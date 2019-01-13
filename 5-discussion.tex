@@ -37,11 +37,10 @@ serendipity can be increased---or, indeed, decreased---because of
 technological design choices (e.g., \cite{danzico2010design},
 \cite{newman2002designing}, \cite{melo2018}).
 %%% Is this still the case, given the paper that you've found last weekend?
-However, current thinking about AI policy has focused on establishing
-control over the behaviour in autonomous systems
-\cite{research-priorities}.  Much less attention has been given to
-features that would allow autonomous systems to make beneficial use of
-the surprises that are bound to be encountered in real-world
+However, AI policy has focused on establishing control over the
+behaviour in autonomous systems \cite{research-priorities}, with less
+attention given to those features that would allow autonomous systems
+to make beneficial use of the surprises that will arise in real-world
 applications.
 
 In Section \ref{sec:literature-summary}, we suggested that serendipity
@@ -94,10 +93,20 @@ much-publicised misadventure with the Twitter bot {\sf Tay}
 \cite{wolf2017we} provides us with an example of a system that
 hindsight tells us was destined to fail.  Hopefully we can learn more
 from this episode than simply to keep our AI systems locked in a `dark
-room'.  We can at least imagine a future research programme that takes
-inspiration from the `functionally integrated networks' in the brain
-\cite{Pessoa2017} to design systems that interact in a socially and
-ecologically responsible manner.
+room'.
+
+Learning from feedback is closely linked with what is essential in
+computation: feedback of output to input is what made the Analytical
+Engine a sketch of a universal computer \cite[p.~24]{Webb1980}.
+Lovelace observed an, if anything, even more profound place for
+feedback in the Engine's operations:
+\begin{quote}
+``\emph{There are frequently several distinct \emph{\textbf{sets of effects}} going on simultaneously; all in a manner independent of each other, and yet to a greater or less degree exercising a mutual influence. To adjust each to every other, and indeed even to perceive and trace them out with perfect correctness and success, entails difficulties whose nature partakes to a certain extent of those involved in every question where \emph{\textbf{conditions}} are very numerous and inter-complicated; such as for instance the estimation of the mutual relations amongst \emph{\textbf{statistical}} ph\ae nomena, and of those involved in many other classes of facts.}'' \cite[p.~710]{lovelace}~{[}emphasis in original{]}
+\end{quote}
+This remark hearkens to complex social and ecological networks and to
+the `functionally integrated networks' in the brain \cite{Pessoa2017}.
+It also anticipates Merton's serendipity pattern (Section
+\ref{sec:literature-review}).
 %% Our overall assessment is that ``blindness'' is neither a
 %% sufficient nor even a necessary condition for serendipity.
 %% %%
@@ -116,7 +125,7 @@ ecologically responsible manner.
 %% experimentation with different architectures will be important.  We
 %% outline several potential applications later in this section.
 
-Our model of serendipity examines necessary factors of serendipity
+Our six-phase model of serendipity examines necessary factors of serendipity
 potential, but aside from requiring each facet of the model, we have
 not had a lot to say about specific techniques or strategies for
 encouraging serendipity.  \citet{bjorneborn2017three} expands upon
@@ -128,8 +137,7 @@ parallel environmental factors or affordances, which he calls
 \emph{sensorability}.  Both sides of this balance are then described
 in terms of sub-factors, with ten on each side.  While Bj\"orneborn
 here traces an interesting parallel between agent and environment, he
-does not comment explicitly on a parallel with the classic theory of
-mind in three parts, namely the ``\emph{conative},''
+does not comment explicitly on a parallel with the classic theory-of-mind-in-three-parts, namely ``\emph{conative},''
 ``\emph{cognitive},'' and ``\emph{affective}''
 \cite{hilgard1980trilogy}.
 %%
@@ -145,18 +153,27 @@ In a recent paper exploring serendipity in computer-generated fiction,
 \citet{mccallum2018} reflect on how structured thinking about
 serendipity can help designers of AI systems take advantage of the
 ``productive and perilous moment [\ldots] in which an unexpected event
-or pattern occurs'' (p.~7).  They cast doubt on whether computational
-art should be constrained to resemble human art.
+or pattern occurs'' (p.~7).  The authors indicate their doubt as
+whether computational art should be constrained to resemble human art.
+This is an aesthetically interesting question: it also calls to mind
+a parallel question in the field of ethics.
+Here, \citet{caliskan2017semantics} recommend ``the explicit
+characterization of acceptable behavior'' and the ``explicit
+instruction of rules of appropriate conduct.''  One possibility in
+accord with the reasoning we have outlined would be to make rules
+themselves negotiable within meta-level institutions
+\cite{corneli2016institutional}.
+
 \citet{gucklesberger2017addressing} tackle related issues with a
 series of ``why questions'' which, they suggest, computational systems
 would need to be capable of addressing in order to be seen as
-`creative'.  It may also be the case that full and accurate explanations
-would have to be highly complex.  \citet{loughran2018serendipity} have
-drawn on the concept of ``cybernetic serendipity'' in their design of
-a music system driven by a {``}`circular-causal' loop,{''} which
-employs a population of evolving critics to build an emergent fitness
-function, which in turn guides the evolution of melodies.  The critics
-give the musical creators an ever-new problem to solve.
+`creative'.  A simple model of evolving creative behaviour is provided
+by \citet{loughran2018serendipity}, who draw on the concept of
+``cybernetic serendipity'' in their design of a music system driven by
+a {``}`circular-causal' loop,{''} which employs a population of
+evolving critics to build an emergent fitness function, which in turn
+guides the evolution of melodies.  Accordingly, the critics give the
+musical creators an ever-new problem to solve.
 
 Peffers et al.'s model of design science research, mentioned in
 Section \ref{sec:background}, has been employed to scaffold various
@@ -168,11 +185,12 @@ would introduce serendipity into the construction of program
 flowcharts.  Recently, a graphical model of dataflow and execution
 dependence was used to establish state of the art results in several
 prediction tasks for multiple input source languages
-\cite{NIPS2018_7617}.  In contrast to the straw man (straw-bot?)
-example from evolutionary computation presented in Section
+\cite{NIPS2018_7617}.  In contrast to the `straw man' example from
+evolutionary computation presented in Section
 \ref{sec:why-this-matters}, technologies like type theory and
 distributional semantics \cite{DBLP:journals/corr/abs-1803-09473}
-could be used by future systems to interpret their results.
+could be used by future systems to both generate and interpret their
+results.
 
 % \cite{KWISTHOUT201784} - six different ways to lower prediction error
 
