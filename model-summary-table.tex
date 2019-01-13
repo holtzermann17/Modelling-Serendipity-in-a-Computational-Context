@@ -34,7 +34,7 @@
  % parbox to limit width of the listing
  \node[boxComponent] (Perception) {\hyperlink{def:perception}{\textbf{Perception}}};
  \node[boxComponent, right of = Perception] (Attention) {\hyperlink{def:attention}{\textbf{Attention}}};
- \node[boxComponent, right of = Attention] (Interest) {\hyperlink{def:interest}{\textbf{Interest\slash Focus Shift}}};
+ \node[boxComponent, right of = Attention] (Interest) {\hyperlink{def:interest}{\textbf{Focus Shift}}};
  \node[boxComponent, right of = Interest] (Explanation) {\hyperlink{def:interest}{\textbf{Explanation}}};
  \node[boxComponent, right of = Explanation] (Bridge) {\hyperlink{def:bridge}{\textbf{Bridge}}};
  \node[boxComponent, right of = Bridge] (Valuation) {\hyperlink{def:result}{\textbf{Valuation}}};
@@ -109,7 +109,7 @@
  \node[boxText, below of = Interest,yshift=2em] (InterestDef) {\small
  \begin{minipage}[t][14em]{10em}
 \begin{flushleft}
-  \textbf{Evaluation of data via existing objective functions}\\[.2cm]
+  \textbf{Hypothesis generation}\\[.2cm]
   \textbullet\ Wundt curve\\
   \textbullet\ \citeauthor{berlyne1954theory} - epistemic and perceptual curiosity\\
   \textbullet\ \citeauthor{logan1994modelling} - belief revision in information seeking\\
@@ -132,9 +132,9 @@
  \node[boxText, below of = Bridge,yshift=2em] (BridgeDef) {\small
  \begin{minipage}[t][14em]{10em}
 \begin{flushleft}
-  \textbf{Identifying or positing a problem (via a new objective function)}\\[.2cm]
+  \textbf{Identifying or positing a problem}\\[.2cm]
   \textbullet\ \citeauthor{bergson1946creative} - creativity of problem statement\\
-  \textbullet\ \citeauthor{thagard2011aha} - ``aha moment''\\
+%  \textbullet\ \citeauthor{thagard2011aha} - ``aha moment''\\
   \textbullet\ \citeauthor{boden1998creativity} - transform the space\\
   \textbullet\ \citeauthor{pease2011computational} - new aesthetic
 \end{flushleft}
@@ -144,7 +144,7 @@
  \node[boxText, below of = Valuation,yshift=2em] (ValuationDef) {\small
  \begin{minipage}[t][14em]{10em}
 \begin{flushleft}
-  \textbf{Evaluation of solution via existing objective function}\\[.2cm]
+  \textbf{Evaluation of solution}\\[.2cm]
   \textbullet\ \citeauthor{bergson1991matter} - affection\\
   \textbullet\ \citeauthor{campbell2005serendipity} - rational exploitation\\
 \end{flushleft}
@@ -243,6 +243,13 @@
 
 % \node [rotate=90, left of = Perception, xshift=-13em,yshift=6em] {\textbf{Implementations}};
 
+\node[ below of = PerceptionDef,yshift=3em] (PreceptionNote) {$\Gamma(t,\ldots)$};
+\node[ below of = AttentionDef,yshift=3em] (AttentionNote) {$\Gamma_1\subset\Gamma$};
+\node[ below of = InterestDef,yshift=3em] (InterestNote) {$\Gamma_1\vdash f\rightarrow g\rightarrow\ldots$};
+\node[ below of = ExplanationDef,yshift=3em] (ExplanationNote) {$\Gamma_1 \vdash \phi : \Pi x:X \mathbin{.} Y(x)$};
+\node[ below of = BridgeDef,yshift=3em] (BridgeNote) {$\beth : \Gamma_1 \rightarrow \Gamma_2, \phi \mapsto \psi$};
+\node[ below of = ValuationDef,yshift=3em] (ValuationNote) {$\psi(t,\ldots)$};
+
 \begin{scope}[thick]
   % draw the connecting arrows
  \path
@@ -256,7 +263,7 @@
 \end{tikzpicture}}
 
 \begin{tabular}{p{.1\textwidth}p{.\textwidth}}
-\caption{Our model for systems with serendipity potential. The flowchart at top provides a visual key, showing that previous phases can be returned to at any point.  The body of the table summarises Definitions \ref{def:perception}--\ref{def:result}.\label{tab:model-summary-table}}
+\caption{Our model for systems with serendipity potential. The flowchart at top provides a visual key, showing that previous phases can be returned to at any point.  The body of the table summarises Definitions \ref{def:perception}--\ref{def:result}.  Notation at the bottom provides a mnemonic.\label{tab:model-summary-table}}
 \end{tabular}
 \end{table}
 %\end{landscape}

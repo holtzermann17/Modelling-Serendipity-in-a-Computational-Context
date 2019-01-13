@@ -28,8 +28,9 @@ explicitly programmed in respect of those patterns.''  Whereas
 predictive processing accounts are ``currently computationally fleshed
 out predominantly at the basic perception and motor control level''
 \cite{KWISTHOUT201784}, here, we will consider a range of higher
-cognitive functions.  We note that the functional architecture of the
-human brain is in fact highly non-modular, ``allowing the confluence
+cognitive functions.  Current research in cognitive
+science observes that the functional architecture of the
+human brain is non-modular and ``allow[s] the confluence
 of information related to perception, cognition, emotion, motivation,
 and action'' \cite[p.~357]{Pessoa2017}.  Our model is, similarly, an
 abstraction of a functional architecture.
@@ -69,14 +70,22 @@ as in the mind.
 The six phases in our model exhibit clear logical dependencies, which
 we will illustrate using notation from constructive type theory---a
 notational strategy inspired by work in computational semantics
-\cite{Piwek2007,krahmer1999presupposition,piwek2000presuppositions}.
+\cite{Chatzikyriakidis2018}.  In particular, it has been applied to
+model linguistic phenomena of anaphora and presupposition
+\cite{10.1007/978-3-662-43742-1_2,krahmer1999presupposition,piwek2000presuppositions}.
+
 We assume that earlier steps can be returned to from later ones, and
 that anticipation of later steps can play a role in the away the
-process runs.  For example, improved ways to process rubber and safe
+process runs.  Anticipation is prominent in pseudoserendipitous
+discovery: for example, improved ways to process rubber and safe
 antibiotics were pursued in broad outline long before the specific
-details became clear \cite{fleming,goodyear1855gum}; similarly,
+details became clear \cite{fleming,goodyear1855gum}.  Similarly,
 Pasteur's research has been retroactively described as
-``use-inspired'' \cite{stokes1997pasteur}.
+``use-inspired'' \cite{stokes1997pasteur}.  Anticipation plays a more
+subtle role in serendipity proper: the unexpected emerges relative,
+not to an blank slate, but to existing top-down predictions, including
+our anticipation of ourselves, our customs, and our \emph{Umwelt}
+\cite{dennett_2013}.
 
 % http://anticipationconference.org/call-for-participation/
 
@@ -162,11 +171,11 @@ $A$ might denote the type `tree' and the relation $\forall i
 \paragraph{\textbf{\upshape Foundations}}
 
 \begin{description}
-\item[Adaptive attention is related to surprise.] Each perceived event causes a prediction error with respect to the agent's predictive model, accounting for their expectations. Only if that error crosses a certain threshold is the event given attention.
+\item[Adaptive attention is related to surprise.] Each perceived event causes a prediction error with respect to the agent's predictive model. Only if that error crosses a certain threshold is the event given further attention.
 \item[Learning, context, and meaning arise together with attention.]
   ``Punctuating events'' \cite[p.~301]{bateson-logical-categories}
   from a stream of data is one form of attention.  Identifying
-  patterns that are stable over time begin give the data
+  patterns that are stable over time begins to give the data
   ``context and interpretation'' \cite{rowley2007wisdom}.
 \item[To some approximation, features of the environment will be attended to.] This is a more specific version of the hypothesis
   that hierarchical structures in the environment will be mirrored by
@@ -186,11 +195,13 @@ constraining some of the variables on which $\Gamma$ depends.  Again,
 the contents of $\Gamma_1$ vary with time.  Attention generates
 changes in the way new perceptions come online.
 
-\begin{defn}[\textbf{Focus shift: Evolution of the data}]\label{def:interest}
+\begin{defn}[\textbf{Focus shift: Data evolution}]\label{def:interest}
 \hypertarget{def:interest}{} We say that a \textbf{focus shift}
-occurrs if processing leads to a recontextualisation of the event.
+occurrs if processing leads to a functional model of the event.
 \end{defn}
 % I'm not sure if "fitness function" is generic enough here. Rather "objective function", expressing a system's goals? You write yourself that our use is at odds with the evolutionary literature; so why do we use the term then, still?
+
+% Evaluation of data via existing objective functions
 
 \paragraph{\textbf{\upshape Foundations}}
                                          
@@ -200,30 +211,28 @@ occurrs if processing leads to a recontextualisation of the event.
   to model situations of collaborative information-seeking.  Ground
   assumptions are shared in the context of such dialogues, and can
   change as conversations progress.  In our model, the focus shift
-  similarly causes the context to change, so that the ground
-  assumptions, including ways of evaluating data, are no longer the
-  same.  \citet{harman1986change}
-  treated the implications of changing circumstances for bringing
-  about a ``reasoned change of view'' (p.~3); he described
-  previous work by \citet{Doyle:1980:MDA:889488} 
-  on the system {\sf SEAN}, which incorporated defeasible reasoning,
-  as one of only a few earlier efforts in this area.
-  More recently, \citet{clarke2017assertion} argues that \emph{belief} is
-  context-sensitive, depending for example on purpose, and on the
-  stakes involved.  In particular, in a dialogue, the sincerety of a
-  given remark is linked to the context, not just to the remark's
-  propositional content.  Our notion of \emph{interest} appears
-  together with the focus shift because interest is what motivates bringing
-  the event into a new context.  In the case of
-  Velcro\textsuperscript{\texttrademark}, the focus shift occurred in
-  quite a literal fashion, when de Mestral examined burrs under a
-  microscope.  This example provides another useful mnemonic: burrs'
-  hooks allow them to ``hitchhike'' into new contexts
-  \cite[\textsection1.1]{jenkins2011bio}.  
-  \citet{patalano1993predictive} describe the related mental phenomenon of
-  \emph{predictive encodings} that record ``blocked goals in memory in such a
-  way that they will be recalled by conditions favorable for their
-  solution.''
+  similarly causes the context to evolve, so that the ground
+  assumptions are no longer
+  the same.  \citet{harman1986change} treated the implications of
+  changing circumstances for bringing about a ``reasoned change of
+  view'' (p.~3); he described previous work by
+  \citet{Doyle:1980:MDA:889488} on the system {\sf SEAN}, which
+  incorporated defeasible reasoning, as one of only a few earlier
+  efforts in this area.  More recently, \citet{clarke2017assertion}
+  argues that \emph{belief} is context-sensitive, depending for
+  example on purpose, and on the stakes involved.  In particular, in a
+  dialogue, the sincerety of a given remark is linked to the context,
+  not just to the remark's propositional content.  An agent's
+  interest is often what motivates bringing the event into a new context.
+  In the case of Velcro\textsuperscript{\texttrademark}, the focus
+  shift occurred in quite a literal fashion, when de Mestral examined
+  burrs under a microscope.  This example provides another useful
+  mnemonic: burrs' hooks allow them to ``hitchhike'' into new contexts
+  \cite[\textsection1.1]{jenkins2011bio}.
+  \citet{patalano1993predictive} describe the related mental
+  phenomenon of \emph{predictive encodings} that record ``blocked
+  goals in memory in such a way that they will be recalled by
+  conditions favorable for their solution.''
   %%   For example, Fry was sufficiently interested in the adhesive to
   %% recall it in connection with a familiar problem at choir
   %% practice.
@@ -257,29 +266,31 @@ functional relationships with each other.  For example, $\Gamma_1
 \vdash \mathrm{Faucet} \rightarrow \mathrm{Handle} \rightarrow
 \mathrm{Valve} \rightarrow \mathrm{Leak}$. Whereas attention only
 changed the way items come online, the focus shift generates
-hypotheses: they need not be correct.
+hypotheses: they need not be correct.  In the process of establishing
+functional hypotheses, the context itself may shifts, by revisiting
+the attention phase.
 
 % I don't think that it is helpful to talk about aesthetics here, as it only narrows our scope. 
 % I would remove the last item / paragraph entirely. Clearly, judgements of interest depend on the person, but we've discussed that in the "prepared mind" reference earlier in this section. The focus on poetry is too narrow.
 % I'd stick with only two items: one on extrinsic objective functions and one on intrinsic ones, where you could talk about interestingness and other things. 
 
 \begin{defn}[\textbf{Explanation: Building a predictive model}]\label{def:explanation}
-\hypertarget{def:explanation}{}By means of closer analysis, experimentation, discussion, or some
-other concerted means of examination devoted to the
-newly-contextualised event, it now receives an
-\textbf{explanation}, which constitutes a model that predicts functional, operational, or statistical behaviours that relate the previously-unexpected event to its newly-retrieved context.
+\hypertarget{def:explanation}{}By means of closer analysis,
+experimentation, discussion, or some other concerted means of
+examination devoted to the event, it now receives an
+\textbf{explanation} that predicts functional, operational, or
+statistical behaviours that relate the previously-unexpected event to
+its context.
 \end{defn}
 % There's two fundamental mechanism to build a predictive model: a maximum likelihood estimator in classic inferential statistics, or Bayesian inference where the goal is to find the posterior p(theta|evidence) using the prior p(theta) and the likelihood p(evidence|theta). Here, theta is a (set of) parameter which characterises our model. Bayesian inference easily becomes intractable and can be approximated with Gibbs Sampling or Variational Inference, amongst others. It seems like you completely left related work out here. All of these approaches are explaines in C. M. Bishop's Pattern Recognition and Machine-Learning book. 
 \paragraph{\textbf{\upshape Foundations}}
                                          
 \begin{description}
-\item[A new model yields an improved ability to make a prediction.]  Our
-  fundamental assumptions about chance, described earlier, insist that
-  the perceiving agent has at best a limited ability to predict the event.
-  The explanation stage now enables the agent to make predictions
-  \cite[p.~389]{sowa2000knowledge}.  Explanatory success depends on
-  the system's skills, and both prior and new knowledge.  However,
-  these explanations are again limited:
+\item[A new model yields an improved ability to make a prediction.]
+  Our assumptions about chance, described earlier, insist that the
+  perceiving agent has at best a limited ability to predict the events
+  it perceives.  The explanation stage now enables the agent to make
+  new predictions \cite[p.~389]{sowa2000knowledge}.
   \citet[p.~101]{swirski2000between} points out that to be effective,
   explanation needs ``a stopping rule'', e.g., ``the standard causal
   pattern in the social sciences'' requires only ``a description of
@@ -329,9 +340,7 @@ hypotheses, this step generates a proof.
 connecting the explanation of the event, generated earlier, and either
 (i) an existing problem within the domain, or else (ii) some
 previously unknown problem.  In both cases, the explanation is
-generalised as a solution strategy.  ``Problems'' can be modelled as
-objective functions, so that case (ii) entails the generation of a new
-objective function.
+generalised as a solution strategy.
 \end{defn}
 \paragraph{\textbf{\upshape Foundations}}
                                          
@@ -339,7 +348,7 @@ objective function.
 \item[Application lies beyond explanation.]
   The bridging process can be
   conveniently outlined by comparing a positive example with a
-  corresponding counterexample.  Nearly 60 years before Fleming,
+  corresponding counterexample.  Nearly 60 years before Alexander Fleming,
   Eugene Semmer both discovered and also cursorily explained the
   curious effects of \emph{penicillium notatum}---but he did not find
   a bridge to the vital problem his discovery could have solved
@@ -384,24 +393,34 @@ solution.
   by piece, and even the order in which the pieces are put into place
   is more or less predictable.  It would not be said that either the
   last piece added, nor any of the other pieces that were added along
-  the way, was the result of pseudoserendipitous creativity.  By contrast,
-  historical progress in aviation depended on dramatic progress in
-  human interaction \cite[p.~292]{spenser2008airplane}, which
-  suggests that this process could not have been planned in advance.
-  To consider another simple example, assembling a jigsaw puzzle is
-  not a fully predictable process.  However, even if a previously
-  missing piece was suddenly supplied which made the puzzle solveable,
-  this would not be a bridge.  In short, both pseudoserendipitous and
+  the way, was the result of pseudoserendipitous creativity.  By
+  contrast, historical progress in aviation depended on dramatic
+  contemporaneous progress in human interaction
+  \cite[p.~292]{spenser2008airplane}, which suggests that this process
+  could not have been planned in advance.  To consider another simple
+  example, assembling a jigsaw puzzle is not a fully predictable
+  process.  However, even if a previously missing piece was suddenly
+  supplied which made the puzzle solveable, this would not be a bridge
+  according to our definition.  In short, both pseudoserendipitous and
   serendipitous creativity involve ``the transformation of some (one
   or more) dimension of the space so that new structures can be
   generated which could not have arisen before''
   \cite[p.~348]{boden1998creativity}.
-\item[A good problem can be identified by working at a meta-level.]
-  Bridge construction might be thought of as a meta-problem, in other
-  words, a fitness function or ``aesthetic''
-  \cite{pease2011computational}, through which an entire class of
-  problems are surveyed, and the most suitable one selected.  Case
-  (ii) additionally requires that the selected problem be a novel one.
+\item[Problem identification is meta-level.]  Constructing a bridge
+  involves a meta-problem, in other words, a fitness function or
+  ``aesthetic'' \cite{pease2011computational}, through which an entire
+  class of problems is surveyed, and the most suitable one (i)
+  selected or (ii) constructed.  One way to create this aesthetic is
+  through experience with previous problems, as in derivational
+  analogy, ``a process that draws analogies from the experiences of
+  the past reasoning process'' \cite{Melis98anargument}. Herbert Clark
+  \cite[p.~169]{Clark:1975:BRI:980190.980237} used the term
+  `bridging', in a linguistics setting, to refer to a certain class of
+  inferences: ``ones the speaker intends the listener to draw as an
+  integral part of the message.''  Our setting is different: people
+  sometimes attribute `intent' or `meaning' to events, but their role
+  in interpreting the events should not be ignored
+  (cf.~\cite{dennett_2013}).
 \end{description}
 
 \paragraph{\textbf{\upshape Notation}}
@@ -418,7 +437,7 @@ applications is generative.
 %% the initial search for methods to build powered aeroplanes.
 
 \begin{defn}[\textbf{Valuation: Evaluation of the solution via an existing objective function}]\label{def:result}
-\hypertarget{def:result}{}The solution to the bridged problem is positively or negatively
+\hypertarget{def:result}{}The solution to the bridged problem is positively 
 \textbf{evaluated} according to some pre-existing objective function.
 This may be system-intrinsic, or specified by the system's user or a third party.
 \end{defn}
@@ -432,7 +451,7 @@ This may be system-intrinsic, or specified by the system's user or a third party
 \citet{campbell2005serendipity} highlights the idea of ``rational
 exploitation'' and the ``discovery of something useful or
 beneficial'' as key aspects of serendipity.
-But some processing may be required
+Some processing may be required
 to get to that point. Here we may refer to the Bergsonian
 distinction
 between ``perceptions'' and ``affections''
@@ -456,7 +475,7 @@ that led to this point.
 
 \paragraph{\textbf{\upshape Notation}}
 
-$\psi$ is now run and generates outcomes.
+$\psi$ is run, selectively, and generates outcomes.
 
 \subsection{Summary}
 We have proposed a phased model of serendipity consisting of several
