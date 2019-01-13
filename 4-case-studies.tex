@@ -1,0 +1,332 @@
+\section{Integrating the features}\label{sec:system-analysis}
+%%% Find a shorter title. E.g. Evaluating our model: discriminating serendipity potential
+
+Here we discuss three systems that appear to exhibit all of the features outlined by model.  First, we consider a snapshot of Mueller's {\sf DAYDREAMER} \cite{mueller1990} -- serendipity was a key concern its design (\emph{ibid}., \textsection 5.3).  Then we examine Pask's {\sf Colloquy of Mobiles}, one of the installations that appeared in the 1968 Cybernetic Serendipity exhibition at the Institute of Contemporary Arts in London
+\cite{reichardt1969cybernetic}.  We use this system to highlight the difference between serendipity as a service and serendipity in the system.  We then give a narrative of the evolution of a series of two related systems {\sf HR} and {\sf LHR}, developed by two of the authors.  This example shows how features of the model can come online step by step.
+
+\subsection{{\sf DAYDREAMER}: Serendipity in the System}
+%%% Btw, these experiments might be related: https://deepmind.com/blog/agents-imagine-and-plan/
+The {\sf DAYDREAMER} system \cite{mueller1990} is intended to provide a computational model of daydreaming.  An agent is guided to use its `imagination' to develop ideas and construct short narratives.  The principle behind {\sf DAYDREAMER} is that a planning agent can operate in a `relaxed' manner to explore possibilities in unusual ways, where the relaxation state is achieved by removing or reducing constraints on the search process that guides the exploration.  {\sf DAYDREAMER}'s exploration is driven by loosely constrained planning mechanisms which are given a pre-determined goal.
+%% The agent to construct a plan in a less-constrained manner. 
+The generated plan then becomes the basis of a narrative.
+Mueller identifies a distinction between {\sf DAYDREAMER} and other comparable systems:
+\begin{quote}
+\emph{``There are certain needless limitations of most present-day
+  artificial intelligence programs which make creativity difficult or
+  impossible: They are unable to consider bizarre possibilities and
+  they are unable to exploit accidents.''} \cite[p. 14]{mueller1990}
+\end{quote}
+In other words, the {\sf DAYDREAMER} system was designed to capitalise
+on the unusual or accidental {\em non-obvious} options available to
+it, which gives intuitive support for Mueller's case that it can act
+serendipitously.  We apply our model to check whether this claim is
+justified: details are given in Table \ref{ex:daydreamer}.
+
+\let\oldparagraph\paragraph
+\makeatletter
+\renewcommand{\paragraph}{%
+  \@startsection{paragraph}{4}%
+  {\z@}{1ex \@plus 1ex \@minus .2ex}{-1em}%
+  {\normalfont\normalsize\itshape}%
+}
+\makeatother
+
+\begin{table}
+\begin{mdframed}[innertopmargin=-10pt]
+\begin{tabular}{p{.96\textwidth}}
+\paragraph{Perception:}
+\textbf{SOME.} {\sf DAYDREAMER} has access to the outside world in that it
+can be given information about events, physical objects and goals as
+input. However, it lacks perception of events beyond such input,
+and cannot steer its perception, or significantly structure the input.
+\paragraph{Attention:}
+\textbf{YES.} {\sf DAYDREAMER} is able to direct processing
+power to pay attention to different aspects of perception.  It is able
+to interpret input in the context of domain knowledge, and also in
+light of previous daydreams.
+\paragraph{Focus shift through interest:}
+\textbf{YES.} Information is processed and evaluated according to an
+emotional component and personality traits implemented within
+{\sf DAYDREAMER}, which determine what {\sf DAYDREAMER} does and
+does not take note of.  Focus shifts are targeted towards achieving
+a particular goal.  The system has an explicit notion of contexts and shifts between them:
+``planning rules give rise to alternative states of a hypothetical world''
+\cite[p.~35]{mueller1990}.
+\paragraph{Explanation:}
+\textbf{YES.}  Drawing on previous experience and domain knowledge
+       {\sf DAYDREAMER}, regularly executes a `predictor' function to
+       measure whether new conceptual steps are likely to bring it
+       closer to its goal.
+\paragraph{Bridge:}
+\textbf{YES.}  {\sf DAYDREAMER} can employ analogical reasoning to see
+if aspects of the plan it is working on could be adapted to achieve
+some other existing goal.  It can also retrieve and reuse the plans
+it has previously created.
+\paragraph{Valuation:}
+\textbf{SOME.} Valuation is performed by {\sf DAYDREAMER} by assessing whether
+the goal it is trying to achieve has been realised.  There is no valuation of the interestingness
+or variability of the daydreams produced over time. 
+The system has limited ability to select topics to daydream about next.
+%%% So we're dealing with pseudoserendipity here?
+\end{tabular}
+\end{mdframed}
+\vspace{-.2cm}
+\caption{Applying our model to evaluate the serendipity potential of the {\sf DAYDREAMER} system\label{ex:daydreamer}}
+\end{table}
+
+\begin{table}
+\begin{mdframed}
+: 
+\begin{tabular}{@{\hspace{-0.01\textwidth}}p{.5\textwidth}@{\hspace{.02\textwidth}}p{.5\textwidth}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{minipage}{.48\textwidth}
+%\vspace{-1\baselineskip}
+\textbf{[System]}
+\paragraph{Perception:} \textbf{SOME.}
+The mobiles were given light and sound sensors, which are linked to their drives.
+The mobiles' behaviour is controlled by light and sound behaviour in their
+environment, which can originate from other mobiles or from other sources.
+%%% Why only SOME then? Please justify why not YES. Also double-check other SOME cases.
+\paragraph{Attention:} \textbf{SOME.}
+The mobiles have ``gender roles'' which cause them to turn to one another
+looking for certain behaviours to satisfy their drives.  They are, however,
+given only limited attention spans.
+\paragraph{Focus shift through interest:} \textbf{SOME.} Once the attention
+has been captured, a mobile will change its behaviour until its drive
+is satisfied or interrupted.
+%%% Again, why only SOME?   
+\paragraph{Explanation:}
+\textbf{SOME.}  The female mobiles ``were adaptive in the sense that
+they could learn to identify individual males and remember their
+peculiarities''  \cite{pickering2007ontological}.
+\paragraph{Bridge:} \textbf{NO.} The mobiles did not have
+the ability to identify any problems other than the satisfaction of
+their drives, nor could they strategise about how to satisfy those
+drives beyond the simple form of learning mentioned above.
+\paragraph{Valuation:} \textbf{NO.} While the mobiles continuously performed
+local optimisations, there was no ``result'' that could be valued (nor were
+they given the ability to form valuations).
+\end{minipage} &
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{minipage}{.48\textwidth}
+\textbf{[Audience]}
+\paragraph{Perception:} \textbf{YES.}
+Audience members were able to perceive the installation as a whole,
+and also interact with it using light and sound (and perceive the
+effects of their own interactions). 
+\paragraph{Attention:} \textbf{YES.}
+The museum-going public also has limited attention spans.
+\paragraph{Focus shift through interest:} \textbf{YES.}
+Pask notes in an appendix 
+that audience members interacted interestedly with the system \cite[p.~98]{pask1971comment}.
+\paragraph{Explanation:} \textbf{YES.}
+Audience members were able to generate theories about how
+their ``actions lead to impacts on the environment that lead to
+sensing and further motivation of actions'' by the mobiles
+\cite{haque2007architectural}.
+\paragraph{Bridge:} \textbf{SOME.} 
+: 
+At least some commentators were able to abstract from the exhibit to further philosophical thinking
+about ``what sorts of things there are in the world, and how they
+relate to one another'' \cite{pickering2007ontological}.
+``Conversational machines'' were not part of everyday life in 1968,
+and the system can still provoke debate \cite{pangaro2018serendipity}.
+\paragraph{Valuation:} \textbf{SOME.}
+\citet[p.~5]{gemeinboeck2015performance} remark: ``The work introduced machinic attributes that even
+today still sound very advanced to museum audiences'' and it ``is
+in many ways as much a humorous, social observation of humans and
+their nonhuman counterparts as it is a technological achievement.''
+\end{minipage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{tabular}
+\end{mdframed}
+\caption{Applying our model to evaluate the serendipity potential of Pask's {\sf Colloquy of Mobiles}.  The system itself is evaluated in the left column, whereas the audience's experience of the system is evaluated in the right column. \label{ex:mobiles}}
+\end{table}
+
+\subsection{{\sf Colloquy of Mobiles}: Serendipity as a Service}
+
+The Cybernetic Serendipity exhibition proved popular with the museum-going public, and has been extensively discussed in subsequent literature
+\cite{Edmonds1994,macgregor2002cybernetic,usselmann2003dilemma}.  For
+our purposes the interesting question is whether, and how, the concept
+of ``serendipity'' relates to one of the more famous artworks that was
+exhibited there.
+%%% I find this a very weak motivation. Not even Pask himself has related his artwork to serendipity, has he? If you want to keep this, I'd (i) stress the artificiality of the system without being classic-computational; (ii) the social aspect leading to serendipitous encounters with people. This is currently still too implicit.
+
+%%
+In an essay that describes the details of his installation, composed
+before the exhibition took place, Pask wrote:
+
+\begin{quote}
+``[T]\emph{he mobiles produce a complex auditory and visual effect by
+  dint of their interaction.  They cannot, of course, interpret these
+  light and sound patterns.  But human beings can and it seems
+  reasonable that they will also aim to achieve patterns that they deem
+  pleasing by interacting with the system at a higher level of
+  discourse.}
+%%
+: 
+\emph{I do not know.  But I believe it may work out that way.}''  \cite[p.~91]{pask1971comment}
+\end{quote}
+
+While the system components have been given regulatory goals which are
+realised in a
+%  an aleatoric---or, more literally,
+stochastic way, the
+system components are not themselves able to make any deeper sense of
+their communication or behaviour.  This suggests that we should make a
+dual accounting, and examine the potential for serendipity on the
+side of the system, and compare it with the potential for serendipity
+on the side of the audience  (Table \ref{ex:mobiles}).
+%%
+According to our analysis, there was no possibility for serendipity on
+the system side, but nevertheless there was a possibility for
+serendipity in the ``wider'' system that included human actors.
+%% The
+%% historical evidence is that there was a certain serendipity to the
+%% exhibition as a whole:
+
+%% \begin{quote}
+%% ``\emph{Where in London could you take a hippy, a computer programmer,
+%%     a ten-year-old schoolboy and guarantee that each would be
+%%     perfectly happy for an hour without you having to lift a finger to
+%%     entertain them?}'' (2 August 1968, \emph{Evening Standard})
+%% \end{quote}
+
+
+\subsection{{\sf HR} and {\sf LHR}: In pursuit of serendipity} \label{sec:pursuit}
+
+In this section we give an account of several episodes in a historical sequence of development of discovery systems created by two of the authors \cite{colton2002automated,pease07}.  For each, we use our model to discern the serendipity potential (if any) for the system described at that point in time.
+
+\begin{ep}[HR constructs the concept of the central elements in a group]\label{ex:central}
+The {\sf HR} system\footnote{Named after mathematicians Hardy (1877 - 1947) and Ramanujan (1887 - 1920).} \citet{colton2002automated} is a machine learning tool which performs automated discovery in a variety of domains. The user provides background domain knowledge describing axioms, concepts and examples, and the system uses production rules to discover new concepts.  HR then conjectures empirical relationships between concepts, and evaluates its concepts and conjectures according to a set of interestingness measures.  When working in mathematics domains, it can link to McCune's theorem prover {\sf OTTER} (Organized Techniques for Theorem-proving and Effective Research)\cite{mccune:90} and model generator {\sf MACE} (Models And Counter-Examples) \cite{mccune:macemanual,zhang}, in order to prove interesting conjectures or find counterexamples.  In early applications its basic mode of operation was entirely deterministic.
+%%
+
+One early success was in the domain of abstract algebra, in which {\sf HR} re-discovered the concept of \emph{the central elements of a group} (the set of elements in a group that commute with every element in the group) \cite{colton2002automated}.  This is a core concept in Group Theory that appears in most if not all basic textbooks on the subject.  HR discovered this concept by applying its {\em compose}, {\em exists} and {\em forall} production rules in the following way:  
+
+\begin{align*}
+\left.
+\begin{array}{c}
+{[}a,b,c{]} : a*b=c\\
+{[}a,b,c{]} : a*b=c
+\end{array}
+\right\}\:\:
+&\mathbf{compose}\rightarrow [a,b,c] : a*b=c \:\text{\emph{\&\&}}\: b*a=c\\
+&\mathbf{exists}\rightarrow [a,b] : \text{exists}\ c\ (a*b=c \:\text{\emph{\&\&}}\: b*a=c)\\
+&\mathbf{forall}\rightarrow [a] : \text{all}\ b\ (\text{exists}\ c\ (a*b=c \:\text{\emph{\&\&}}\: b*a=c))
+\end{align*}
+\end{ep}
+
+In addition to perceiving new conjectures (which it generates), we allow that these are given further attention (by testing them with examples and checking them with external systems), but in the context of our model, that is where things stop.
+
+\begin{ep}[HR refutes a boring conjecture in monoid theory]\label{ex:monoid}
+With a view to increasing the serendipity potential of {\sf HR} , Colton 
+subsequently enhanced the system so that whenever it finds a
+counterexample to a new conjecture, it tests to see whether the
+counterexample also breaks any previously unsolved open conjecture.
+In this case, the system's ``prepared mind'' takes the form of previous
+experiences, background knowledge, a store of unsolved problems, as
+well as skills and a current focus.  The new counterexample arises
+due partly to factors beyond the system's control, in particular, the
+built-in structure of the
+domain.
+%% dynamic complexity, or some other process independent of the
+%% current focus.
+This version of the system was tested in three test domains:  group theory (associativity, identity and inverse axioms), monoid theory (associativity, identity) and semigroup theory (associativity). When run in breadth first mode, i.e., with no heuristic search, during sessions with tens of thousands of production rule steps, there were no instances of open problems which were solved in this way. Amending the search strategy to random led to one instance of a newly generated counterexample solving a pre-existing conjecture in monoid theory, none at all in group theory and a handful of times in semi-group theory (there were three times when a new counterexample dispatched an open conjecture, and on one occasion, ten open conjectures were dispatched by one counterexample).  Not only was it rare, the conjectures which were disproved in this way could not be considered interesting: for instance, the monoidal conjecture which was an open problem disproved by a later counterexample was the following:
+\begin{align*}
+\forall b, c, d &\hspace{.2cm}(((b * c = d \wedge c * b = d \wedge c * d = b \wedge (\exists(e * c = d \wedge e * d = c)))\\
+&\hspace{.2cm}\leftrightarrow(b * c = d \wedge (\exists f(b * c = f)) \wedge (\exists g(g * c = b)) \wedge d * b = c \wedge c * d = b)))
+\end{align*}
+
+\noindent This conjecture does {\em not} appear in textbooks on Monoid Theory.
+\end{ep}
+
+Alongside the attributes of perception and attention that were present
+in Episode \ref{ex:central}, we now have evidence of a focus shift,
+since every newly-disproved conjecture is considered in the context of
+each open conjecture, a potentially long series of (rather limited)
+recontextualisations.  However, this evidence must be seen as rather
+weak, since the same basic routine happens with each disproved
+conjecture, whereas one might expect a true recontextualisation would
+be data-specific.
+%%
+The explanation phase is somewhat better represented (namely via the
+demonstration that the counterexample refutes the earlier conjecture)
+but the bridge is wholly missing, so the system's findings can only be
+regarded as path-dependent rather than serendipitous.
+
+Note, as well, that mathematical theorems are generally more important
+than disproved conjectures, and that the conjectures that were being
+disproved were very unlike the ones that might appear in a textbook on
+abstract algebra.  So, evidence for the valuation phase would also be
+quite weak, if everyday standards of mathematical value were applied.
+
+\begin{ep}[HRL undiscovers the platypus]\label{ex:platypus}
+{\sf HRL} was an adaptation of {\sf HR}, developed by \citet{pease07} and 
+based on a theory of argumentation that acknowledges the role of conflict and ambiguity in mathematical discovery.  The theory, based on the work of
+\citet{lakatos}, can also be used to describe (some) real-world
+discoveries in mathematics.  {\sf HRL} is a distributed system,
+comprised of ``student'' and ``teacher'' agents, each running a copy
+of Colton's {\sf HR}.  The systems have different input knowledge,
+measures of interestingness, and different ways of producing concepts.
+The overall system is organised into independent work phases, and
+discussion phases, in which conjectures, concepts, and counterexamples
+are communicated.  Students react to counterexamples using Lakatos's
+methods.  One such discussion, developed around a simple theory of
+animals, progressed as follows:
+\begin{itemize}
+\item[\emph{A}:] ``There does not exist an animal which produces milk and lays eggs.''
+\item[\emph{B}:] ``The platypus does''
+\item[\emph{A}:] {[}Checks new object against current theory. Finds it breaks 11\% of its conjectures{]}\newline ``The platypus is not an animal''
+\item[\emph{B}:] {[}Finds that the platypus breaks 31\% of its own conjectures.{]}\newline ``Okay - I'll accept that.''
+\end{itemize}
+\end{ep}
+
+We will discuss this example together with the following:
+
+\begin{ep}[HRL formulates Goldbach's Conjecture]\label{ex:goldbach}
+The same system could also do theory formation in basic number theory.
+Here is another dialogue:
+\begin{itemize}
+\item[\emph{A}:] {[}Knows: numbers 10-20, integer, div, mult{]}\newline ``All even numbers are the sum of two primes.''
+\item[\emph{B}:] {[}Knows: numbers 0-10, integer, div, mult{]}\newline ``2 is not the sum of two primes.''
+\item[\emph{A}:] {[}Checks new object against current theory. It fits well and doesn't break any further conjectures{]}\newline ``Okay - I'll accept that 2 is a number. Then my conjecture is `All even numbers except 2 are the sum of two primes'.''
+\end{itemize}
+\end{ep}
+
+Let's consider whether either of examples 3 and 4 meet our criteria.
+%%
+The system's basic perceptual abilities again rely on its generative
+methods, drawing where relevant on external systems.  Agents develop
+concepts, conjectures, theorems, and examples that are given
+preliminary assessments: the most interesting findings are shared
+during the ``discussion phase''.  This is reasonable evidence of
+attention.  We saw evidence of a limited focus shift even for {\sf HR}
+in Episode \ref{ex:monoid}; somewhat more convincing context- and
+data-specific behaviour is illustrated with {\sf HRL}'s agent model,
+since each agent is working with its own theory, and can independently
+decide what to do with the evidence shared by the other agents.
+Causal models are established using external systems, which produce
+proofs or check for counterexamples.  This allows the system to
+generate simple explanations, for example, Agent \emph{A}'s assertion
+that ``The platypus is not an animal.''
+%%
+In Episode \ref{ex:platypus}, this explanation is simply accepted, but
+in Episode \ref{ex:goldbach}, Agent \emph{A} uses \emph{B}'s
+counterexample to produce a new conjecture.  The reasoning can be seen
+as a bridge to a new problem:
+\begin{quote}
+``All even numbers are the sum of
+two primes.''\:$\rightarrow$\:``2 is not the sum of two
+primes.''\:$\rightarrow$\:``All even numbers except 2 are the sum of two
+primes.'' 
+\end{quote}
+This conjecture is considered interesting by the system for roughly
+the same reason it is historically interesting: it is succinctly
+stated but continues to evade proof.  However, since the conjecture
+is already well known (and remains unproved), the simple
+fact of its reformulation by {\sf HRL} has little chance of 
+receiving the kind of recognition given to original mathematical
+discoveries---of the sort that have in fact been made with {\sf HR}
+\cite{colton2007computational}.
+
+Eco suggested that if Kant had had the opportunity to observe the platypus, he would have concluded that it is ``a masterpiece of design, a fantastic example of environmental adaptation, which permitted the mammal to survive and flourish in rivers'' \cite[p.~93]{eco2000kant}.  There is quite a difference between this creative line of abductive reasoning and {\sf HRL}'s reductive approach.  However, as we have seen, given a somewhat richer background theory, {\sf HRL} was also capable of exercising something akin to reflective judgement, which it used to reinvent a famous number-theoretic conjecture.

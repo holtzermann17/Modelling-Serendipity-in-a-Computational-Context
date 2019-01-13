@@ -1,0 +1,344 @@
+\section{The structure of serendipitous occurrences}
+\label{sec:literature-review}
+
+To capture the intricate concept of serendipity in a model that is amenable to computational implementation, we first need a thorough understanding of the concept.  Our objective in this section is therefore to identify the factors common to existing theories of serendipity in one unified interpretation.  We will draw on related conceptualisations of \emph{creativity}, a theme that has drawn considerable attention in artificial intelligence research (cf.~\cite{boden1998creativity,colton2009computational,mccormack2012computers}).  We also draw connections with \emph{discovery}, \emph{invention}, \emph{learning} and \emph{insight}.
+
+At the outset it may be remarked that there are diverse perspectives on serendipity both in the theoretical literature as well as in applied work.  Usage of the term is particularly ambiguous when viewed across different computational sub-fields.  In the recommender systems context, the dominant, though not exclusive view is that serendipitous recommendations characterise items that are both surprising and valuable for the user \cite{Lu2012,Herlocker2004}.  In planning, serendipity can be ``driven by unexpected plan successes, expected but uncertain opportunities, and unexpected plan failure'' \cite{NelsonSerendipitySymp17}, as for example in the onboard planner for NASA's \emph{Deep Space One} mission \cite{muscettola1997board}. In their human-robot interaction scenario, \citet{chakraborti2015planning} consider serendipity to be ``the occurrence or resolution of facts in the world such that the future plan of an agent is rendered easier in some measurable sense.''  Their robot engages in planning in order to help achieve a human-sought goal.
+%%
+This diversity further motivates a return to the foundational literature.
+% This motivates our return to the theoretical literature and consider both the origins and development of the serendipity concept as foundation for our framework. We consequently start with a survey of definitions and the etymology of serendipity. We then describe how serendipity is intertwined with creativity, and eventually juxtapose our findings to derive the components of our framework. %Not even unambiguously defined within domain of recommender systems (cf. Lu et al., 2012). Most popular is definition by Herlocker et al.: „A serendipitous recommendation helps the user find a surprisingly interesting item he might not have otherwise discovered.“ (Herlocker et al., 2004, S. 43). McNeww et al. define serendipity as „the experience of receiving an unexpected and fortuitous item recommendation“ (McNee et al., 2006, S. 1099). Zhang et al. distinguish it from novelty by saying “unlike novelty, serendipity encompasses the semantic content of items, and can be imagined as the distance between recommended items and their expected contents.“ (Zhang et al., 2011, S. 16). 
+
+% I must tell you a critical discovery of mine àpropos: in an old book of Venetian arms, there are two coats of Capello, who from their name bear a hat; on one of them is added a fleur-de-lis on a blue ball, which I am persuaded was given to the family by the Great Duke, in consideration of this alliance; the Medicis, you know, bore such a badge at the top of their own arms. This discovery I made by a talisman, which Mr. Chute calls the Sortes Walpolianæ, by which I find every thing I want, à pointe nommee, whenever I dip for it. This discovery, indeed, is almost of that kind which I call Serendipity, a very expressive word, which, as I have nothing better to tell you, I shall endeavour to explain to you: you will understand it better by the derivation than by the definition. I once read a silly fairy tale, called "The Three Princes of Serendip;" as their Highnesses travelled, they were always making discoveries, by accidents and sagacity, of things which they were not in quest of: for instance, one of them discovered that a mule blind of the right eye had travelled the same road lately, because the grass was eaten only on the left side, where it was worse than on the right — now do you understand Serendipity? One of the most remarkable instances of this accidental sagacity, (for you must observe that no discovery of a thing you are looking for comes under this description,) was of my Lord Shaftsbury, who, happening to dine at Lord Chancellor Clarendon's, found out the marriage of the Duke of York and Mrs. Hyde, by the respect with which her mother treated her at table. I will send you the inscription in my next letter; you see I endeavour to grace your present as it deserves. 
+
+\subsection{Etymology and selected definitions}
+The English term \emph{serendipity} derives from Horace Walpole's
+interpretation of the first chapter of the 1302 poem \emph{Eight
+  Paradises}---in a French translation of an intermediate Italian version of the Persian original---written by the Sufi
+poet Am\={\i}r Khusrow \cite{van1994anatomy,remer1965serendipity}.  
+%% JC: 13 Nov. Double check spelling vs the version in "Fluke",
+%% add a reference
+The term ``serendipity'' first appears in a 1757 letter from Horace
+Walpole to his friend Horace Mann, wherein he describes the heroes of
+this story ``making discoveries, by accidents \& sagacity, of things
+which they were not in quest of''
+\cite[pp.~407--408]{walpole1937yale}.
+%% A related folk tale, of which
+%% several exist \cite[p.~225]{mazur-fluke}, had informed Voltaire
+%% \cite{huxley1903science} in \emph{Zadig}, published ten years earlier.
+%% Hm... I wonder what discovery he was referring to?
+Following Walpole's coinage, ``serendipity'' was mentioned in print
+only 135 times over the next 200 years,
+according to a survey carried out by Robert Merton and Elinor Barber, collected in \emph{The Travels and
+  Adventures of Serendipity} \citep{merton}.  Merton described his own
+understanding of a generalised ``serendipity pattern'' and its
+constituent parts as follows:
+
+\begin{quote}
+``\emph{The serendipity pattern refers to the fairly common experience of observing an \emph{\textbf{unanticipated}}, \emph{\textbf{anomalous}} \emph{\textbf{and strategic}} datum which becomes the occasion for developing a new theory or for extending an existing theory.}''~\cite[p. 506]{merton1948bearing}~{[}emphasis in original{]}
+%%% AJ I have reincorporated some of the below quote that had been commented out, because otherwise the terms used in the previous quote are quite opaque! I had to go look them up before realising we had the quote details all along
+    %% The datum [that exerts a pressure for initiating theory] is, first of all, unanticipated. A research directed toward the test of one hypothesis yields a fortuitous by-product, an unexpected observation which bears upon theories not in question when the research was begun.
+	%% Secondly, the observation is anomalous, surprising, either because it seems inconsistent with prevailing theory or with other established facts. In either case, the seeming inconsistency provokes curiosity; it stimulates the investigator to "make sense of the datum," to fit it into a broader frame of knowledge....
+    %%And thirdly, in noting that the unexpected fact must be "strategic," i. e., that it must permit of implications which bear upon generalized theory, we are, of course, referring rather to what the observer brings to the datum than to the datum itself. %%For it obviously requires a theoretically sensitized observer to detect the universal in the particular....
+    %% The serendipity pattern, then, involves the unanticipated, anomalous and strategic datum which exerts pressure upon the investigator for a new direction of inquiry which extends theory. 
+\end{quote}
+In Merton's account, the \emph{unanticipated} datum is observed while investigating some unrelated hypothesis; it is a ``fortuitous by-product'' (\emph{ibid}.). It is \emph{anomalous} because it is inconsistent with existing theory or established facts, prompting the investigator to try to unravel the inconsistency. The datum becomes \emph{strategic} when the implications of such investigations are seen to suggest new theories, or extensions of existing theories.
+
+%% In 1986, Philippe Qu\'eau described serendipity as ``the art of
+%% finding what we are not looking for by looking for what we are not
+%% finding'' (\cite{eloge-de-la-simulation}, in the translation of
+%% \citet[p. 121]{Campos2002}).  Campbell
+%% \cite{campbell2005serendipity} defines it as ``the rational
+%% exploitation of chance observation, especially in the discovery of
+%% something useful or beneficial.''  Van Andel describes it simply 
+
+Roberts \cite[pp.~246--249]{roberts} records 30 entries for the term ``serendipity'' from English language dictionaries dating from 1909 to 1989.
+%
+While classic definitions required an accidental discovery, as per Walpole, this criterion was modified
+or omitted later on.  Roberts gives the name \emph{pseudoserendipity} to
+``sought findings'' in which a desired discovery nevertheless
+follows from an accident.
+%%   This concept was later elaborated by
+%% \citet{chumaceiro1995serendipity}.
+\citet{Makri2012a,Makri2012b} point to a continuum between sought and
+unsought findings, and highlight the role of subjectivity both in
+bringing about a serendipitous outcome, and in perceiving a particular
+sequence of events to be ``serendipitous.''
+%% \Citet[p.~12]{Makri2012b} also highlight the role of subjective
+%% interpretation in ascribing serendipity to a given situation.
+%% , pointing
+%% out that ``in extreme cases, as asserted by one of our interviewees,
+%% `the same event might be serendipitous for me and a disaster for
+%% someone else\rq\,{''} (\emph{ibid.}, p.~9).  While Walpole initially
+%% described serendipity as an event (i.e., a kind of discovery),
+Many of Roberts' collected definitions treat serendipity
+as a psychological attribute: a ``gift'' or ``faculty.''
+%% Along these lines,
+%% %%  following Makri and Blandford, and \citet{de2014structure},
+%% Jonathan Zilberg asserts:
+%% \begin{quote}
+%% ``\emph{Chance is an event while serendipity is a capability dependent
+%%     on bringing separate events, causal and non-causal together
+%%     through an interpretive experience put to strategic
+%%     use.}''~\cite[p.~79]{zilberg2015embedded}
+%% \end{quote}
+%% % spacing of quotes: http://www.public.asu.edu/~arrows/tidbits/quotes.html
+%% %Only one of Roberts' collected definitions defined it solely as an
+%% %event, while five define it as both event and attribute.
+%% Reflecting on the branching tree
+%% of opportunities that formed the foundation of
+%% his medical research career \citet[p.~54]{austin1978chase} remarks that there
+%% ``have been more meanderings than searches.''
+Merton and Barber argue for integrating a social psychology
+perspective:
+\begin{quote}
+``\emph{For if chance favours prepared minds, it particularly favours
+    those at work in microenvironments that make for unanticipated
+    sociocognitive interactions between those prepared minds. These
+    may be described as serendipitous sociocognitive
+    microenvironments.}'' \cite[p.~259--260]{merton}
+\end{quote}
+Thus, consider that between Spencer Silver's creation of high-tack,
+low-adhesion glue in 1968, Arthur Fry's invention of a sticky bookmark
+in 1973, and the eventual launch of the distinctive canary yellow
+re-stickable notes in 1980, there were many opportunities for
+Post-its\textsuperscript{\textregistered} to \emph{not} have come to
+be \cite{tce-postits}.  Umberto Eco \cite{eco2013serendipities} gives
+several examples illustrating the serendipitous impact of mistakes,
+falsehoods, and rumours on the production of knowledge.
+
+\subsection{Theories of serendipity and related notions} \label{sec:serendipityInvention}
+Serendipity is often discussed in the context of \emph{discovery}.  In
+everyday parlance, this concept may be linked with \emph{invention} or
+\emph{creativity} \cite{jordanous16plos}.  Henri Bergson made the
+following distinction:
+\begin{quote}
+%% \emph{``La d\'ecouverte porte sur ce qui existe d\'ej\`a, actuellement
+%%   ou virtuellement ; elle \'etait donc s\^ure de venir t\^ot ou
+%%   tard. L'invention donne l'\^etre \`a ce qui n'\'etait pas, elle
+%%   aurait pu ne venir jamais.''}
+``\emph{Discovery, or uncovering, has to do with what already exists,
+    actually or virtually; it was therefore certain to happen sooner
+    or later.  Invention gives being to what did not exist; it might
+    never have happened.}''    \cite[p. 58]{bergson1946creative}
+\end{quote}
+\citet{mckay-serendipity} draws on this Bergsonian distinction to
+frame her argument about the role of serendipity in artistic practice,
+where discovery and invention can be seen as ongoing and diverse.
+The discovery of something unexpected in the world, followed by the
+invention of an application for the same closely mirror the two-part
+description of serendipity given by \citet{andre2009discovery}, namely
+the ``chance encountering of information'' followed by ``the sagacity
+to derive insight from the encounter.''
+
+While definitions of creativity vary, two standard criteria are
+variously given as ``novelty and utility,'' or ``originality and
+effectiveness'' \cite{newell:63,boden,runco2012standard}.  With a
+somewhat different emphasis, \citet{cropley2006praise} draws on
+\citet{austin1978chase} to infuse his concept of creativity with
+features of chance, and understands a creative individual to be
+someone who ``stumbles upon something novel and effective when not
+looking for it.''  However, Cropley questions ``whether it is a matter
+of luck,'' because of the work and knowledge involved in the process
+of forming an assessment of one's findings.  \citet{campbell1960blind}
+contends that ``all processes leading to expansions of knowledge involve
+a blind variation-and-selective-retention process.''
+However, \citet[p.~49]{austin1978chase} remarks that: ``Nothing [suggests that]
+you can blunder along to a fruitful conclusion, pushed there solely by
+external events.''
+
+Cs\'ikszentmih\'alyi describes creativity much along the lines of
+Merton's unanticipated, anomalous, and strategic datum, as it arises
+and develops in a social context.
+
+\begin{quote}
+``{[}C{]}\emph{reativity results from the interaction of a system
+    composed of three elements: a culture that contains
+   \emph{\textbf{symbolic rules}}, a person who brings
+    \emph{\textbf{novelty}} into the symbolic domain, and a
+    field of experts who recognize and
+    \emph{\textbf{validate}} the innovation.}''
+  \cite[p.~6]{csikszentmihalyi1997flow}~{[}emphasis added{]}
+\end{quote}
+%% Although there are common features to existing definitions of
+%% creativity, and again, much in common with serendipity,
+%% there is also much disagreement and discussion -- for example,
+%% about the relevance of the social context.
+
+In this case, novelty is attributed to ``a person'': even so, it is
+reasonable to assume that this person's novel insights rely at least
+in part on the observation of data.
+%%
+Cs\'ikszentmih\'alyi's three-part model of the creative process can be
+compared with his five-part phased model, comprising
+\emph{preparation}, \emph{incubation}, \emph{insight},
+\emph{evaluation}, and \emph{elaboration}
+\cite[pp.~79--80]{csikszentmihalyi1997flow} (adapting
+\citet{wallas1926art}).  \citet{Campos2002} used this more elaborate
+model to describe instances of serendipitous creativity.
+
+This model is also a near match to the process-based model of
+serendipity from \citet{lawley2008maximising}, centred on a sequence
+of component-steps: \emph{prepared mind}, \emph{unexpected event},
+\emph{recognise potential}, \emph{seize the moment}, \emph{amplify
+  effects}, and \emph{evaluate effects}.  Lawley and Tompkins's model
+introduces a feedback loop between ``recognising potential'' and
+``evaluating effects'' that has no parallel in the
+Wallas/Cs\'ikszentmih\'alyi model of creativity.  Using the feedback
+loop, they make a connection to \emph{learning}: sometimes the process
+``further prepares the mind.''
+
+\Citet{Makri2012a} adapt Lawley and Tompkins's model, notably by
+combining the ``prepared mind'' and ``unexpected event'' into one
+first step, a \emph{new connection}, which involves a ``mix of
+unexpected circumstances and insight.''  Expanding on the role of
+feedback, they suggest that a process of reflection on the
+``unexpectedness of circumstances that led to the connection and/or
+the role of insight in making the connection'' is important for the
+subjective identification of serendipity.  Projections of value can
+also be updated when the new connection is exploited---for example,
+when it is discussed with others.
+
+`Insight' could play a role at several stages in the theories
+discussed so far.  Klein and Jarosz use this term to denote
+``discontinuous discoveries, that is, nonobvious inferences from the
+existing evidence'' \cite[p.~335]{Klein2011}.  Out of the pool of
+examples they studied, only 18\% involved an insight that was reached
+by accident, although 92\% were accompanied by surprise (\emph{ibid.},
+pp.~343--345).  These authors criticise the assumptions made by the
+Wallas model as being unrealistic for many of the situations they
+examined, and present an alternative framing whereby insight arises in
+a response to an inconsistency, from desperation, or from the
+discovery of a new connection.
+
+\citet{Allen:2013:LOD:2655780.2655790} studied how the term
+`serendipity' and its various synonyms and related terms have been
+used to describe opportunistic discovery in the biomedical literature.
+Three categories of usage were particularly salient:
+\emph{inspiration}, \emph{mentioned findings}, and \emph{research
+  focus}.  A fourth category, \emph{systematic review}, highlighted
+scholarly interest in the topic of serendipity itself.
+%%
+%\citet{mccay2015investigating} and subsequently
+On this note, \citet{bjorneborn2017three} surveys several theoretical
+treatments beyond those mentioned above, and extracts diverse personal
+and environmental factors that can promote serendipity.  We will
+engage with his work later on, but for now, we have enough material to
+assemble themes in line with our objective.
+
+ %% The simplest case is \emph{mentioned findings}, which briefly report phenomena that have arisen as a side-effect of research carried out with some other intended purpose. Allen et al distinguish this category from \emph{inspiration}, in which a serendipitous occurrence inspires a research study.  Lastly, \emph{research focus} refers to reports of research that are specifically ``devoted to reporting a serendipitous finding encountered during the conduct of research.''
+%%inspiration: ``articles where the serendipity described forms the basis of the research design or seeks to further describe previously recorded ODI phenomena.''
+%% mentioned findings: ``Mentioned findings were determined to be instances where the ODI findings described resulted from the study, but were not the major research outcomes. While the context and tenor of the term use is very similar to the statements that indicated a research focus on the ODI phenomenon, the location of the statements within the paper played a key role in determining whether the ODI incident was the focus of the paper or a mentioned finding. The statements related to a research focus were primarily located early in the paper, in abstracts, introductions and statements of purpose. Mentioned findings, however, were not seen until the results, discussion, or conclusion sections.''
+%% research focus: ``When the entire article is devoted to reporting a serendipitous finding encountered during the conduct of research, diagnostics or medical therapeutics for another purpose, we considered the term usage to be research focus''
+%% NB ODI = Opportunistic Discovery of Information
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\setul{0pt}{.4pt}% 1pt below contents
+\def\tabularxcolumn#1{m{#1}}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+\begin{table}
+{\centering\small\def\arraystretch{1.2}
+%% scale the overall result
+%% \hspace{-11cm}%
+\begin{tabularx}{.98\textwidth}{Yc}  
+\textbf{Serendipity is \raisebox{-.5ex}{$\cdots$}} & \phantom{(0)}\\[.5cm]
+\end{tabularx}\offinterlineskip
+
+\vspace{.2cm}
+\noindent\begin{tabularx}{.98\textwidth}{Y@{\textbullet}Yc}  %\cline{1-2}
+{chance encountering of information} & {sagacity to derive insight} & (1) \\
+\end{tabularx}\offinterlineskip
+
+\noindent\begin{tabularx}{.98\textwidth}{Y@{\textbullet}Yc}  %\cline{1-2}
+ discovery &  invention & (2) \\
+\end{tabularx}\offinterlineskip
+
+%% \noindent\begin{tabularx}{.98\textwidth}{Y@{\textbullet}Y@{\textbullet}Yc}
+%% %\cline{1-3}
+%% symbolic rules & novelty & {validation}& (3)
+%% \end{tabularx}\offinterlineskip
+
+\noindent\begin{tabularx}{.98\textwidth}{Y@{\textbullet}Y@{\textbullet}Yc} 
+%\cline{1-3}
+findings & inspiration & research focus & (4) \\
+\end{tabularx}\offinterlineskip
+
+\noindent\begin{tabularx}{.98\textwidth}{Y@{\textbullet}Y@{\textbullet}Y@{\textbullet}Yc} 
+%\cline{1-4}
+unanticipated datum & anomalous datum & {strategic datum} & {new\slash modified theory} & (5) \\
+\end{tabularx}\offinterlineskip
+
+%% \noindent\begin{tabularx}{.98\textwidth}{Y@{\textbullet}Y@{\textbullet}Y@{\textbullet}Y@{\textbullet}Yc}  %\cline{1-5}
+%% preparation & incubation & insight & evaluation & {elaboration} & (6) \\
+%% \end{tabularx}\offinterlineskip
+
+\noindent\begin{tabularx}{.98\textwidth}{Y@{\textbullet}Y@{\textbullet}Y@{\textbullet}Y@{\textbullet}Y@{\textbullet}Yc}  %\cline{1-6}
+prepared mind & unexpected event & recognise potential & seize the moment & \textcolor{white}{xx}amplify\newline effects & \textcolor{white}{x}evaluate\newline effects & (7) \\
+\end{tabularx}\offinterlineskip
+
+\noindent\begin{tabularx}{.98\textwidth}{Y@{\textbullet}Y@{\textbullet}Y@{\textbullet}Y@{\textbullet}Y@{\textbullet}Yc}  %\cline{1-6}
+\multicolumn{2}{p{.2787\textwidth}@{\textbullet}}{\begin{minipage}{.2787\textwidth}
+{\centering new connection
+
+\par}
+  \end{minipage}} & project value & \textcolor{white}{xx}exploit\newline connection & valuable outcome & \textcolor{white}{x}reflect\newline on value & (8)
+\end{tabularx}\offinterlineskip
+
+\vspace{0cm}
+\raisebox{1cm}{\noindent\begin{tabularx}{.98\textwidth}{YYYYYYc}
+%% \Cline{1-6}{2pt}
+$\downarrow$&$\downarrow$&$\downarrow$&$\downarrow$&$\downarrow$&$\downarrow$&\\[-.3cm]
+%\shifttext{1.5em}{$\uparrow$}\newline
+%\textbf{\emph{perception} \mbox{of a}} \shifttext{-1.6em}{\mbox{\textbf{chance event}}} &
+%\shifttext{1.2em}{$\uparrow$}\newline \textbf{\emph{attention} \mbox{to salient} \mbox{detail}} &
+%\shifttext{1.4em}{$\uparrow$}\newline \textbf{\emph{interest} \mbox{achieves a} \mbox{focus shift}} &
+%\shifttext{1.4em}{$\uparrow$}\newline \textbf{\shifttext{-.7em}{\emph{explanation}} \mbox{of the} \mbox{event}} &
+%\shifttext{1.2em}{$\uparrow$}\newline \textbf{\emph{bridge} \mbox{to a} problem} &
+%\shifttext{1.2em}{$\uparrow$}\newline \textbf{\emph{valuation} \mbox{of the} \mbox{result}} & (9) \\ 
+\shifttext{1.5em}{}\newline
+\textbf{\emph{perception} \mbox{of a}} \shifttext{-.6em}{\mbox{\textbf{chance event}}} &
+\shifttext{1.2em}{}\newline \textbf{\emph{attention} \mbox{to salient} \mbox{detail}} &
+\shifttext{1.4em}{}\newline \textbf{\shifttext{-.2em}{\mbox{\emph{focus shift}}} \mbox{achieved} \shifttext{-.5em}{\mbox{by interest}}} &
+\shifttext{1.4em}{}\newline \textbf{\shifttext{-.5em}{\emph{explanation}} \mbox{of the} \mbox{event}} &
+\shifttext{1.2em}{}\newline \textbf{\emph{bridge} \mbox{to a} problem} &
+\shifttext{1.2em}{}\newline \textbf{\emph{valuation} \mbox{of the} \mbox{result}} & \raisebox{-.1cm}{(9)} \\ 
+\end{tabularx}}
+
+\vspace{-.4cm}
+\shifttext{-2.5em}{$\underbrace{\text{\phantom{XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX}}}$}
+\vspace{.2cm}
+
+\begin{tabularx}{.98\textwidth}{Yc} %%\cline{1-1}
+\textbf{All of which are operations of a \emph{prepared mind} subject to \emph{chance}.} & \phantom{(0)}\\
+ %%\cline{1-1}
+\end{tabularx}\offinterlineskip
+
+\par}
+\caption{Aligning ideas from several theories of serendipity and
+  creativity.  Rows 1-7 show increasing detail, moving from two to six
+  phases; row 8 bundles two of the steps together; row 9 summarises our
+  analysis and
+  provides the framework for Section \ref{sec:our-model}. Sources: (1) 
+ \citet{andre2009discovery}; (2) \citet{mckay-serendipity}, citing \citet{bergson1946creative}; (4) \citet{Allen:2013:LOD:2655780.2655790}; (5) \citet{merton1948bearing}; (7) Lawley and Tompkins \cite{lawley2008maximising}; (8) Makri and
+  Blandford \cite{Makri2012a}. \label{tab:theory-summary}}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%% JC: Added a sentence describing the role of the different elements
+%% as per Alison's advice, Nov 13 2016
+\subsection{Summary} \label{sec:literature-summary}
+
+Our review of significant literature on serendipity has led us to the
+key features of system operation that can be described as
+serendipitous.  Highlights are summarised in Table
+\ref{tab:theory-summary}, where we have aligned the concepts discussed
+by previous authors.  We distil and collect six cognitively plausible
+processing steps: perception of a chance event, attention to salient
+detail, focus shift achieved by interest, explanation of the event,
+bridge to a problem, valuation of the result.  We will define these
+steps in the following section.  For now, we summarise our current
+understanding that serendipity is a form of creativity that happens in
+context, on the fly, with the active participation of a creative
+agent, but not entirely within that agent's control.
+
+% Feedback...

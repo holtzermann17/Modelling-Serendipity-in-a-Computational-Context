@@ -1,0 +1,71 @@
+\begin{tikzpicture}[
+single/.style={draw, anchor=text, rectangle},
+]
+\node (discovery) {\textbf{\emph{Discovery:}}};
+% ``poet generates poem''
+\node[single, right=8mm of discovery.east,text width=1.6cm] (poet) {\emph{generation\\ module}};
+\node[single, right=6mm of poet.east] (poem) {\tikz{\node[draw,circle]{};}};
+\draw [->] (poet.east) -- (poem.west);
+
+% ``critic listens to poem and offers feedback''
+\node[ellipse, draw, right=9mm of poem.east,text width=1.3cm] (critic) {\emph{feedback}};
+\draw [->] (poem.east) -- (critic.west);
+\node[single, above=8mm of critic.north,text width=1.4cm] (experience) {\emph{reflection\\ module}};
+\node[draw,diamond,inner sep =.3mm,above right=4mm and 3mm of critic] (comment) {\phantom{pp}};
+\node[draw,circle,double] (dcircle) at (comment) {};
+\node[draw,diamond, inner sep =.3mm, above left=4mm and 3mm of critic] (reflection) {\phantom{pp}};
+\node[draw,circle,double] (Tcircle) at (reflection){};
+\node[draw,circle,scale=.7] (tcircle) at (reflection){};
+
+\draw[->,thick] ([yshift=1mm]critic.east) to [out=0,in=270] (comment.south) ;
+\draw[->,thick] (comment.north) to [out=90,in=0] (experience.east) ;
+\draw[->,thick] (experience.west) to [out=180,in=90] (reflection.north) ;
+\draw[->,thick] (reflection.south) to [out=270,in=140] ([yshift=1.5mm]critic.west) ;
+
+% nonprinting point to use to bend curve
+\coordinate[below right=3mm and 7mm of critic] (mid1);
+
+\node[single, below left=6mm and 4mm of critic] (feedback) {\raisebox{.1em}{\shifttext{-.1em}{\tikz{\node[draw,circle,circular drop shadow,fill=white]{};}}}};
+\node[below=.65cm of discovery] (focusshift) {{\small \textbf{\emph{[Focus shift]}}}};
+
+% draw the first curve into focus shift
+\draw [->] ([yshift=-1mm]critic.east) to[out=0,in=90] (mid1) to[out=270,in=0] (feedback.east);
+
+%%% Next phase
+\node[below=2cm of discovery] (invention) {\textbf{\emph{Invention:}}};
+
+% ``poet integrates feedback''
+\node[ellipse, draw, right=12mm of invention.east,text width=1.51cm] (integrator) {\emph{validation}};
+
+% nonprinting point to use to bend curve
+\coordinate[above left=2mm and 9mm of integrator] (mid2);
+
+% draw the second curve out from focus shift
+\draw [->] (feedback.west) to[out=180,in=90] (mid2) to[out=270,in=160] (integrator.west);
+
+% ``poet asks questions about the feedback''
+
+\node[single, below=9mm of integrator.south,text width=2.5cm] (explainer) {\emph{experimentation\\ module}};
+
+\node[draw,diamond,inner sep =.3mm, below right=4mm and 5mm of integrator] (question) {\phantom{pp}};
+\node[draw,regular polygon,regular polygon sides=4,scale=.9] (dsquare) at (question){};
+
+\node[draw,diamond, inner sep =.3mm, below left=4mm and 5mm of integrator] (answer) {\phantom{pp}};
+\node[draw,regular polygon,regular polygon sides=3,scale=.6] (dtriangle) at (answer){};
+
+\draw[->,thick] ([yshift=-1mm]integrator.east) to [out=0,in=90] (question.north) ;
+\draw[->,thick] (question.south) to [out=270,in=0] (explainer.east) ;
+\draw[->,thick] (explainer.west) to [out=180,in=270] (answer.south) ;
+\draw[->,thick] (answer.north) to [out=90,in=200] ([xshift=1mm,yshift=-1.8mm]integrator.west) ;
+
+\node[yshift=1mm,single, right=10mm of integrator.east] (problem) {\evaluationcompositeinternal};
+
+\draw [->] ([yshift=1mm]integrator.east) -- (problem.west);
+
+% ``poet reflects on feedback and updates codebase''
+
+\node[single, right=6mm of problem.east,text width=1.6cm] (pgrammer) {\emph{evaluation}\\ \emph{module}};
+\draw [->] (problem.east) -- (pgrammer.west);
+\node[single, right=4mm of pgrammer.east,text width=.3cm] (etc) {\hphantom{\rule{.07pt}{.15pt}}...};
+\draw [->] (pgrammer.east) -- (etc.west);
+\end{tikzpicture}

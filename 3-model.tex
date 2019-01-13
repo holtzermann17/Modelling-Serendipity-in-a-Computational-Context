@@ -1,0 +1,468 @@
+\section{A computational model and evaluation framework for assessing the potential for serendipity in computational systems} \label{sec:our-model}
+
+\subsection{Definitions of the model's component terms} \label{sec:modelTerms}
+
+We now present short definitions of each component, which we support
+with references to foundational literature from cognitive science and
+philosophy.  As mentioned earlier, our thinking is informed by the
+``predictive processing'' framework, advocated for example by
+\citet{clark2013whatever}, building on the work of
+\citet{friston2009free} and others.  A central idea in such theories
+is that perceived events are only passed forward to higher cognitive
+layers if they do not conform with our prior expectations.  A response
+to prediction error can motivate action, which ameliorates the error
+by bringing the world into alignment with our predictions, or it can
+motivate adaptation of our generative models.
+%%
+%% %% Maybe also cite:
+%% Smart, P. R. (forthcoming) Predicting Me: The Route to Digital
+%% Immortality? In R. W. Clowes, K. Gärtner & I. Hipólito (Eds.), The
+%% Mind-Technology Problem: Investigating Minds, Selves and 21st Century
+%% Artifacts. Springer, Berlin, Germany.
+
+This perspective highlights the fact that, going beyond Pasteur's
+famous idiom, chance not only \emph{favours}, but also \emph{shapes}
+the prepared mind.  For example, \citet[p.~137]{boden} notes that
+``neural networks learn to associate (combine) patterns without being
+explicitly programmed in respect of those patterns.''  Whereas
+predictive processing accounts are ``currently computationally fleshed
+out predominantly at the basic perception and motor control level''
+\cite{KWISTHOUT201784}, here, we will consider a range of higher
+cognitive functions.  We note that the functional architecture of the
+human brain is in fact highly non-modular, ``allowing the confluence
+of information related to perception, cognition, emotion, motivation,
+and action'' \cite[p.~357]{Pessoa2017}.  Our model is, similarly, an
+abstraction of a functional architecture.
+
+Multi-level architectures and hierarchical models abound in AI; one
+example comes from \citet{singh2005architecture}, where the first
+level beyond ``innate reactions'' is ``learned reactions''; higher
+levels include ``deliberative thinking'', ``reflective thinking'',
+``self-reflective thinking'' and ``self-conscious thinking.''
+\citet{sloman2002framework} place similar concepts within a
+two-dimensional schema.  Reading left-to-right, their schema concerns
+classically computational input, processing, and output dimensions,
+namely \emph{perception}\slash \emph{central processing}\slash
+\emph{action}; reading bottom-to-top, it concerns cross-cutting
+varieties of control: \emph{reactive mechanisms}\slash
+\emph{deliberative reasoning}\slash \emph{meta-management}.
+
+While sharing concepts of hierarchical control, theories based on
+predictive processing often replace classic input/output information
+processing with models based on thermodynamic energy transfer.  In
+this setting, control is continuous and ``there are no disconnected
+moments of perception of the world, since the world wholly envelops
+the agent throughout its lifespan''
+\cite[pp.~9--10]{10.3389/frobt.2018.00021}.  However, whether or not
+perception is continuous, the world can change more or less rapidly.
+\citet{KWISTHOUT201784} develop a predictive processing treatment
+using categorical probability distributions defined over a discrete
+state space.  \citet{kockelman2011biosemiosis} develops a related line
+of thinking from a semiotic perspective, pointing out that processes
+of ``sieving'' and ``selection'' take place in the environment as well
+as in the mind.
+
+%% We will have to deal with the topic raised by the AIJ editor
+%% -- Are there different places to begin in the model?  Do
+%% we always start with perception?
+
+The six phases in our model exhibit clear logical dependencies, which
+we will illustrate using notation from constructive type theory---a
+notational strategy inspired by work in computational semantics
+\cite{Piwek2007,krahmer1999presupposition,piwek2000presuppositions}.
+We assume that earlier steps can be returned to from later ones, and
+that anticipation of later steps can play a role in the away the
+process runs.  For example, improved ways to process rubber and safe
+antibiotics were pursued in broad outline long before the specific
+details became clear \cite{fleming,goodyear1855gum}; similarly,
+Pasteur's research has been retroactively described as
+``use-inspired'' \cite{stokes1997pasteur}.
+
+% http://anticipationconference.org/call-for-participation/
+
+%% In this respect we note that Friston's model of predictive processing
+%% makes more specific and detailed assumptions about structure and
+%% interconnection than we will adhere to here, namely that ``error-units
+%% receive messages from the states in the same level and the level
+%% above; whereas state-units are driven by error-units in the same level
+%% and the level below'' \cite[p.~297]{friston2009free}.  In simpler
+%% biologically-inspired terms, ``the brain generates top-down
+%% predictions that are matched bottom-up with sensory information''
+%% \cite[p.~2]{Bruineberg2018}.  The mismatch between sense data and
+%% existing ubiquitously generative models is how prediction errors are
+%% said to arise, which the system then strives to correct.  Our model
+%% also has integral generative aspects, but they differ at the different
+%% phases.
+
+\begin{defn}[\textbf{Perception: An interface to the world}]\label{def:perception}
+\hypertarget{def:perception}{}\textbf{Perception} allows evidence of events to enter the system,
+whenever the event's occurrence aligns with the system's sensors.
+\end{defn}
+
+\setlist[description]{font=\normalfont\itshape,itemsep=-2pt}
+
+\paragraph{\textbf{\upshape Foundations}}
+
+\begin{description}
+\item[System-environment relationships differ widely, and develop
+  differently.]  The environment may be more or less observable;
+  events may appear to be more deterministic or more stochastic in
+  nature \cite[pp.~42--44]{russel2003artificial}. The system may be
+  able to self-program using the environment, possibly via some form
+  of interaction with other systems
+  \cite[esp.~p.~234]{clark1998being}.  The system's perceptual
+  features and limitations can vary with time, location, the state of
+  development of the system, and other factors.  We do make any
+  specific assumptions about how the system must behave in order to
+  perceive.
+\item[Chance can play various roles in shaping perception.] For
+  \citet[p.~99]{hume1904enquiry} \emph{chance} denotes the absence of
+  an explanation; for \citet{peirce1931necessity} it is one of several
+  fundamental aspects of reality; for Bergson
+  \cite[p.~234]{bergson1983creative}, it ``objectifies the state of
+  mind'' of one whose expectations are confounded.  By any
+  understanding:
+  % 1) I don't understand how these references to chance contribute to the understanding of perception.
+  % 2) The last sentence appears incomplete.
+\item[The system has limited control.] The world is not entirely under
+  the control of the system:
+%  \cite{burroughs1978limits}
+  furthermore,
+  perceptions necessarily constitute an incomplete picture of reality
+  \cite{hoffman2015interface}.
+%% Perception is often theorised within a \emph{perception-action
+%% cycle} \cite{cutsuridis2011perception}, but we do not make strong
+%% assumptions about the way systems act in the world.
+Taking a view grounded in predictive processing, \citet[pp.~2, 17--18]{10.3389/frobt.2018.00021} emphasise 
+the epistemic and existential salience of generative models
+(and continuous action/perception loops, including proprio- and intero-ception)
+for both organisms and future robots.  The basic view is
+that 
+``we harvest sensory signals that we can predict'' \cite{friston2009free},
+though such predictions are fallible.  
+% further details fall outside the scope of our effort.
+\end{description}
+
+\paragraph{\textbf{\upshape Notation}}
+
+$\Gamma$ is a \emph{context}.  We understand its contents to depend on
+time and other variables, for instance, location, sensors used, and so
+on.  For example, at some time $t$ we might have $\Gamma(t,\ldots)
+\equiv a_1, a_2, a_3, \ldots, a_n : A, f:A\rightarrow \mathbb{R},
+>:\mathbb{R}\rightarrow\mathbb{R}\rightarrow \mathbb{B}, \ldots$
+Perception is generative insofar as judgements are made.  For example,
+$A$ might denote the type `tree' and the relation $\forall i
+\mathbin{.} i\neq 1 \Rightarrow f(a_1)>f(a_i)$ may be observed.
+
+
+\begin{defn}[\textbf{Attention: Directed processing capacity}]\label{def:attention}
+\hypertarget{def:attention}{}By exerting \textbf{attention}, the system directs its processing power to the perceived event or aspects thereof.
+\end{defn}
+
+\paragraph{\textbf{\upshape Foundations}}
+
+\begin{description}
+\item[Adaptive attention is related to surprise.] Each perceived event causes a prediction error with respect to the agent's predictive model, accounting for their expectations. Only if that error crosses a certain threshold is the event given attention.
+\item[Learning, context, and meaning arise together with attention.]
+  ``Punctuating events'' \cite[p.~301]{bateson-logical-categories}
+  from a stream of data is one form of attention.  Identifying
+  patterns that are stable over time begin give the data
+  ``context and interpretation'' \cite{rowley2007wisdom}.
+\item[To some approximation, features of the environment will be attended to.] This is a more specific version of the hypothesis
+  that hierarchical structures in the environment will be mirrored by
+  \emph{adaptive} agents \cite{simon1962architecture,simon1995near}.
+  Outside intervention may be needed to optimise learning about tasks
+  with complicated problem/subproblem structure
+  \cite{goldenberg2004may}.
+  %% Agents tend to see most clearly the
+  %% distinctions that they themselves draw
+  %% \cite{keeney1982epistemology}.
+\end{description}
+
+\paragraph{\textbf{\upshape Notation}}
+
+$\Gamma_1 \subset \Gamma$ is a \emph{restricted context}, obtained by
+constraining some of the variables on which $\Gamma$ depends.  Again,
+the contents of $\Gamma_1$ vary with time.  Attention generates
+changes in the way new perceptions come online.
+
+\begin{defn}[\textbf{Focus shift: Evolution of the data}]\label{def:interest}
+\hypertarget{def:interest}{} We say that a \textbf{focus shift}
+occurrs if processing leads to a recontextualisation of the event.
+\end{defn}
+% I'm not sure if "fitness function" is generic enough here. Rather "objective function", expressing a system's goals? You write yourself that our use is at odds with the evolutionary literature; so why do we use the term then, still?
+
+\paragraph{\textbf{\upshape Foundations}}
+                                         
+\begin{description}                      
+\item[Context change is a possible basis for belief revision.]
+  \citet{logan1994modelling} use the notion of \emph{belief revision}
+  to model situations of collaborative information-seeking.  Ground
+  assumptions are shared in the context of such dialogues, and can
+  change as conversations progress.  In our model, the focus shift
+  similarly causes the context to change, so that the ground
+  assumptions, including ways of evaluating data, are no longer the
+  same.  \citet{harman1986change}
+  treated the implications of changing circumstances for bringing
+  about a ``reasoned change of view'' (p.~3); he described
+  previous work by \citet{Doyle:1980:MDA:889488} 
+  on the system {\sf SEAN}, which incorporated defeasible reasoning,
+  as one of only a few earlier efforts in this area.
+  More recently, \citet{clarke2017assertion} argues that \emph{belief} is
+  context-sensitive, depending for example on purpose, and on the
+  stakes involved.  In particular, in a dialogue, the sincerety of a
+  given remark is linked to the context, not just to the remark's
+  propositional content.  Our notion of \emph{interest} appears
+  together with the focus shift because interest is what motivates bringing
+  the event into a new context.  In the case of
+  Velcro\textsuperscript{\texttrademark}, the focus shift occurred in
+  quite a literal fashion, when de Mestral examined burrs under a
+  microscope.  This example provides another useful mnemonic: burrs'
+  hooks allow them to ``hitchhike'' into new contexts
+  \cite[\textsection1.1]{jenkins2011bio}.  
+  \citet{patalano1993predictive} describe the related mental phenomenon of
+  \emph{predictive encodings} that record ``blocked goals in memory in such a
+  way that they will be recalled by conditions favorable for their
+  solution.''
+  %%   For example, Fry was sufficiently interested in the adhesive to
+  %% recall it in connection with a familiar problem at choir
+  %% practice.
+\item[Interest is related to curiosity.]  Berlyne distinguished
+  between \emph{perceptual} and \emph{epistemic} curiosity, while
+  positing a relationship between them: one ``leads to increased
+  perception of stimuli'' and the other to ``knowledge''
+  \cite[p.~180]{berlyne1954theory}.  He posited that responses would
+  be strongest in an ``intermediate state of familiarity'' which
+  triggered conflict, whereas ``too much familiarity will have removed
+  conflict by making the particular combination an expected one''
+  (p.~189).  Accordingly, such curiosity depends on prior
+  preparations.  In some reinforcement learning models, a
+  \emph{novelty bonus} ``acts like a surrogate reward'' and ``distorts
+  the landscape of predictions and actions, as states predictive of
+  future novelty come to be treated as if they are rewarding''
+  \cite[p.~554]{kakade2002dopamine}.  Whether or not novelty is
+  interesting in and of itself, the system's initial assessment
+  motivates it to look for further information or for ``new
+  connections,'' as per \citet{Makri2012a}.  This effort is expected
+  to yield a future payoff, whether in terms of additional novelty,
+  more efficient organisation of the system's knowledge base, or some
+  other reward.
+% You could make two claims here: objective functions could either be extrinsic (e.g. a task specified by the system designer) or intrinsic (pursuing the activity has only inherent, but not instrumental value). In the second case, we can talk about motivations such as curiosity or learning progress. Cf. Oudeyer and Kaplan, 2007/2008 on intrinsic motivations. Crucially, interest is then not exclusively related to curiosity, but to a whole set of intrinsic motivations.
+\end{description}
+
+\paragraph{\textbf{\upshape Notation}}
+
+Within $\Gamma_1$, features are identified that seem to have
+functional relationships with each other.  For example, $\Gamma_1
+\vdash \mathrm{Faucet} \rightarrow \mathrm{Handle} \rightarrow
+\mathrm{Valve} \rightarrow \mathrm{Leak}$. Whereas attention only
+changed the way items come online, the focus shift generates
+hypotheses: they need not be correct.
+
+% I don't think that it is helpful to talk about aesthetics here, as it only narrows our scope. 
+% I would remove the last item / paragraph entirely. Clearly, judgements of interest depend on the person, but we've discussed that in the "prepared mind" reference earlier in this section. The focus on poetry is too narrow.
+% I'd stick with only two items: one on extrinsic objective functions and one on intrinsic ones, where you could talk about interestingness and other things. 
+
+\begin{defn}[\textbf{Explanation: Building a predictive model}]\label{def:explanation}
+\hypertarget{def:explanation}{}By means of closer analysis, experimentation, discussion, or some
+other concerted means of examination devoted to the
+newly-contextualised event, it now receives an
+\textbf{explanation}, which constitutes a model that predicts functional, operational, or statistical behaviours that relate the previously-unexpected event to its newly-retrieved context.
+\end{defn}
+% There's two fundamental mechanism to build a predictive model: a maximum likelihood estimator in classic inferential statistics, or Bayesian inference where the goal is to find the posterior p(theta|evidence) using the prior p(theta) and the likelihood p(evidence|theta). Here, theta is a (set of) parameter which characterises our model. Bayesian inference easily becomes intractable and can be approximated with Gibbs Sampling or Variational Inference, amongst others. It seems like you completely left related work out here. All of these approaches are explaines in C. M. Bishop's Pattern Recognition and Machine-Learning book. 
+\paragraph{\textbf{\upshape Foundations}}
+                                         
+\begin{description}
+\item[A new model yields an improved ability to make a prediction.]  Our
+  fundamental assumptions about chance, described earlier, insist that
+  the perceiving agent has at best a limited ability to predict the event.
+  The explanation stage now enables the agent to make predictions
+  \cite[p.~389]{sowa2000knowledge}.  Explanatory success depends on
+  the system's skills, and both prior and new knowledge.  However,
+  these explanations are again limited:
+  \citet[p.~101]{swirski2000between} points out that to be effective,
+  explanation needs ``a stopping rule'', e.g., ``the standard causal
+  pattern in the social sciences'' requires only ``a description of
+  the actions and the motivations behind them that were sufficient to
+  produce a change in the circumstances.''
+\item[There are different kinds of viable explanations.] We do not
+  impose a practical requirement at this stage.  The explanation can
+  establish ``how'' rather than ``so what.''  For instance,
+  \citet{van1994anatomy} describes Blass's explanation of as follows:
+  ``On investigation he found that, although the soil around the tree
+  was dry, water was continually dripping from a nearby leaking
+  connection in a water pipe.''  This is a fine ``how'' explanation:
+  the usefulness of Blass's model arose only later.  According to
+  Aristotle, the fundamental question that must be addressed is
+  ``why?''  \cite{sep-aristotle-causality}: answers are to be
+  demonstrated in terms of ``principles and causes'' \cite[Book Gamma,
+    p.~81]{lawson1998metaphysics}.  Explanations may only be valid
+  within circumscribed regimes.
+\item[The system creates an explanation of the event for itself.]  At
+  this stage the system is not, in general, aiming to explain its
+  behaviour to someone else, or otherwise make its behaviour transparent
+  (in the sense of \emph{Explainable AI}
+  \cite{lane2005explainable}).  Nevertheless we may think of
+  explanation as an expository device or ``framing''
+  \cite{pease2011computational} that relies on the system's ability to
+  retrieve a suitable context, and to establish relationships between
+  elements of this wider context.  Explanatory prowess is not simply a
+  matter of paying attention, but depends in particular on having
+  learned ``what to pay attention to'' \cite[p.~4]{levin1975bateson}.
+  Notice, then, that requirements arising in this stage can impose
+  constraints on earlier stages: ``the methods and assumptions
+  on which a systematic investigation is built selectively focus the
+  researcher's attention''
+  \cite[p.~131]{floppyearedrabbits1958barber}.
+\end{description}
+                                         
+\paragraph{\textbf{\upshape Notation}}
+
+An inhabitant for one of the functional types is constructed, for
+example: $\Gamma_1 \vdash \phi : (\Pi l:\mathrm{Leak},
+d:\mathrm{Rate}, r:\mathrm{Radius}, p:\mathrm{Plant} \mathbin{.}
+\mathrm{Growth}(l,d,r,p))$.  Whereas the focus shift generated
+hypotheses, this step generates a proof.
+
+\begin{defn}[\textbf{Bridge: Identifying or positing a problem}]\label{def:bridge}
+\hypertarget{def:bridge}{}The system may now create a \textbf{bridge}
+connecting the explanation of the event, generated earlier, and either
+(i) an existing problem within the domain, or else (ii) some
+previously unknown problem.  In both cases, the explanation is
+generalised as a solution strategy.  ``Problems'' can be modelled as
+objective functions, so that case (ii) entails the generation of a new
+objective function.
+\end{defn}
+\paragraph{\textbf{\upshape Foundations}}
+                                         
+\begin{description}
+\item[Application lies beyond explanation.]
+  The bridging process can be
+  conveniently outlined by comparing a positive example with a
+  corresponding counterexample.  Nearly 60 years before Fleming,
+  Eugene Semmer both discovered and also cursorily explained the
+  curious effects of \emph{penicillium notatum}---but he did not find
+  a bridge to the vital problem his discovery could have solved
+  \cite[p.~75]{cropley2013creativity}.  His ``methods and
+  assumptions'' \cite[p.~131]{floppyearedrabbits1958barber}
+  constrained his thinking.
+\item[Pseudoserendipity versus true serendipity]
+  \citet[p.~3]{Figueiredo2001} made the distinction between
+  serendipity and pseudoserendipity  crisp by introducing
+  the ``serendipity equations'':
+\begin{quote}
+\begin{tabular}{cc}
+\emph{pseudoserendipity} & \emph{serendipity}\\
+$\begin{array}{c}
+P1 \subset (\mathit{KP}1)\\
+M \subset (\mathit{KM})
+\end{array} \Rightarrow S\hspace{-.12em}1 \subset (\mathit{KP}1, \mathit{KM}, \mathit{KN})$
+&
+$\begin{array}{c}
+P1 \subset (\mathit{KP}1)\\
+M \subset (\mathit{KM})
+\end{array} \Rightarrow
+\begin{array}{c}
+P2 \subset (\mathit{KP}2)\\
+S\hspace{-.1em}2 \subset (\mathit{KP}2, \mathit{KM}, \mathit{KN})
+\end{array}$
+\end{tabular}
+\end{quote}
+In the pseudoserendipitous case, a given problem $P1$ in the knowledge
+domain $\mathit{KP}1$ becomes solveable (whence, $S1$) by the addition of
+additional knowledge, supplied by $M$.  In the serendipitous case, the
+initial set up is similar, but the result is not a solution to the
+original problem: rather, it is a new problem, $P2$, together with its
+solution.
+\item[The bridge is transformational.]  Although the notation above
+  makes the distinction between the two cases clear, it somewhat
+  disguises the principle common to both.  Thus, in case (i), there is
+  must be more going on than just new information coming online which
+  happens to make a problem solveable.  Otherwise any online
+  problem-solving system could be seen as pseudoserendipitous.  For
+  example, when putting together a model aeroplane, this is done piece
+  by piece, and even the order in which the pieces are put into place
+  is more or less predictable.  It would not be said that either the
+  last piece added, nor any of the other pieces that were added along
+  the way, was the result of pseudoserendipitous creativity.  By contrast,
+  historical progress in aviation depended on dramatic progress in
+  human interaction \cite[p.~292]{spenser2008airplane}, which
+  suggests that this process could not have been planned in advance.
+  To consider another simple example, assembling a jigsaw puzzle is
+  not a fully predictable process.  However, even if a previously
+  missing piece was suddenly supplied which made the puzzle solveable,
+  this would not be a bridge.  In short, both pseudoserendipitous and
+  serendipitous creativity involve ``the transformation of some (one
+  or more) dimension of the space so that new structures can be
+  generated which could not have arisen before''
+  \cite[p.~348]{boden1998creativity}.
+\item[A good problem can be identified by working at a meta-level.]
+  Bridge construction might be thought of as a meta-problem, in other
+  words, a fitness function or ``aesthetic''
+  \cite{pease2011computational}, through which an entire class of
+  problems are surveyed, and the most suitable one selected.  Case
+  (ii) additionally requires that the selected problem be a novel one.
+\end{description}
+
+\paragraph{\textbf{\upshape Notation}}
+
+$\Gamma_2$ is a context and $\beth : \Gamma_1 \rightarrow \Gamma_2$ is
+a map between contexts such that $\phi \mapsto \psi$.  $\Gamma_2$, and
+accordingly, $\psi$, can include structure that is not present in
+$\Gamma_1$.  For example, $\psi : (\Pi h:\mathrm{Hose},
+d:\mathrm{Rate}, r:\mathrm{Radius}, p_1,\ldots,p_n:\mathrm{Plant}
+\mathbin{.}  \mathrm{Growth}(h,d,r,p_1,\ldots,p_n))$.  The search for
+applications is generative.
+
+%% However, there would have been ample room for pseudoserendipity in
+%% the initial search for methods to build powered aeroplanes.
+
+\begin{defn}[\textbf{Valuation: Evaluation of the solution via an existing objective function}]\label{def:result}
+\hypertarget{def:result}{}The solution to the bridged problem is positively or negatively
+\textbf{evaluated} according to some pre-existing objective function.
+This may be system-intrinsic, or specified by the system's user or a third party.
+\end{defn}
+%Ah okay, here you mention the extrinsic vs. intrinsic distinction. Anyways, my earlier suggestions still apply.
+%Is this the same objective/fitness function that we've been discussed earlier?
+
+\paragraph{\textbf{\upshape Foundations}}
+                                         
+\begin{description}                      
+\item[Affection is based on reflection.]
+\citet{campbell2005serendipity} highlights the idea of ``rational
+exploitation'' and the ``discovery of something useful or
+beneficial'' as key aspects of serendipity.
+But some processing may be required
+to get to that point. Here we may refer to the Bergsonian
+distinction
+between ``perceptions'' and ``affections''
+\cite[p.~23]{deleuze1991bergsonism}.
+Affection is the ``feeling in the instant'', which is {``}`alloyed'
+to other subjectivities [\ldots] as we understand what we feel and
+act upon it'' \cite[p.~141]{sutton2008deleuze}.
+In particular,
+\citet[p.~17]{bergson1991matter} considers affections to be directly
+linked to the self-knowledge a being has of its body.  A system's
+evaluation of the new state of affairs brought about by the processing
+stages outlined in Definitions \ref{def:perception}--\ref{def:bridge}
+might be described as ``affective''
+when a new system configuration is brought about that is then assessed
+in some reflexive way.  Raw somesthetic sense---e.g., an architecture inspired by
+the instrumentation of robotic joints with hardwired position
+sensors---might be alloyed with ``reflective thinking'' \cite{singh2005architecture}
+that considers global aspects of the configuration and course of action
+that led to this point.
+\end{description}                        
+
+\paragraph{\textbf{\upshape Notation}}
+
+$\psi$ is now run and generates outcomes.
+
+\subsection{Summary}
+We have proposed a phased model of serendipity consisting of several
+cognitive components.  We then defined each component with reference
+to theoretical literature.  Table \ref{tab:model-summary-table}
+summarises the model that results from this analysis.
+
+\input{model-summary-table}
+%Is this table stil up-to-date?

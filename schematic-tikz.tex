@@ -1,0 +1,44 @@
+\begingroup
+\tikzset{
+block/.style = {draw, fill=white, rectangle, minimum height=3em, minimum width=3em},
+tmp/.style  = {coordinate}, 
+sum/.style= {draw, fill=white, circle, node distance=1cm},
+input/.style = {coordinate},
+output/.style= {coordinate},
+pinstyle/.style = {pin edge={to-,thin,black}}
+}
+
+\begin{tikzpicture}[auto, node distance=2cm,>=latex']
+    \node [sum] (A-sum1) {};
+    \node [input, name=pinput, above left=.7cm and .7cm of A-sum1] (A-pinput) {};
+    \node [sum, name=tinput, left=1.3cm of A-sum1] (A-tinput) {};
+    \node [input, name=minput, below left of=A-sum1] (A-minput) {};
+    \node [input, name=minput, right of=A-sum1] (A-moutput) {};
+    \draw [->] (A-pinput) -- node{$p$} (A-sum1);
+    \draw [->] (A-tinput) -- coordinate[midway](T) (A-sum1);
+%    \draw [->] (A-tinput) -- (A-sum1);
+%    \draw [->] (A-sum1) -- node{\vphantom{{\tiny g}}$T^{\star}$}  (A-moutput);
+
+    \node [sum, right=2cm of A-sum1] (B-sum1) {};
+    \node [input, name=pinput, above left=.7cm and .7cm of B-sum1] (B-pinput) {};
+    \node [input, name=tinput, left of=B-sum1] (B-tinput) {};
+    \node [input, name=minput, below left of=B-sum1] (B-minput) {};
+    \node [sum, right=1.3cm of B-sum1] (B-sum2) {};
+    \node [input, name=minput, right=2.3cm of B-sum2] (B-moutput) {};
+    \draw [->] (B-pinput) -- node{$p^{\prime}$} (B-sum1);
+
+    \draw [->] (A-sum1) -- coordinate[midway](Tstar) node{\vphantom{{\tiny g}}$T^{\star}$} (B-sum1);
+
+    \draw [->] (B-sum1) -- coordinate[midway](R) node{\vphantom{{\tiny g}}$B$} (B-sum2);
+%    \draw [->] (B-sum2) -- coordinate[midway](evaluation) node{$R$~$(|R|>0)$}  (B-moutput);
+
+%    \node [below=.15cm of T] (chance) {\vphantom{$c^{\star}$}\textcolor{gray}{$c$}};
+    \node [below=-.02cm of A-tinput] (chance) {\vphantom{$c^{\star}$}\textcolor{gray}{$a$}};
+    \node [below=-.02cm of A-sum1] (curiosity) {\vphantom{$c^{\star}$}\textcolor{gray}{$b$}};
+    \node [below=-.02cm of B-sum1] (sagacity) {\vphantom{$c^{\star}$}\textcolor{gray}{$c$}};
+    \node [below=-.02cm of B-sum2] (value) {\vphantom{$c^{\star}$}\textcolor{gray}{$d$}};
+    \node [above=.02cm of B-sum2] (result) {\vphantom{$c^{\star}$}$R$};
+    \node [above=.02cm of A-tinput] (trigger) {\vphantom{$c^{\star}$}$T$};
+\end{tikzpicture}
+\endgroup
+

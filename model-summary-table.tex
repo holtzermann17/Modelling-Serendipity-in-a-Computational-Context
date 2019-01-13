@@ -1,0 +1,262 @@
+%\begin{landscape}
+\tikzset{
+    boxComponent/.style={
+    rectangle,
+    draw=black, very thick,
+    minimum height=2em,
+    minimum width=10em,
+    inner sep=2pt,
+    text centered,
+    },
+    boxText/.style={
+    rectangle,
+    draw=black,
+    minimum height=14em,
+    minimum width=10em,
+    inner sep=0em,
+    outer sep=0em,
+    },
+}
+
+%\thispagestyle{empty}
+
+\begin{table}[h]
+\captionsetup{width=1\linewidth}
+\vspace{1cm}\hspace{0cm}
+\resizebox{1\textwidth}{!}{
+%% Wow, I didn't know how to use ``node distance'' for auto-layout -JC.
+%% Nice!
+\begin{tikzpicture}[->,>=stealth',node distance=4cm]
+
+ % Position of QUERY
+ % Use previously defined 'state' as layout (see above)
+ % use tabular for content to get columns/rows
+ % parbox to limit width of the listing
+ \node[boxComponent] (Perception) {\hyperlink{def:perception}{\textbf{Perception}}};
+ \node[boxComponent, right of = Perception] (Attention) {\hyperlink{def:attention}{\textbf{Attention}}};
+ \node[boxComponent, right of = Attention] (Interest) {\hyperlink{def:interest}{\textbf{Interest\slash Focus Shift}}};
+ \node[boxComponent, right of = Interest] (Explanation) {\hyperlink{def:interest}{\textbf{Explanation}}};
+ \node[boxComponent, right of = Explanation] (Bridge) {\hyperlink{def:bridge}{\textbf{Bridge}}};
+ \node[boxComponent, right of = Bridge] (Valuation) {\hyperlink{def:result}{\textbf{Valuation}}};
+
+% \node[above left= -1.5mm and 9.2mm of Perception.center] {\large{\pmglyph{\HDiv}}};
+% \node[above right= -1.5mm and 9.2mm of Perception.center] {\reflectbox{\large{\pmglyph{\HDiv}}}};
+
+ \coordinate[above= 9mm of Perception  ] (PerceptionPrime) ;
+ \coordinate[above= 9mm of Attention    ] (AttentionPrime) ;
+ \coordinate[above= 9mm of Interest     ] (InterestPrime) ;
+ \coordinate[above= 9mm of Explanation  ] (ExplanationPrime) ;
+ \coordinate[above= 9mm of Bridge       ] (BridgePrime) ;
+ \coordinate[above= 9mm of Valuation    ] (ValuationPrime) ;
+
+\begin{scope}[thick,decoration={
+    markings,
+    mark=at position 0.52 with {\arrow{latex}}}
+    ]
+\draw[postaction={decorate},-] (AttentionPrime) -- (PerceptionPrime);                   % L
+\draw[postaction={decorate},-] (InterestPrime) -- (AttentionPrime);                     % L
+\draw[postaction={decorate},-] (ExplanationPrime) -- (InterestPrime);                   % L
+\draw[postaction={decorate},-] (BridgePrime) -- (ExplanationPrime);                     % L
+\draw[postaction={decorate},-] (ValuationPrime) -- (BridgePrime);                      % L
+\end{scope}
+%%
+\begin{scope}[thick,decoration={
+    markings,
+    mark=at position 0.65 with {\arrow{latex}}}
+    ]
+ \path
+ (PerceptionPrime) edge[postaction={decorate},-] (Perception)                                   % D
+ (Attention) edge[postaction={decorate},-,transform canvas={xshift=-9mm}] (AttentionPrime)     % U
+ (AttentionPrime) edge[postaction={decorate},-,transform canvas={xshift=9mm}] (Attention)      % D
+ (Interest) edge[postaction={decorate},-,transform canvas={xshift=-9mm}] (InterestPrime)       % U
+ (InterestPrime) edge[postaction={decorate},-,transform canvas={xshift=9mm}] (Interest)        % D
+ (Explanation) edge[postaction={decorate},-,transform canvas={xshift=-9mm}] (ExplanationPrime) % U
+ (ExplanationPrime) edge[postaction={decorate},-,transform canvas={xshift=9mm}] (Explanation)  % D
+ (Bridge) edge[postaction={decorate},-,transform canvas={xshift=-9mm}] (BridgePrime)           % U
+ (BridgePrime) edge[postaction={decorate},-,transform canvas={xshift=9mm}] (Bridge)            % D
+ (Valuation) edge[postaction={decorate},-] (ValuationPrime);                                     % U
+\end{scope}
+
+
+%\draw[decorate,decoration={triangles,segment length=12mm}] (ValuationPrime) -- (PerceptionPrime);
+
+%Boxes for definitions
+ \node[boxText, below of = Perception,yshift=2em] (PerceptionDef)
+ {\small
+ \begin{minipage}[t][14em]{10em}
+ \begin{flushleft}
+  \textbf{Interface to world}\\[.2cm]
+  \textbullet\ \citeauthor{russel2003artificial} - different kinds of environments\\
+  \textbullet\ \citeauthor{hume1904enquiry}/\citeauthor{peirce1931necessity} - chance is negative/fundamental\\
+  \textbullet\ \citeauthor{hoffman2015interface} - adaptivity of not seeing reality as it is\\
+  \textbullet\ \citeauthor{friston2009free} - we sense what we can predict
+ \end{flushleft}
+ \end{minipage}
+ };
+
+ \node[boxText, below of = Attention,yshift=2em] (AttentionDef){\small
+ \begin{minipage}[t][14em]{10em}
+  \begin{flushleft}
+  \textbf{Directed processing power}\\[.2cm]
+  \textbullet\ \citeauthor{clark2013whatever} - prediction error\\
+  \textbullet\ \citeauthor{singh2005architecture} - layered architecture\\
+  \textbullet\ \citeauthor{bateson-logical-categories} - changing behaviour\\
+  \textbullet\ \citeauthor{rowley2007wisdom} - meaning making
+  \end{flushleft}
+ \end{minipage}
+ };
+
+ \node[boxText, below of = Interest,yshift=2em] (InterestDef) {\small
+ \begin{minipage}[t][14em]{10em}
+\begin{flushleft}
+  \textbf{Evaluation of data via existing objective functions}\\[.2cm]
+  \textbullet\ Wundt curve\\
+  \textbullet\ \citeauthor{berlyne1954theory} - epistemic and perceptual curiosity\\
+  \textbullet\ \citeauthor{logan1994modelling} - belief revision in information seeking\\
+  \textbullet\ \citeauthor{patalano1993predictive} - predictive encodings
+\end{flushleft}
+ \end{minipage}
+ };
+
+ \node[boxText, below of = Explanation,yshift=2em] (ExplanationDef){\small
+ \begin{minipage}[t][14em]{10em}
+\begin{flushleft}
+  \textbf{A predictive model}\\[.2cm]
+  \textbullet\ \citeauthor{lawson1998metaphysics} - principles and causes\\
+  \textbullet\ \citeauthor{pease2011computational} - framing\\
+  \textbullet\ \citeauthor{bateson-logical-categories} - change of pattern\\
+\end{flushleft}
+ \end{minipage}
+ };
+
+ \node[boxText, below of = Bridge,yshift=2em] (BridgeDef) {\small
+ \begin{minipage}[t][14em]{10em}
+\begin{flushleft}
+  \textbf{Identifying or positing a problem (via a new objective function)}\\[.2cm]
+  \textbullet\ \citeauthor{bergson1946creative} - creativity of problem statement\\
+  \textbullet\ \citeauthor{thagard2011aha} - ``aha moment''\\
+  \textbullet\ \citeauthor{boden1998creativity} - transform the space\\
+  \textbullet\ \citeauthor{pease2011computational} - new aesthetic
+\end{flushleft}
+ \end{minipage}
+ };
+
+ \node[boxText, below of = Valuation,yshift=2em] (ValuationDef) {\small
+ \begin{minipage}[t][14em]{10em}
+\begin{flushleft}
+  \textbf{Evaluation of solution via existing objective function}\\[.2cm]
+  \textbullet\ \citeauthor{bergson1991matter} - affection\\
+  \textbullet\ \citeauthor{campbell2005serendipity} - rational exploitation\\
+\end{flushleft}
+ \end{minipage}
+ };
+
+
+%%  % Boxes for implementation details
+%%  \node[boxText, below of = PerceptionDef, yshift = -4em] ()
+%%  {\small
+%%  \begin{minipage}[t][14em]{10em}
+%% \begin{flushleft}
+%%   \textbf{HCI, automated feature finding, emergence of grid cells} \\[.2cm]
+%%   \textbullet\ \citeauthor{turk2000perceptive}\\
+%%   \textbullet\ \citeauthor{jacob2015viewpoints}\\
+%%   \textbullet\ \citeauthor{stopher2017technology}\\
+%%   \textbullet\ DeepDream\\
+%%   \textbullet\ \citeauthor{Banino2018}
+%% \end{flushleft}
+%%  \end{minipage}
+%%  };
+
+%%  \node[boxText, below of = AttentionDef, yshift = -4em] ()
+%%  {\small
+%%  \begin{minipage}[t][14em]{10em}
+%% \begin{flushleft}
+%%   \textbf{Visual attention, competition for resources, temporal bonus, soft attention}\\[.2cm]
+%%   \textbullet\ \citeauthor{sun2003object}\\
+%%   \textbullet\ \citeauthor{tsotsos1995modeling}\\
+%%   \textbullet\ \citeauthor{baars1997theatre}\\
+%%   \textbullet\ \citeauthor{lesser1977retrospective}\\
+%%   \textbullet\ \citeauthor{vemula2017social}
+%% \end{flushleft}
+%%  \end{minipage}
+%%  };
+
+%%  \node[boxText, below of = InterestDef, yshift = -4em] ()
+%%  {\small
+%%  \begin{minipage}[t][14em]{10em}
+%% \begin{flushleft}
+%%   \textbf{Autonomous creative behaviour, aesthetics classifier, compression, information gain}\\[.2cm]
+%%   \textbullet\ \citeauthor{Saunders2007}\\
+%%   \textbullet\ \citeauthor{dhar2011high}\\
+%%   \textbullet\ \citeauthor{schmidhuber2009art}\\
+%%   \textbullet\ \citeauthor{javaheri2016analysis}
+%% \end{flushleft}
+%%  \end{minipage}
+%%  };
+
+%%  \node[boxText, below of = ExplanationDef, yshift = -4em] ()
+%%  {\small
+%%  \begin{minipage}[t][14em]{10em}
+%% \begin{flushleft}
+%%   \textbf{Explanation-based learning, epistemic modelling, critics, dialogue, integration of causal models}\\[.2cm]
+%%   \textbullet\ \citeauthor{ellman1989explanation}\\
+%% %  \textbullet\ \citeauthor{cohen1992abductive}\\
+%%   \textbullet\ \citeauthor{delamaza1994generate}\\
+%%   \textbullet\ \citeauthor{sussman1973computational}\\
+%% %  \textbullet\ \citeauthor{Sacerdoti:1975:SPB:907010}\\
+%%   \textbullet\ \citeauthor{singh2005alternate}\\
+%%   \textbullet\ \citeauthor{moore1995participating}\\
+%%   \textbullet\ \citeauthor{GeiHofSch16}
+%% \end{flushleft}
+%%  \end{minipage}
+%%  };
+
+%%  \node[boxText, below of = BridgeDef, yshift = -4em] ()
+%%  {\small
+%%  \begin{minipage}[t][14em]{10em}
+%% \begin{flushleft}
+%%   \textbf{Analogy, metaphor, concept blending, bridging terms}\\[.2cm]
+%%   \textbullet\ \citeauthor{sowa2003analogical}\\
+%%   \textbullet\ \citeauthor{xiao2016meta4meaning}\\
+%%   \textbullet\ \citeauthor{confalonieri2018concepts}\\
+%%   \textbullet\ \citeauthor{EPPE2018105}\\
+%%   \textbullet\ \citeauthor{swanson1997interactive}\\
+%%   \textbullet\ \citeauthor{jursic2012}
+%% \end{flushleft}
+%%  \end{minipage}
+%%  };
+
+%%  \node[boxText, below of = ValuationDef, yshift = -4em] ()
+%%  {\small
+%%  \begin{minipage}[t][14em]{10em}
+%% \begin{flushleft}
+%%   \textbf{Modelling taste, affect, intrinsic motivation}\\[.2cm]
+%%   \textbullet\ \citeauthor{Saunders2007}\\
+%%   \textbullet\ \citeauthor{picard1995affective}\\
+%%   \textbullet\ \citeauthor{kaplan2007intrinsically}\\
+%%   \textbullet\ \citeauthor{singh2010intrinsically}
+%% \end{flushleft}
+%%  \end{minipage}
+%%  };
+
+% \node [rotate=90, left of = Perception, xshift=2.5em,yshift=6em] {\textbf{Definitions}};
+
+% \node [rotate=90, left of = Perception, xshift=-13em,yshift=6em] {\textbf{Implementations}};
+
+\begin{scope}[thick]
+  % draw the connecting arrows
+ \path
+ (Perception) edge (Attention)
+ (Attention) edge (Interest)
+ (Interest) edge (Explanation)
+ (Explanation) edge (Bridge)
+ (Bridge) edge (Valuation)
+;
+\end{scope}
+\end{tikzpicture}}
+
+\begin{tabular}{p{.1\textwidth}p{.\textwidth}}
+\caption{Our model for systems with serendipity potential. The flowchart at top provides a visual key, showing that previous phases can be returned to at any point.  The body of the table summarises Definitions \ref{def:perception}--\ref{def:result}.\label{tab:model-summary-table}}
+\end{tabular}
+\end{table}
+%\end{landscape}

@@ -1,0 +1,179 @@
+\section{Discussion} \label{sec:discussion}
+
+  %% This is related to the notion of \emph{open discovery} which
+  %% ``leads the creative knowledge discovery process from a given starting
+  %%   domain towards a yet unknown second domain which at the end of
+  %%   this process turns out to be connected with the first one.''
+
+  %% However, Connections between these fields seems
+  %% unexplored in practical work, though Ada Lovelace had already
+  %% acknowledged the role of ``various collateral influences, besides
+  %% the main and primary object attained'' \cite[p.~696]{lovelace} in
+  %% all additions to knowledge.
+
+% To merge:
+%% Austin \cite[p.~78]{austin1978chase} advances two further
+%% variations on Pasteur's famous principle, namely: \emph{Chance favours
+%%   those in motion} (and generalisations such as ``curiosity about many
+%% things, persistence, willingness to experiment and to explore''), and
+%% \emph{chance favours the individualised action} (i.e., ``distinctive
+%% hobbies, personal life styles, and activities peculiar to [the]
+%% individual'').  These variants suggest that certain properties of the
+%% investigator both introduce and constrain possibilities for chance
+%% encounters and unexpected connections.
+
+%% Our work in this paper does not report on system development, but we
+%% nevertheless we have argued that serendipity is not strictly beyond
+%% the reach of computational implementations.  Indeed, 
+
+The examples in the previous section show that serendipitous behaviour
+can be exhibited in a meaningful sense by computer systems.
+%%% Do they? No system has a full YES or SOME. 
+%%% Also, this is not the goal: the examples should demonstrate that our evaluation framework is working, not that engineering serendipity in the system is possible. 
+The demonstration of this claim has made use of a novel theoretical
+synthesis that is compatible with other established perspectives on
+serendipity.  We are not the first to argue that the potential for
+serendipity can be increased---or, indeed, decreased---because of
+technological design choices (e.g., \cite{danzico2010design},
+\cite{newman2002designing}, \cite{melo2018}).
+%%% Is this still the case, given the paper that you've found last weekend?
+However, current thinking about AI policy has focused on establishing
+control over the behaviour in autonomous systems
+\cite{research-priorities}.  Much less attention has been given to
+features that would allow autonomous systems to make beneficial use of
+the surprises that are bound to be encountered in real-world
+applications.
+
+In Section \ref{sec:literature-summary}, we suggested that serendipity
+is \emph{a form of creativity that happens in context, on the fly,
+  with the active participation of a creative agent, but not entirely
+  within that agent's control.}  We have focused on what Edmonds
+referred to as ``open system models'' \cite{Edmonds1994}.  The
+perspective we developed is compatible with what
+\citet{tonnessen2015uexkullian} calls ``Uexk\"ullian phenomenology.''
+This conception of a world rich in interdependence across various
+layers of mental processing is also compatible with Copeland's
+\cite{copeland2017serendipity} assertion that serendipity is found in
+networks and communities, and in mundane social encounters.
+%% The basic concern about AI is that given a long enough leash (or,
+%% lead) and access to a suitable energy source, more sensors and
+%% actuators, more processing power, and so on, computational systems
+%% will run amok.  We might do well to compare Bostrom's reflections on
+%% superintelligence \cite{bostrom2014superintelligence} with Ostrom's
+%% reflections on the commons \cite{ostrom1999revisiting}.  Consider
+%% that, from an ecological perspective, we are already grasping with
+%% existential risks due to anthropogenic climate change.
+
+Assessing the risks involved in programming for serendipity clearly
+depends on how `serendipity' is understood.  Thus for example
+\citet[p.~158]{simonton2010creative} has suggested that `exceptional
+creativity' is more likely to engage blind selection mechanisms, on
+the view that ``blind variation generates the originality of an
+idea.''  He cites {\sf BACON} \cite{langley1987scientific} as an
+example of a blind but nonetheless ``systematic'' search program,
+based on ``heuristic methods in which a solution is no longer
+guaranteed'' \cite[p.~169]{simonton2010creative}.  However, this
+system, and the related example of a ``blind'' radar search
+\cite[p.~383]{campbell1960blind} should be contrasted with Austin's
+\emph{`barking up the right tree' phenomenon}: ``if you happen to be
+the kind of person who hunts afield, it may be, in fact, your dog who
+leads you up to the correct tree, and to a desirable conclusion''
+\cite[p.~50]{austin1978chase}.
+\citet[p.~720]{kockelman2011biosemiosis} contends that just as ``one
+cannot offer an account of significance without an account of
+selection'' also ``one cannot offer an account of selection without an
+account of significance.''  In order to make good use of serendipity,
+systems will need to model both the anticipation and appreciation of
+valuable outcomes in an uncertain world.
+
+Notice that if `blindness' came in degrees, we might expect to see the
+propagation of prediction error through a broader system that works to
+reduce surprise over the long term, in line with predictive processing
+accounts \cite{Kiverstein2017,Friston2012}.  Microsoft's
+much-publicised misadventure with the Twitter bot {\sf Tay}
+\cite{wolf2017we} provides us with an example of a system that
+hindsight tells us was destined to fail.  Hopefully we can learn more
+from this episode than simply to keep our AI systems locked in a `dark
+room'.  We can at least imagine a future research programme that takes
+inspiration from the `functionally integrated networks' in the brain
+\cite{Pessoa2017} to design systems that interact in a socially and
+ecologically responsible manner.
+%% Our overall assessment is that ``blindness'' is neither a
+%% sufficient nor even a necessary condition for serendipity.
+%% %%
+%% At least, it is clearly possible for a sequence
+%% of accurate local optimizations to result in an unexpected global structure,
+%% as demonstrated convincingly in various evolutionary simulations \cite{alife2018cases}.
+%% %%% cf. ``Kant and the Platypus: Essays on Language and Cognition'', p. 90.
+ 
+%% While Copeland emphasises that ``serendipity is a category that can
+%% only be applied retrospectively to a discovery process'' 
+%% \cite[p.~7]{copeland2017serendipity}, she also
+%% mentions several skills and cultural traits that can be cultivated to
+%% encourage serendipity, such as the early sharing of research results.
+%% Although we have presented the steps of our model building on one
+%% another in sequence, feedback loops are allowed, and 
+%% experimentation with different architectures will be important.  We
+%% outline several potential applications later in this section.
+
+Our model of serendipity examines necessary factors of serendipity
+potential, but aside from requiring each facet of the model, we have
+not had a lot to say about specific techniques or strategies for
+encouraging serendipity.  \citet{bjorneborn2017three} expands upon
+that theme in considerable detail.  He puts forward three major
+``personal factors in serendipitous encounters'': \emph{curiosity},
+\emph{mobility}, and \emph{sensitivity}.  These correspond to three
+parallel environmental factors or affordances, which he calls
+\emph{diversifiability}, \emph{traversability}, and
+\emph{sensorability}.  Both sides of this balance are then described
+in terms of sub-factors, with ten on each side.  While Bj\"orneborn
+here traces an interesting parallel between agent and environment, he
+does not comment explicitly on a parallel with the classic theory of
+mind in three parts, namely the ``\emph{conative},''
+``\emph{cognitive},'' and ``\emph{affective}''
+\cite{hilgard1980trilogy}.
+%%
+Thus for example \citet[p.~347]{boden1998creativity} comments that
+creativity ``involves not only a cognitive dimension (the generation
+of new ideas) but also motivation and emotion.''
+%%
+These dimensions may be active throughout the processes we've
+described, which is why they did not fit cleanly into the alignment of
+theories in Table \ref{tab:theory-summary}.
+
+In a recent paper exploring serendipity in computer-generated fiction,
+\citet{mccallum2018} reflect on how structured thinking about
+serendipity can help designers of AI systems take advantage of the
+``productive and perilous moment [\ldots] in which an unexpected event
+or pattern occurs'' (p.~7).  They cast doubt on whether computational
+art should be constrained to resemble human art.
+\citet{gucklesberger2017addressing} tackle related issues with a
+series of ``why questions'' which, they suggest, computational systems
+would need to be capable of addressing in order to be seen as
+`creative'.  It may also be the case that full and accurate explanations
+would have to be highly complex.  \citet{loughran2018serendipity} have
+drawn on the concept of ``cybernetic serendipity'' in their design of
+a music system driven by a {``}`circular-causal' loop,{''} which
+employs a population of evolving critics to build an emergent fitness
+function, which in turn guides the evolution of melodies.  The critics
+give the musical creators an ever-new problem to solve.
+
+Peffers et al.'s model of design science research, mentioned in
+Section \ref{sec:background}, has been employed to scaffold various
+design tasks.  One recent example is a methodology for component-based
+program synthesis that uses a type theoretic descriptions to align
+components \cite{10.1007/978-3-030-03427-6_35}.
+\citet{pease2013discussion} had outlined a related experiment that
+would introduce serendipity into the construction of program
+flowcharts.  Recently, a graphical model of dataflow and execution
+dependence was used to establish state of the art results in several
+prediction tasks for multiple input source languages
+\cite{NIPS2018_7617}.  In contrast to the straw man (straw-bot?)
+example from evolutionary computation presented in Section
+\ref{sec:why-this-matters}, technologies like type theory and
+distributional semantics \cite{DBLP:journals/corr/abs-1803-09473}
+could be used by future systems to interpret their results.
+
+% \cite{KWISTHOUT201784} - six different ways to lower prediction error
+
+%% Insofar as human mental processing has evolved to elegantly handle inputs, kinematics, actions, and intentions \cite[p.~85]{KWISTHOUT201784} we could similarly be said to be designed for serendipity.  There is clearly quite a way before we have computational systems with comparable abilities.

@@ -1,0 +1,536 @@
+\section{Attributes of serendipity} \label{attributes}
+
+Building on our summary of the literature in Table
+\ref{tab:theory-summary}, this section introduces the concepts that
+inform our model and evaluation procedure in Section
+\ref{sec:our-model}. We illustrate each concept by means of historical
+examples and consider what they might mean in a computational context.
+%%
+The elements of Table \ref{tab:theory-summary} can be loosely separated into categories insofar as they concern a discoverer, a discovery, or the environment in which discovery takes place.
+
+
+We follow the divisions and define relevant attributes for each below: discovery ($\S$\ref{discovery}), discoverer ($\S$\ref{discoverer}) and
+environment ($\S$\ref{environment}).
+
+%\section{Defining serendipity in a computational context}
+
+\subsection{Attributes of a serendipitous event}\label{discovery}
+
+\begin{itemize}
+\item \textbf{Trigger}: a piece of data without which a result would
+  not have been found. The trigger does not directly cause the
+  outcome, but rather, inspires a potentially new insight.  It was
+  long known by Quechua medics that cinchona bark stops shivering.  In
+  particular, it worked well to stop shivering in malaria patients, as
+  was observed when malarial Europeans first arrived in Peru
+  \cite[pp.~75--77]{desowitz1997gave}.  The joint appearance of
+  shivering Europeans and a South American remedy was the trigger.
+  That an extract from cinchona bark can cure and can even prevent
+  malaria was learned subsequently.
+\end{itemize}
+
+\begin{itemize}
+\item \textbf{Bridge}: the path and set of mechanisms used to get from
+  trigger to result.  Mechanisms often include reasoning techniques,
+  such as abductive inference (what might cause a clear patch in a
+  petri dish?), analogical reasoning (de Mestral constructed a target
+  domain from the source domain of burrs hooked onto fabric), or
+  conceptual blending (Kekul\'e, discoverer of the benzene ring
+  structure, is said to have blended his knowledge of molecule
+  structure with his dream image of a snake biting its tail, although
+  this story is probably apocryphal
+  \cite[p.~xv]{kennedy2016inventology}).  The bridge may rely on new
+  social arrangements or physical prototypes.  It may have many steps,
+  and may feature chance elements.  Several serendipitous episodes may
+  be chained together in sequence, so that the result of one episode
+  serves as the trigger for the next, and this sequence as a whole
+  forms the bridge to a truly unprecedented result.  For example,
+  C\'edric Villani \cite[pp.~15--16]{birth-of-a-theorem} describes
+  two surprising conversations that happened in one day early on in
+  his work on the Boltzmann equation.  The first conversation was with
+  Freddy Bouchet, about the way galaxies stabilise,
+%-- ``I was thrilled to see Landau damping suddenly make another
+%-- appearance, scarcely more than a week after my discussion with
+%-- Cl\'ement [Mouhot]''--
+   and the second with his colleague \'Etienne Ghys, who provided an
+   unexpected link from the content of the first conversation to ideas
+   in Komolgorov-Arnold-Moser theory: ``I didn't really want to say
+   anything, C\'edric, but those figures there on the board -- I've
+   seen them before.''
+\end{itemize}
+
+
+\begin{itemize}
+\item \textbf{Result}: the new product, artefact, process, theory, use
+  for a material substance, or other outcome.  The outcome may
+  contribute evidence in support of a known hypothesis, or a solution
+  to a known problem.  Alternatively, the result may itself {\em be} a
+  new hypothesis or problem.  The result may be
+  ``pseudoserendipitous'' in the sense that it was {\em sought}, while
+  nevertheless arising from an unexpected source.  More classically,
+  it is an \emph{unsought} finding, such as the discovery of the
+  Rosetta stone.
+\end{itemize}
+
+\begin{mdframed}
+{\bf Definition}
+
+A {\em potentially serendipitous event} is one which can be decomposed
+into Trigger, Bridge and Result.
+%[do we want FS in here?]
+\end{mdframed}
+
+
+\subsection{Attributes of a serendipitous person or
+  system}\label{discoverer}
+We measure the serendipitous potential of a person or system by its
+knowledge and abilities. 
+
+\begin{itemize}
+\item \textbf{Prepared mind}: this concerns the internal environment
+  of a person or system, its knowledge and input data. Alexander
+  Fleming's ``prepared mind'' included his focus on carrying out
+  experiments to investigate influenza as well as his previous
+  experience that showed that foreign substances in petri dishes can
+  kill bacteria.  He was concerned above all with the question ``Is
+  there a substance which is harmful to harmful bacteria but harmless
+  to human tissue?''  \cite[p. 161]{roberts}. A ``prepared mind'' is
+  not something that systems either have or not: we can describe the
+  contents of any system in terms of prepared mind. However, we can
+  identify aspects that are helpful in increasing the likelihood of
+  serendipitous discoveries. For instance, maintaining a set of open
+  problems, half-formed solutions and unexpected as well as expected
+  results are features of the prepared minds in the human context. The
+  prepared mind will normally develop over a session of a system run,
+  so a trigger might be missed at the start of a run where the same
+  system might have done a focus shift on the same trigger later on in
+  its run.
+\end{itemize}
+
+%\item Bridging techniques. These are a subset of the prepared mind and
+ % constitute those techniques actually used to  
+
+\begin{itemize}
+\item \textbf{Focus Shift}: this is an ability to make an assessment
+  or reassessment -- a focus shift in which something that was
+  previously unnoticed or uninteresting, of neutral, or even negative
+  value, becomes interesting.  In one famous example, George de
+  Mestral, an electrical engineer by training, and an experienced
+  inventor who worked in a machine shop, returned from a hunting trip
+  in the Alps. He removed numerous burdock burrs from his clothes and
+  his dog's fur and became curious about how they worked. After
+  examining them under a microscope, he realised the possibility of
+  creating a new kind of fastener that worked similarly, laying the
+  foundations for the hook-and-loop mechanism in Velcro\texttrademark\
+  \cite{roberts}. 
+
+  In the human situation this ability is exhibited when people take
+  consequential note of anomalies to arrive at unanticipated
+  discoveries. For instance, consider a situtation in which a given
+  object in a given context is evaluated as poor, according to given
+  evaluation criteria. A focus shift occurs when a second context is
+  retrieved or constructed, in which the same object is evaluated more
+  highly, or when the evaluation criteria are changed so that the
+  object in its original context is now evaluated more highly.
+\end{itemize}
+%\item Curiosity [include or omit?]
+
+\begin{itemize}
+\item \textbf{Sagacity}: connects both the knowledge and abilities on
+  the part of the discoverer. This old-fashioned word is related to
+  ``wisdom,'' ``insight,'' and especially to ``taste''t.  Merton
+  \cite[p.~507]{merton1948bearing} writes: ``{[}M{]}en had for
+  centuries noticed such `trivial' occurrences as slips of the tongue,
+  slips of the pen, typographical errors, and lapses of memory, but it
+  required the theoretic sensitivity of a Freud to see these as
+  strategic data through which he could extend his theory of
+  repression and symptomatic acts.''  The degree to which such data
+  are \emph{prima facie} unanticipated and anomalous is clear.  Merton
+  would be prepared to take in stride that Freud's claims surrounding
+  this data are part of ``an idealized story'' \cite{freudtheory}.
+  For Merton ``what the observer brings to the datum'' is an essential
+  aspect of strategy; his key criterion is that the result ``must
+  permit of implications which bear upon generalised theory'' -- not
+  that it be correct. As well as including the knowledge in the
+  prepared mind, and the ability to focus shift and to form the bridge
+  between the trigger and the result, this includes enhanced
+  evaluation capacities: initial evaluation and re-evaluation, ability
+  to generate and evaluate between possible directions that developing
+  the trigger might lead, and ability to evaluate the result and
+  recognise that it is good.
+\end{itemize}
+
+\begin{mdframed}
+{\bf Definition}
+
+A {\em potentially serendipitous person or system} is one which can be described as having a Prepared Mind, ability to Focus Shift, and Sagacity.
+\end{mdframed}
+
+
+\subsection{Attributes of a serendipitous
+  environment}\label{environment}
+Serendipity seems to be more likely for agents who experience and
+participate in a \emph{dynamic world}, who are active in
+\emph{multiple contexts}, occupied with \emph{multiple tasks}, and who
+avail themselves of \emph{multiple influences}.
+
+\begin{itemize}
+\item \textbf{Dynamic world}: Information about the world develops
+  over time, and is not presented as a complete, consistent whole.  In
+  particular, \emph{value} may come later.
+  \Citet[p. 643]{van1994anatomy} estimates that in twenty percent of
+  innovations ``something was discovered before there was a demand for
+  it.''  To illustrate the role of this factor, it may be most
+  revealing to examine a remarkable ``near miss,'' in which the state
+  of the world changed, but the dynamics and concomitant implications
+  were not attended to carefully.
+%%
+  \citet[pp.~75-76]{cropley2013creativity} describe the case of Eugen
+  Semmer, a veterinary pathologist who intended to carry out a post
+  mortem analysis on two unwell horses.  As it turned out, there was
+  just one problem with his plan: ``when he arrived in the morning he
+  discovered that the animals had unexpectedly and inexplicably
+  recovered.''  %% With some consternation, he then determined that
+%%   ``their recovery was linked to the unintended presence of spores of
+%%   the fungus \emph{penicillium notatum} in his laboratory.''  He
+%%   proceeded to test this theory with further \emph{in vivo}
+%%   experiments on other animals.
+%% \begin{quote}  ``\emph{However, apparently blinded by the
+%%   narrow nature of his special knowledge {\upshape\ldots}\ he did not
+%%   recognise that he had stumbled on an important life-saver (what we
+%%   now call `antibiotics'), and instead went to considerable lengths to
+%%   eradicate the spores from his laboratory.}''
+%% \end{quote}
+%% In this example it appears that a focus shift was effected, since
+%% Semmer did give the perplexing fungus further attention: however a
+%% bridge to a potentially valuable result was not formed, despite of a
+%% growing body of evidence.  This example reveals that the mind needs to
+%% be prepared to cope effectively with change.
+Semmer effected a focus shift and figured out the cause of this change
+of affairs -- \emph{penicillium notatum} spores -- but he failed to
+establish a bridge to a valuable result because he was missing the
+important ability \cite{bereiter1997situated} to revise his basic
+approach in response to changes in the underlying situation.
+\end{itemize}
+
+\begin{itemize}
+\item \textbf{Multiple contexts}: One of the dynamical aspects at play
+  may be the discoverer/inventor going back and forth between
+  different contexts with different stimuli and affordances.  3M
+  employee Arthur Fry sang in a church choir and needed a good way to
+  mark pages in his hymn book -- and happened to have been recently
+  attending internal seminars offered by his colleague Spencer Silver
+  about restickable glue \cite{tce-postits}.
+\end{itemize}
+
+%% Einstein's work at the patent office seems to have been fortuitous
+%% not because it gave him ideas, but because it gave him time to work
+%% on his ideas.  Famously, this resulted in four fundamental papers
+%% in the year 1905.
+
+\begin{itemize}
+\item \textbf{Multiple tasks}: Two decades after his \emph{annus
+  mirabilis}, Einstein's fame drew letters and a copy of a rejected
+  paper from Indian physicist Satyendra Nath Bose.  As a recent Nobel
+  Prize winner and an institute director, Einstein was in no way
+  obliged to take on the extra task of translating Bose's paper from
+  English to German.  Nevertheless, he did so out of interest, and in
+  the process learned a calculation method that produced accurate
+  physical results, despite making nonstandard physical assumptions
+  \cite{delbruck1980bose}.  Einstein's subsequent examination of this
+  work led to further papers and the idea of Bose-Einstein statistics,
+  which describes fundamental particles, now known as bosons, which do
+  not obey the Pauli exclusion principle.
+\end{itemize}
+
+\begin{itemize}
+\item \textbf{Multiple influences}: The bridge from trigger to result
+  is often found by availing oneself of others' points of view.  For
+  example, Arno Penzias and Robert Wilson, working at Bell Labs, used
+  a large antenna to detect radio waves that were relayed by bouncing
+  off satellites.  After they had carefully removed interference
+  effects due to radar, radio, and heat, they found residual ambient
+  noise that couldn't be eliminated.  They then ruled out directional
+  effects that would suggest either a terrestrial or galactic origin
+  \cite[p.~3]{lachieze1999cosmological}.  They were mystified, and
+  only understood the significance of their work after a friend at MIT
+  told them about a preprint on the subject written by astrophysicists
+  from nearby Princeton University, who had hypothesised the
+  possibility of measuring radiation released by the big bang
+  \cite[p.~385]{shu1982physical}.
+\end{itemize}
+
+
+\begin{mdframed}
+{\bf Definition}
+
+A {\em potentially serendipitous environment} is one which can be
+described in terms of a dynamic world, and multiple contexts, in which
+agents are concerned with multiple tasks, and have multiple
+influences.
+\end{mdframed}
+
+
+\subsection{Serendipity space: uniting our three dimensions}
+
+The [four] components described above have attributes that may be
+present to a greater or lesser degree.  These are: \emph{Chance} --
+how likely was the trigger to appear?; \emph{Curiosity} -- how likely
+was this trigger to be identified as interesting?; \emph{Sagacity} --
+how likely was it that the interesting trigger would be turned into a
+result?; -- and \emph{Value} (how valuable is the result that is
+ultimately produced?). We unite these with the notion of {\bf
+  serendipity space}, in which events may lie.
+
+{\em serendipity space} is the space defined by the three dimensions
+chance, sagacity and value. We measure {\em position in serendipity
+  space} by where in serendipity space a potentially serendipitous
+event lies.
+
+
+\begin{itemize}
+\item \textbf{Chance}: relates to the environment: how likely was the
+  trigger to occur in that context? Fleming \cite{fleming} noted:
+  ``There are thousands of different moulds'' -- and ``that chance put
+  the mould in the right spot at the right time was like winning the
+  Irish sweep.''  It is important to notice that \emph{he} was in the
+  right spot at the right time as well -- this was not a complete
+  coincidence.
+\end{itemize}
+
+\begin{itemize}
+\item \textbf{Sagacity} relates to the discoverer: how sophisticated
+  was the insight used to see the relevance of the trigger (the focus
+  shift), and the skill and knowledge it took to get from the trigger
+  to the result)?
+\end{itemize}
+
+
+\begin{itemize}
+\item \textbf{Value}: relates to the result, or discovery. Serendipity
+  concerns happy surprises, but different parties may have different
+  judgements as to whether a given situation is ``happy'' or
+  ``surprising''.  A third party judgement of value can help to
+  discriminate between luck, sleight of hand, and \emph{bona fide}
+  value creation.  An unconcerned third party is more likely to see
+  serendipity when ``One man's trash is another man's treasure'' than
+  when ``One man's loss is another man's gain.''  In order to clearly
+  distinguish between these two cases, wherever possible we prefer to
+  make use of independent judgements of value.  A literal example of
+  the trash-to-treasure scenario is provided by the Swiss company
+  Freitag, which was started by design students who built a business
+  around ``upcycling'' used truck tarpaulins into bags and backpacks.
+  Thanks in part to clever marketing \cite[pp. 54--55,
+  68--69]{russo2010companies}, their product is now a global brand.
+\end{itemize}
+
+%is a dimension (- how good is it?)
+
+
+\begin{mdframed}
+{\bf Definition}
+
+A point in {\em serendipity space} is a {\em potentially serendipitous
+  event} along which dimensions of Chance, Sagacity and Value have
+been defined. 
+\end{mdframed}
+
+
+%how is context different to prepared mind etc? 
+
+
+\subsection{A step-by-step example illustrating how these concepts can
+  be applied to computational systems} \label{sec:by-example-summary}
+
+In Sections \ref{sec:our-model} and
+\ref{sec:computational-serendipity}, we will show how the key
+condition, components, dimensions and environmental factors of
+serendipity discussed above can be used to model and assess the
+potential for serendipity in computational systems.
+%%
+Here, we develop a preliminary illustration showing how these criteria can be
+applied to separate computational examples into instances, non-instances, and
+weak instances.
+We will consider three systems in the tradition of ``computational
+discovery in mathematics'' \cite{colton2007computational}.
+%%   These system descriptions illustrate two central points: namely that
+%% all of the components are necessary in order for a system to have
+%% potential for serendipity, and that they can be active to a greater or
+%% lesser degree in different systems.  In addition, systems do not
+%% require all (or even any) of the supportive environmental factors to
+%% achieve serendipitous results, but that the presence of these factors
+%% can go along with several advantages.
+
+\paragraph{System A.~Zero potential for serendipity -- Automatic
+  theorem proving}
+A user of an automatic theorem proving system typically has in mind
+the theorem for which he or she wishes to establish a formal proof.
+That is, an informal proof already exists, and when translating this
+into the formal language, only minor logical and syntax errors stand
+in the way.  These can be straightforwardly debugged.  Once the proof
+has been fully specified, the theorem prover will return a
+certification.  There seems to be no chance for serendipity here, on
+either the user or the system side.  Even if we were to construe an
+erroneous formal proof as a \textbf{trigger} and a corresponding error
+message as a \textbf{result}, the other components all fail to
+materialise.  Nothing can be generated from this trigger except for
+the (to-be-expected) error message.
+%% Furthermore, if the user
+%% happens to be surprised by the error message, they are unlikely to be
+%% particularly happy about it.
+
+\paragraph{System B.~Moderate potential for serendipity -- Generating
+  conjectures and proofs}
+Suppose that rather than checking a known theorem, the user programs
+the computer to come up with conjectures, and generate proof-attempts
+on its own.  Furthermore, suppose that three out of 100 generated
+conjectures turn out to be provable.  In this case, the user may be
+interested and pleasantly surprised -- especially if one or more of
+the theorems is one that he or she wouldn't have thought of.  In this
+case, each of the generated conjectures is a potential
+\textbf{trigger} for discovery.  Note that although the system itself
+generates these conjectures, in general it cannot determine in advance
+which ones, if any, will turn out to be true.  Its ability to assess
+the generated conjectures and to construct proof-attempts constitutes
+an elementary \textbf{prepared mind}.  The system is (fallibly) able
+to apply pre-programmed methods to form a \textbf{bridge} to an
+interesting \textbf{result}, namely, a new theorem.  Indeed,
+fallibility applies twice over: not only may the system fail to find
+the interesting conjectures, it may also fail to find proofs for all
+of the (true) conjectures that it does discover.  Furthermore, note
+that due to its limited domain knowledge, the system has only a weak
+model of the way \textbf{value} will be assigned to any theorem it
+finds.
+%% Conjectures arise through some
+%% combinatorial or other similar process, which, although deterministic,
+%% selects a sample from the population of available conjectures.
+% Although the conjectures are presumably deterministically constructed,
+% they may appear random; more specifically, i
+In lieu of further information about the conjecture generation process
+(and about those conjectures which are not generated)
+it seems that every potential trigger for discovery is
+encountered by definition, so that \textbf{chance} does
+not play a significant role at that stage.
+% \footnote{For example, in lieu of further information
+%  about the conjecture-generating algorithm, we might regard a
+%  conjecture's ``order of arrival'' as a proxy for its probability of
+%  being encountered, after a suitable normalisation.  So that if $n$
+%  conjectures are selected, the $j$th conjecture could be assigned the
+%  ``subjective probability'' $2(n+1-j)/n(n+1)$.}
+However, the system may make use of simple heuristics -- based, for
+example, on a computed \emph{plausibility measure}
+\cite[p.~193]{colton2007computational} -- to keep it from focusing on
+a conjecture that it isn't likely to prove, so it is capable of a
+somewhat discriminating form of \textbf{curiosity}.  It will effect a
+\textbf{focus shift} to each plausible trigger independently, in turn.
+This conservative behaviour also contributes to the system's
+\textbf{sagacity}, which is otherwise grounded in proof-generation
+techniques.  This system matches all of our criteria for serendipity,
+although we should stress that its ability to generate new mathematics
+will depend, in part, on the initial selection of problem domain --
+and, to a considerable extent, on the programmer's ingenuity.  Among
+the environmental factors from Section
+\ref{sec:environmental-factors}, this system matches the description
+of \textbf{multiple tasks}, but not the others.
+
+\paragraph{System $B^{\prime}$.~Low potential for serendipity -- Zooming in on part of the process}
+
+Here we focus in on the part of \emph{System B} that generates
+conjectures, without considering proof attempts.  This was the
+historical course initially taken by the {\sf HR} project with the
+{\sf NumbersWithNames} program \cite{colton2002numberswithnames}.
+%%  --
+%% although subsequent versions of the system worked with third-party theorem
+%% provers to generate proofs \cite{colton2002hr}.
+%%
+Intuitively, {\sf NumbersWithNames} can help with ``the discovery
+part'' of mathematics \cite[p.~7]{colton2002numberswithnames}.
+%%
+The \textbf{trigger} for this system was a given integer sequence,
+which may have been chosen at random or hand-selected by a user.  An
+interesting conjecture (\emph{sans} proof) about the sequence is
+considered to be a valuable, albeit preliminary, \textbf{result}.  A
+case can be made for the system possessing an entirely nonexceptional
+form of \textbf{curiosity}: each trigger is submitted for further
+processing, in this case via a range of transformation rules that
+explore outwards from the triggering sequence to discover potential
+statements that can be made about it.  However, examining the
+algorithms used by {\sf NumbersWithNames}, the case for
+\textbf{sagacity} initially seems rather weak.  In the first place:
+``Even after pruning, the program often produces a plethora of
+conjectures'' \cite[p.~4]{colton2002numberswithnames}.  Identifying
+the \emph{plausible} conjectures among these requires some further
+common-sense ideas and straightforward numerical processing.
+Naturally, filtering the results list cannot guarantee that any of the
+generated plausible results will actually be interesting.  Here it is
+worth emphasising that, in practice, many of the interesting results
+from {\sf NumbersWithNames} were found based on intelligent problem
+selection on the part of the system's users, who were able to supply a
+preselected sequence of interest.  Ultimately, the fact that {\sf
+  NumbersWithNames} could surface interesting conjectures about these
+sequences suggests that it is sufficiently, if minimally, sagacious,
+after all.
+%% Moreover, work with this system led to publishable mathematical
+%% results from \citet{colton1999refactorable} and others.
+Automated problem selection is one of the key advantages \emph{System
+  B} obtains by using \emph{System $B^{\prime}$} as a submodule.  As
+we saw above, this allows \emph{System B} to be somewhat
+discriminating in its curiosity, whereas \emph{System $B^{\prime}$}
+seems to have relied alternately on outside help or luck to steer its
+initial processing.
+%% :\emph{System B}'s ``hit rate'' of 3\% would be much worse if the
+%% conjectures did were not filtered.
+
+\paragraph{System C.~High potential for serendipity -- Mining an online domain model} 
+In a more futuristic and entirely hypothetical example, we can imagine
+a system has at its disposal a large database of formalised proofs,
+assorted mathematical concepts, and informal heuristics.
+Additionally, suppose that new data in a machine-accessible format is
+coming online all the time -- perhaps the system deploys a
+next-generation parser on new papers as they are added to the
+mathematics Arxiv (cf.~\citet{ginev2009architecture}).  Such a system
+could have a large collection of open problems that it is working on
+at any given moment, which, together with the aforementioned facts and
+heuristic patterns, constitute a considerably more robust
+\textbf{prepared mind} than in the previous system.  This system could
+take a discriminating approach to generating conjectures, and apply a
+range of mathematical techniques to find a \textbf{bridge} from a
+conjecture to a proof.
+%%
+Each new paper or fragment of user interaction it encounters would constitute
+a potential \textbf{trigger} for discovery.  Some of these contributions will have
+more generative potential than others.  Importantly, the system would
+be able to judge for itself whether a given \textbf{result} is globally
+new.  The new data expresses highly unpredictable mathematical
+content, so \textbf{chance} plays a prominent role in this 
+system.  However, like the previous system, this one is fallible: for
+all its background knowledge, there is no guarantee that it will find
+any worthwhile results on any given day.  Its ``hit rate'' will depend partly on the quality of
+the search strategies it uses.  It would be straightforward to
+characterise the system's search priorities using the dimension of
+\textbf{curiosity}.  Again, the system could afford to be
+discriminating, with its allocation of attention driven by an interest in
+specific problems.
+%%
+The system's heuristics for solving these problems would
+straightforwardly connect with the dimension of \textbf{sagacity}.
+Adding a further layer on top of this, higher-order programming could
+be applied that would operationalise the search for new strategies
+and heuristics.  The system is clearly situated in a \textbf{dynamic
+  world}.  It can avail itself of \textbf{multiple influences} by
+reading papers from different mathematical domains.  Switching
+attention between proving new theorems and developing new search
+strategies and problem solving heuristics would give the system
+\textbf{multiple tasks} and \textbf{multiple contexts} for creativity.
+
+\bigskip
+
+The foregoing system descriptions illustrate two central points:
+namely that all of the components are necessary in order for a system
+to have potential for serendipity, and that they can be active to a
+greater or lesser degree.  We will make these assertions more precise
+in the following section.
+
+
+
+

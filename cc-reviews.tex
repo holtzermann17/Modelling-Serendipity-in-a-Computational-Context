@@ -1,0 +1,198 @@
+\textbf{Memo}
+Dear Professor Hussain:
+
+Futher to your letter of 23 Feb 2015 regarding our paper on “Modelling serendipity in a
+computational context” we are pleased to enclose a revised draft that takes into account the
+very helpful reviewer comments.
+
+We have significantly clarified and streamlined the argument. To highlight our intended
+contribution, the computational model of serendipity appears earlier in the paper. We have also
+dropped material that was less essential to explaining this model. We now include a diagram
+that shows how the 13 proposed criteria for serendipity form a unified whole.
+We include two new short case studies that illustrate the relationship between the model and
+existing implementation work. We describe “minimal” criteria for serendipity. This should help
+to address concerns from reviewers about computational feasibility. To this end we have also
+added a more complete system description in our thought experiment describing the design of a
+computational poetry workshop. We have slightly revised the SPECs criteria to enable a more
+precise treatment of these examples.
+
+The discussion of design patterns has been condensed and moved to a “future work” section.
+We now connect the interpretation of design patterns more clearly to prior literature, to the
+model and to the recommendations introduced in our paper. Although some aspects of this
+interpretation are nonstandard, we now explain how, and why, again providing a succinct
+example.
+
+We now use APA style referencing, which we believe the reviewers prefer, and while striving to
+remain self-contained, we have cut down both the length of the paper and the number of
+references. The resulting revised paper has been thoroughly proofread.
+
+Sincerely yours,
+Joseph Corneli, Alison Pease, Simon Colton, Anna Jordanous, Christian Guckelsberger
+
+\textbf{Reviewer \#1}
+“Modelling serendipity in a computational context” is not an easy read. It covers a lot of ground,
+and generally it feels not well threaded together. The paper also reads to my eye more like an
+essay than a technical paper—for me this is not a problem, but it might be for some readers.
+The paper exhibits a number of strengths that make the paper worth reading, however, so it
+might merit a revision clearing up some transitions and the argument.
+A towering strength of the paper is its explanation of what makes for serendipity, which is
+accomplished by a series of good examples and a relatively comprehensive literature review. In
+general I found the first two sections made the paper worth reading.
+I got very little from the discussion of FloWr and its use / manipulation of flowcharts. I had a
+sense of how it was related to computational serendipity, but I doubt I could recount the
+connections to someone else. Part of it was that the presentation was heavy on references and
+light on explanation.
+
+I was not convinced that the authors saw the distinction between ordinary patterns (repetitions
+and the like) and Alexandrian (design) patterns, which are patterns in the world observed into
+formal descriptions of how to decide to build an instance of a pattern along with instructions for
+how to do it. I can see how (design) patterns could serve as a medium for describing structures
+ripe for serendipity, but as a relative expert on software and design patterns, I was not sure the
+authors and I were speaking of the same things. For example, it would never occur to me to
+lump things like Copycat into a discussion of design patterns. When I saw this I thought I had
+picked up the wrong sheaf of paper.
+
+Similarly I was not convinced by the argument about writers’ workshops. I can see that writers’
+workshops could be a source of serendipity-rich situations, but it didn’t strike me as among the
+most promising places to look for them with computational agents—because to program up
+agents to operate in a writers’ workshop seems like a hard road. Moreover, writers’ workshops
+are a collaborative part of the revision process, and not the heart of the creative part of the
+process. On the other hand, getting agents to converse likely requires serendipity somewhere
+along the line.
+
+After the very good sections on characterizing serendipity, I found the later sections much more
+abstract and therefore I felt less as if I were in the hands of an expert guide. Each sentence
+made sense, but it didn’t seem like a coherent journey.
+Viewed as a whole, I found the paper worth reading but the weaknesses of the patterns /
+writers’ workshop sections—and some of the oddities I found there—made the paper difficult to
+fully get behind. I read the paper four times, and after each time I was not certain I got the
+patterns and writers’ workshops parts well enough to repeat the arguments to someone else.
+My suggestion is to revisit the paper starting with the FLoWr discussion. Describe that system a
+little more and how it directly relates to the question at hand. Then the section on links to van
+Andel’s work needs to be revised with relevance and necessity in mind—I felt overwhelmed by
+the number of facets coming at me. The sections on patterns need to be revised to highlight
+how patterns can be used to build a system or context for serendipity to pop up. I felt as though
+the authors and I meant different things by “patterns.” Finally the section on writers’ workshops
+needs some thinking about what there is about a revision-centric part of the writing process that
+makes it ripe for serendipity. How would constructing a computational writers’ workshop push
+serendipity to the fore. Along these lines, the remark earlier in the paper about lower case
+serendipity could stand a couple of examples so that the lower bound for what counts is clearer.
+This might help the writers’ workshop sections.
+
+\textbf{Reviewer \#2}
+[NOTE: the page numbers stated here is that of the PDF, which includes the cover page. So the
+first page of the paper is in fact numbered as page 2]
+This paper attempts to provide a model of the phenomena of serendipity in a computational
+context. It starts with a review of the literature on serendipity based on several aspects, namely
+
+its etymology, characteristics, key condition, components, dimensions, and environmental
+factors. It then tries to describe an existing collection of patterns in serendipity by van Andel in
+terms of the aforementioned aspects. It subsequently provides a framework for evaluating
+serendipity in computational systems, in which it also provides a definition for computational
+serendipity. Finally it presents a thought experiment involving a writers workshop where
+participants are computationally creative systems that provide feedback on each other's output.
+I found this paper confusing as it was not clear what the authors were trying to achieve. 
+When
+the title states of modelling serendipity in a "computational context", what is the clear
+target that is being modelled? Is it serendipity that occurs within the workings of a
+computational system? Is it serendipity that occurs when human researchers --who
+happen to work on computational systems-- discover and invent useful outcomes? I
+suspect it is the former, but it is never clarified, and some sentences seem to suggest the
+latter (e.g. page 3, lines 23 \& 24). Or is it a *computational model* of serendipity (as hinted to
+in Section 3)? I think these are all very distinct possible targets, and so the authors should
+clarify the matter explicitly.
+
+I found the literature review on serendipity interesting and easy enough to follow, although it
+wasn't clear what are the relations and interactions (if any) between the 13 aspects listed under
+key condition (1), components (4), dimensions (4), and environmental factors (4). Are there any
+overlaps or gaps between their definitions? I find this important because later on in Sections 4
+and 5 these aspects are claimed to form a set of "evaluation criteria", although their utility as
+an evaluation criteria for serendipity is never really justified..
+Section 3 (Foundational work) seems to suggest that the authors intend to build computer
+experiments within which one can then identify and evaluate when serendipity occurs in a
+computational approach, using the FloWr system.
+
+Section 4 tries to recast the description of serendipity in terms of design patterns, and here is
+where the paper starts to become more confusing for me. As I understand it, design patterns
+are an informal way of describing solutions (or prototypes of solutions) to recurrent problems
+that exhibit certain commonalities. The use of design patterns to describe software design
+issues is a very clear and successful instantiation of such an approach. Thus, my understanding
+would be that a design pattern-approach to serendipity would try to describe how serendipity
+can be identified as having occurred given certain conditions. This would constitute a model of
+some sort, as it would allow one to recognize the occurrence of serendipity. To that end, the
+authors try to present van Andel's patterns filtered through the 13 aspects presented in Section
+2, and my understanding is that they intend for these to be thought of as design patterns.
+However, I found the discussion in Section 4.1 very hard to comprehend, so I am unable to
+comment on this section other than suggest that the authors try to explain it to a more general
+audience.
+
+Sections 5.1 and 5.2 is where I found things to get interesting. It provides a discussion on how
+the 13 evaluation criteria can be interpreted in the context of a computational system. Again, it is
+not clear whether these aspects are strictly required for serendipity to occur. Also, I suspect that
+given the rather vague definitions, "merely" generative systems such as genetic algorithms and
+other evolutionary computational systems could be described as exhibiting serendipity. If the
+authors claim that this should not necessarily be the case, more argumentation should be
+provided, e.g.: when is a random action that leads to a good outcome *not* serendipitous?
+From the definition provided on page 19, it seems the fact that the system must first deem a
+trigger to be interesting before processing it is noteworthy. For example, most generative
+systems tend to apply "mutation" operations blindly and exhaustively. Is it the case that
+serendipitous systems would be more 'sagacious' in recognizing interesting triggers. After all,
+we wouldn't expect humans to exhaustively comb the entire space of possibilities they are
+exploring, and we probably wouldn't call their discovery 'serendipitous' were they to do so.
+Perhaps this aspect could be expanded on to further distinguish between serendipity and 'mere'
+stochastic processes.
+
+However, the thought experiment is once again confusing. The preceding sections suggested to
+me that the authors would be developing a computational platform to test the occurrence of
+serendipity. However, the thought experiment provided is a very meta-level (and technically
+improbable) setup where computationally creative systems participate in a writers workshop to
+critique each other, and hopefully learn from this process, presumably in a serendipitous
+fashion. I have the feeling that Table 1 is intended to illustrate a key concept from the paper, but
+it is not really discussed.
+All in all, it is clear that the authors of this paper have a very interesting and novel contribution to
+make in terms of modelling serendipity, but in its current form I find the paper problematic for
+publication. I recommend the authors clarify their intentions and perhaps focus the discussion
+more clearly.
+
+Some other issues:
+
+* Given the discussion of the components of serendipity (page 7), I would like to see explicit
+discussion on how 'regular' systems that work by applying inference procedures on symbolic
+representations to yield new representations are not necessarily deemed to be serendipitous.
+From my reading of the definitions of Bridge and Result, it would seem that existing approaches
+to analogical reasoning and inference can be said to be serendipitous. Is this the case?
+
+* page 10: What is the purpose of showing Figure 1? It does not seem to illustrate any point that
+is relevant to the arguments put forth in the paper. Also, is it permissible for the formatting of the
+paper to have the figure appear alongside body text?
+
+* page 10: What is the significance of the 'dynamic aspects' of the environment? It does not
+seem to coincide with the sense of 'dynamic' as discussed in earlier sections.
+
+* page 12: What are the authors trying to convey with the analysis of van Andel's patterns
+according to the 13 evaluation criteria in Figure 3? Also, where does the analysis come from
+(i.e. which aspect occurs in which pattern)? Is there clear consensus on this?
+
+* page 18: Why is it important for the trigger to be outside of the direct control of the system? Is
+it not serendipitous if this condition does not hold?
+
+* page 20: What is the significance of the schematic illustration?
+
+\textbf{Reviewer \#3}
+While the topic is interesting, the paper is very long which is not a problem per se but not sure if
+it's acceptable for the policy of the journal and the readers. Due to the length of the paper and
+the heavy referencing, it is difficult to read the paper smoothly.
+
+Additionally despite the fact that I enjoyed reading the thorough literature review, it helps if it's
+shortened in order to allow for more space to focus on the central argument.
+
+The hint to Deleuze's philosophy of difference in the conclusion was not sufficiently backed in
+the main body of the paper.
+
+My main recommendation to the authors is therefore to shorten the paper and focus mainly on
+the primary argument (i.e. modelling and evaluating serendipity in computational settings).
+
+\textbf{Editorial Comments}
+In addition to carefully addressing all the reviewers' comments, the authors should consider
+referencing more recent (2013-14) related works, including relevant ones from Cognitive
+Computation.

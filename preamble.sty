@@ -1,0 +1,492 @@
+\usepackage{ifxetex}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifxetex
+    % XeLaTeX
+    \usepackage{polyglossia}
+    \let\providelength\relax
+    \let\providecounter\relax
+    \setmainlanguage[spelling=new,babelshorthands=true]{british}
+    \usepackage{fontspec}
+    \usepackage{amsmath}
+    \usepackage{amssymb} % math symbols
+    \usepackage[]{unicode-math}
+%    \setmainfont{XITS}
+%    \setmathfont{XITS Math}
+\usepackage{xeCJK}
+% \setCJKmainfont[BoldFont=FandolSong-Bold.otf,ItalicFont=FandolKai-Regular.otf]{FandolSong-Regular.otf}
+\setCJKmainfont{WenQuanYi Zen Hei} % or another font supporting Chinese
+\newCJKfontfamily{\dejavusanszh}{DejaVu Sans} % this font has the required glyphs
+\newfontface{\dejavusans}{DejaVu Sans} % this font has the required glyphs
+\newcommand{\iching}[1]{{\dejavusanszh\char\numexpr"4DC0+#1}}
+\newcommand{\trigram}[1]{{\dejavusans\char\numexpr"2630+#1}}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\else
+    % default: pdfLaTeX
+    \usepackage[english]{babel}
+    \usepackage[T1]{fontenc}
+    \usepackage{amsmath}
+    \usepackage{amssymb} % math symbols
+    %\usepackage{lmodern}
+    \usepackage[utf8]{inputenc}
+%    \usepackage[babel=true]{microtype}
+    %\newcommand{\iching}[1]{\fbox{\phantom{i}}}
+    \newcommand{\iching}[1]{\raisebox{-.5ex}{\includegraphics{#1}}}
+    \newcommand{\trigram}[1]{\fbox{\phantom{i}}}
+\fi
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{ifdraft}
+
+\RequirePackage{fix-cm}
+
+%% handle Van Andel's name properly
+% http://tex.stackexchange.com/questions/40747/bibtex-handling-of-the-dutch-van-name-prefix-with-natbib
+\DeclareRobustCommand{\VAN}[3]{#2}
+
+
+
+%%%%%%%%%%%%%%%
+% Editorial notes to be added with \ednote{UN: foo}
+%%%%%%%%%%%%%%%
+
+\usepackage[normalem]{ulem}
+\usepackage{soul}
+\newcommand\hlyellow[1]{{\ul{#1}}}
+
+%% {\bgroup\markoverwith
+%%   {\textcolor{yellow}{\rule[-.5ex]{1pt}{2.5ex}}}\ULon}
+
+%% \newcommand\hlgreen{\bgroup\markoverwith
+%%   {\textcolor{GreenYellow}{\rule[-.5ex]{1pt}{2.5ex}}}\ULon}
+
+\usepackage{graphicx} % including of graphics files in various formats
+
+\usepackage{alphalph}
+\usepackage[dvipsnames,table]{xcolor}
+\usepackage{hhline}
+\DeclareRobustCommand{\hlgreen}[1]{{\sethlcolor{GreenYellow}\hl{#1}}}
+%\DeclareRobustCommand{\hlyellow}[1]{{\colorbox{yellow!20}\hl{#1}}}
+
+\colorlet{gray30}{gray!30}
+\colorlet{gray70}{gray!70}
+\definecolor{scarlet}{rgb}{1.0, 0.13, 0.0}
+\definecolor{cerulean}{rgb}{0.0, 0.48, 0.65}
+\definecolor{darkred}{rgb}{0.55, 0.0, 0.0}
+\definecolor{deepcarmine}{rgb}{0.66, 0.13, 0.24}
+\definecolor{debianred}{rgb}{0.84, 0.04, 0.33}
+
+%\ifdraft{\usepackage[show,nomargins]{ed}}%
+%{\usepackage[nomargins]{ed}} % use nomargins here to disable marginal note; remone ``show'' to hide the ednotes
+
+%% \usepackage[show,nomargins]{ed}
+%% %% modify ed notes so that they use letters rather than numbers
+%% \makeatletter
+%% \renewcommand{\ednote}[2][]{\begingroup%
+%%  \renewcommand*{\thefootnote}{\hlgreen{[\AlphAlph{\value{footnote}}]}}%
+%%  \ed@note{#2}\ednote@label{#1}\ednote@margin%
+%% \endgroup}
+%% %%%
+%% \renewcommand\ed@note[4]%
+%% {\Ed@note{#1}{#2}{#3}\ifshowednotes\ed@margin{#4:\Alph{ednote}}\fi}
+%% \makeatother
+%% \usepackage{etoolbox}
+%% % make marginpars appear on right
+%% \makeatletter
+%% \patchcmd{\@addmarginpar}{\ifodd\c@page}{\ifodd\c@page\@tempcnta\m@ne}{}{}
+%% \makeatother
+%% \reversemarginpar
+
+%% \def\signed #1{{\leavevmode\unskip\nobreak\hfil\penalty50\hskip2em
+%%   \hbox{}\nobreak\hfil#1%
+%%   \parfillskip=0pt \finalhyphendemerits=0 \endgraf}}
+
+%% \newsavebox\mybox
+%% \newenvironment{aquote}[1]
+%%   {\savebox\mybox{#1}\begin{quote}}
+%%   {\signed{\usebox\mybox}\end{quote}}
+
+%% \makeatletter
+%% \renewenvironment{Newpart}[1]{\Ed@part{#1}{New Part}%
+%% \b@newpart@label\ifshowednotes\color{debianred}\fi}%
+%% {\endEd@part}
+%% \renewenvironment{newpart}[1]{\ed@part{#1}{New Part}%
+%% \b@newpart@label\b@newpart@margin\ifshowednotes\color{debianred}\fi}%
+%% {\ended@part\e@newpart@margin}
+%% \makeatother
+
+\usepackage{fontawesome}
+
+%%%%%%%%%%%%%%%
+\usepackage{pdflscape} %handle landscape format within portrait document
+
+%\usepackage{geometry} %to customize margins etc
+
+\usepackage{textcomp}
+\usepackage{setspace}
+
+\usepackage{caption}
+\captionsetup{compatibility=false}
+\usepackage{subcaption}
+\usepackage{afterpage}
+
+\usepackage{slantsc}
+\usepackage{pifont}
+\newcommand{\xmark}{\ding{54}}%
+\newcommand{\ymark}{\ding{56}}%
+\newcommand{\sunmark}{\ding{106}}%
+\newcommand{\handmark}{\ding{43}}%
+
+% \usepackage{lineno}
+% \usepackage{pagecolor}
+% \pagecolor{yellow!10!orange!5}
+
+\usepackage[framemethod=tikz]{mdframed}
+
+%% \usepackage{fontspec}
+%% \newfontfamily{\tam}[Script=Tamil]{Lohit Tamil}
+%% \defaultfontfeatures{Scale=MatchLowercase}
+
+\mdfdefinestyle{exampledefault}{%
+skipabove=\baselineskip,
+skipbelow=\baselineskip,
+innertopmargin=3pt,
+innerbottommargin=8pt,
+apptotikzsetting={\tikzset{mdfbackground/.append style={fill=white,fill opacity=0}}}}
+
+\mdfdefinestyle{colorful}{%
+hidealllines=true,
+backgroundcolor=yellow!20,
+innerleftmargin=3pt,
+innerrightmargin=3pt,
+leftmargin=-3pt,
+rightmargin=-3pt,
+skipabove=-16pt}
+
+\let\svendmdframed\endmdframed
+\makeatletter
+\def\endmdframed{\svendmdframed\unskip\vspace{-2pt}}
+\makeatother
+
+\usepackage{footnote}
+\newenvironment{mdframedwithfoot}
+{
+    \savenotes
+    \begin{mdframed}[style=colorful]
+    \stepcounter{footnote}
+    \renewcommand{\thempfootnote}{\arabic{footnote}}
+    }
+{
+    \end{mdframed}
+    \spewnotes
+}
+
+\setlength{\marginparwidth}{5.5cm}
+
+\usepackage{calc}
+
+\newlength\marginal
+\newlength\article
+\newlength\difference
+
+%% allow calculation of lengths with paragraph breaks in the text that is measured
+% http://tex.stackexchange.com/questions/93932/settototalheight-issue-with-empty-lines/93933#93933
+\makeatletter
+\begingroup
+\toks0=\expandafter{\@settodim{#1}{#2}{#3}}
+\edef\x{\endgroup
+  \long\def\noexpand\@settodim##1##2##3{\the\toks0 }}\x
+\makeatother
+
+%% add space below marginpar if it is too long
+% http://tex.stackexchange.com/questions/111689/vertical-space-depending-on-height-of-marginpar?rq=1
+\ifdraft{\newcommand{\edcomment}[2]{%
+    \settototalheight\marginal{\parbox{\marginparwidth}{\tiny #2}}%
+    \settototalheight\article{\parbox{\textwidth}{#1}}%
+    \setlength{\difference}{\the\marginal-\the\article}%
+    \begingroup%
+    \setlength{\fboxsep}{1pt}%
+%% Typeset the marginpar
+\marginpar{\vspace{.5\baselineskip}\tiny\fbox{%
+\colorbox{yellow!20}{%
+\begin{minipage}{\marginparwidth}%
+#2%
+\end{minipage}}}}
+    \endgroup%
+%% Typeset the mdframed environment
+    \begin{mdframedwithfoot}#1\end{mdframedwithfoot}%
+%% add necessary space
+    \ifnum\difference>0 \vspace{\the\difference}\vspace{\baselineskip} \else \addvspace{1ex} \fi
+}
+\newcommand\edcommentB[2]{
+\begingroup
+\setlength{\fboxsep}{1pt}%
+\marginpar{\vspace{.5\baselineskip}\tiny\fbox{%
+\colorbox{yellow!20}{%
+\begin{minipage}{\marginparwidth}%
+#2%
+\end{minipage}}}}%
+\begin{mdframedwithfoot}
+#1%
+\end{mdframedwithfoot}
+\endgroup
+}
+}%
+{\newcommand{\edcomment}[2]{#1}
+\newcommand{\edcommentB}[2]{#1}}
+
+%%% This version allows line breaks in the text...
+
+\usepackage{comment}
+
+\usepackage{eurosym}
+
+\usepackage{url}
+%\usepackage{apacite}            % APA style citations
+%\usepackage{apacdoc}
+
+\let\oldcite\cite
+\let\cite\citep
+\let\citeA\oldcite
+\let\citeNP\oldcite
+\let\citeyear\citeyearpar
+%\let\citeyear\cite
+
+\usepackage{amsfonts}
+
+\let\proof\relax
+\let\endproof\relax
+\usepackage{amsthm}
+%\usepackage{thmtools}
+
+\newtheoremstyle{exampstyle}
+  {\topsep} % Space above
+  {\topsep} % Space below
+  {} % Body font
+  {} % Indent amount
+  {\bfseries} % Theorem head font
+  {.} % Punctuation after theorem head
+  {.5em} % Space after theorem head
+  {\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}} % Theorem head spec (can be left empty, meaning `normal')
+
+%\declaretheoremstyle[notefont=\bfseries]{boldthm}
+
+%\declaretheorem[style=nopar]{theorem}
+
+\theoremstyle{exampstyle}
+
+\newtheorem{ex}{Example}
+\newtheorem{ep}{Episode}
+
+\newtheorem{defn}{Definition}
+
+\newtheorem*{ndef}{Definition (The serendipity potential of a system)}
+
+\newtheoremstyle{named}{.2\topsep}{}{\itshape}{}{\bfseries}{.}{}{}
+\theoremstyle{named}
+
+
+\usepackage{dialogue}
+\usepackage{placeins}
+\usepackage{tikz}
+%\usepackage{onimage}
+\usetikzlibrary{positioning,backgrounds,fit,arrows,shapes,shadows,calc}
+\usetikzlibrary{shapes.multipart,shapes.geometric,decorations.markings,decorations.shapes,decorations.pathmorphing,shadows}
+\usepackage{wrapfig}
+
+\usepackage{hieroglf}
+
+\usepackage[inline]{enumitem}
+\newlist{compitem}{itemize*}{4}
+\setlist[compitem,1]{nolistsep,label={},afterlabel={}, itemjoin = {\nobreakspace}}
+
+\usepackage{framed}
+
+% \hypersetup{hidelinks}
+
+\usepackage[xspace,mla]{ellipsis}
+
+\definecolor{myyellow}{RGB}{242,226,149}
+\definecolor{mygreen}{RGB}{144,238,144}
+\definecolor{mypink}{RGB}{255,182,193}
+\definecolor{myorange}{RGB}{255,165,0}
+\definecolor{myblue}{RGB}{0,204,204}
+
+\usepackage{xparse}
+\NewDocumentCommand\StickyNote{O{4cm}mmO{4cm}}{%
+\begin{tikzpicture}
+\node[
+drop shadow={
+  shadow xshift=2pt,
+  shadow yshift=-4pt
+},
+inner xsep=7pt,
+fill=#2,
+xslant=-0.05,
+yslant=0.05,
+inner ysep=10pt
+] {\parbox[t][#1][c]{#4}{#3}};
+\end{tikzpicture}%
+}
+
+%\urldef{\mailsa}\path|{j.corneli,s.colton}@gold.ac.uk|
+%\urldef{\mailsb}\path|a.pease@dundee.co.uk|
+
+%% \newcommand{\keywords}[1]{\par\addvspace\baselineskip
+%% \noindent\keywordname\enspace\ignorespaces#1}
+%\usepackage[colorlinks=false,allcolors=black]{hyperref}
+\usepackage{hyperref}
+
+\usepackage{tabularx}
+%\usepackage{array}
+\newcommand{\tcap}[1]{
+\begin{minipage}{.7in}
+{\centering #1 \par}
+\end{minipage}
+}
+
+\newcommand{\inlineitem}[1]{%
+\begingroup%
+\setlength\itemindent{-1em}%
+\item[]%
+\begin{minipage}{.96\textwidth}%
+#1%
+\end{minipage}%
+\endgroup
+}
+
+
+%% overriding ``draft'' behaviour
+%\hypersetup{final}
+
+% Patch for just citing years are cited
+\usepackage{etoolbox}
+
+\makeatletter
+
+% Patch case where name and year are separated by aysep
+\patchcmd{\NAT@citex}
+  {\@citea\NAT@hyper@{%
+     \NAT@nmfmt{\NAT@nm}%
+     \hyper@natlinkbreak{\NAT@aysep\NAT@spacechar}{\@citeb\@extra@b@citeb}%
+     \NAT@date}}
+  {\@citea\NAT@nmfmt{\NAT@nm}%
+   \NAT@aysep\NAT@spacechar\NAT@hyper@{\NAT@date}}{}{}
+
+% Patch case where name and year are separated by opening bracket
+\patchcmd{\NAT@citex}
+  {\@citea\NAT@hyper@{%
+     \NAT@nmfmt{\NAT@nm}%
+     \hyper@natlinkbreak{\NAT@spacechar\NAT@@open\if*#1*\else#1\NAT@spacechar\fi}%
+       {\@citeb\@extra@b@citeb}%
+     \NAT@date}}
+  {\@citea\NAT@nmfmt{\NAT@nm}%
+   \NAT@spacechar\NAT@@open\if*#1*\else#1\NAT@spacechar\fi\NAT@hyper@{\NAT@date}}
+  {}{}
+
+\makeatother
+
+% color for links
+
+\makeatletter
+\AtBeginDocument{%
+    \newlength{\temp@x}%
+    \newlength{\temp@y}%
+    \newlength{\temp@w}%
+    \newlength{\temp@h}%
+    \def\my@coords#1#2#3#4{%
+      \setlength{\temp@x}{#1}%
+      \setlength{\temp@y}{#2}%
+      \setlength{\temp@w}{#3}%
+      \setlength{\temp@h}{#4}%
+      \adjustlengths{}%
+      \my@pdfliteral{\strip@pt\temp@x\space\strip@pt\temp@y\space\strip@pt\temp@w\space\strip@pt\temp@h\space re}}%
+    \ifpdf
+      \typeout{In PDF mode}%
+      \def\my@pdfliteral#1{\pdfliteral page{#1}}% I don't know why % this command...
+      \def\adjustlengths{}%
+    \fi
+    \ifxetex
+      \def\my@pdfliteral #1{\special{pdf: literal direct #1}}% isn't equivalent to this one
+      \def\adjustlengths{\setlength{\temp@h}{-\temp@h}\addtolength{\temp@y}{1in}\addtolength{\temp@x}{-1in}}%
+    \fi%
+    \def\Hy@colorlink#1{%
+      \begingroup
+        \ifHy@ocgcolorlinks
+          \def\Hy@ocgcolor{#1}%
+          \my@pdfliteral{q}%
+          \my@pdfliteral{7 Tr}% Set text mode to clipping-only
+        \else
+          \HyColor@UseColor#1%
+        \fi
+    }%
+    \def\Hy@endcolorlink{%
+      \ifHy@ocgcolorlinks%
+        \my@pdfliteral{/OC/OCPrint BDC}%
+        \my@coords{0pt}{0pt}{\pdfpagewidth}{\pdfpageheight}%
+        \my@pdfliteral{F}% Fill clipping path (the url's text) with
+                           % current color
+        %
+        \my@pdfliteral{EMC/OC/OCView BDC}%
+        \begingroup%
+          \expandafter\HyColor@UseColor\Hy@ocgcolor%
+          \my@coords{0pt}{0pt}{\pdfpagewidth}{\pdfpageheight}%
+          \my@pdfliteral{F}% Fill clipping path (the url's text)
+                             % with \Hy@ocgcolor
+        \endgroup%
+        \my@pdfliteral{EMC}%
+        \my@pdfliteral{0 Tr}% Reset text to normal mode
+        \my@pdfliteral{Q}%
+      \fi
+      \endgroup
+    }%
+}
+\makeatother
+
+\setlength{\parskip}{0pt}
+\setlength{\parsep}{0pt}
+%\setlength{\headsep}{0pt}
+\setlength{\topskip}{0pt}
+\setlength{\topmargin}{0pt}
+\setlength{\topsep}{0pt}
+\setlength{\partopsep}{0pt}
+\raggedbottom
+
+\setcounter{tocdepth}{2}
+
+%\renewcommand{\bibsection}{\section{\bibname}}
+
+\newcommand{\rev}[1]{{\sf\textcolor{cerulean}{\MakeUppercase{#1}}}}
+
+% \usepackage{csquotes}
+%\MakeOuterQuote{"}
+
+\DeclareRobustCommand\mytikzcircle{\tikz{\node[draw,circle]{};}}
+\DeclareRobustCommand\mytikzsquare{\tikz{\node[draw,regular polygon,regular polygon sides=4,scale=.9]{};}}
+\DeclareRobustCommand\mytikztriangle{\tikz{\node[draw,regular polygon,regular polygon sides=3,scale=.6]{};}}
+
+\DeclareRobustCommand\mylgsquare{\tikz{\node[draw=gray30,fill=gray30,regular polygon,regular polygon sides=4,scale=.9]{};}}
+\DeclareRobustCommand\mydgsquare{\tikz{\node[draw=gray70,fill=gray70,regular polygon,regular polygon sides=4,scale=.9]{};}}
+
+\DeclareRobustCommand\evaluationcomposite{\tikz{\begin{scope}
+\node[draw,circle] (eventD) {};
+\node[right=.1cm of eventD,draw,regular polygon,regular polygon sides=4] (explanationD) {};
+\node[right=.13cm of explanationD,draw,regular polygon,regular polygon sides=3,scale=.65,yshift=-.08cm] (problemD) {};
+\node[left=.01cm of eventD,xshift=.1cm] (evaluation1) {$v($};
+\node[right=1.07cm of evaluation1] (evaluation2) {$)$};
+\coordinate[right=1.15cm of evaluation1] (evaluationO);
+\end{scope}}}
+
+\DeclareRobustCommand\evaluationcompositeinternal{\tikz{\begin{scope}
+\node[draw,circle] (eventD) {};
+\node[right=.1cm of eventD,draw,regular polygon,regular polygon sides=4] (explanationD) {};
+\node[right=.13cm of explanationD,draw,regular polygon,regular polygon sides=3,scale=.65,yshift=-.08cm] (problemD) {};
+\end{scope}}}
+
+\makeatletter
+\newcommand*{\shifttext}[2]{%
+  \settowidth{\@tempdima}{#2}%
+  \makebox[\@tempdima]{\hspace*{#1}#2}%
+}
+\makeatother
+
+\usepackage{mathtools}

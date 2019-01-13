@@ -1,0 +1,184 @@
+\section{Conclusions} \label{sec:conclusion} 
+
+%% In this paper, drawing on previous literature on serendipity and
+%% creativity (Section \ref{sec:literature-review}) we have assembled a
+%% process-oriented model of serendipity in computational systems
+%% (Section \ref{sec:our-model}). Table \ref{tab:model-summary-table} summarises the model.  We grounded each of the components in
+%% existing cognitive science research, and pointed to existing work that
+%% can plausibly be said to implement each of the individual components
+%% (summarised in Table \ref{tab:model-summary-table}).  While it does
+%% not seem that any one system yet combines all of the features, in
+%% Section \ref{sec:computational-serendipity}, we show how our model
+%% provides a roadmap for further implementation of systems with serendipitous potential.
+
+%% \subsection{Serendipity in computational systems: Potential future applications} \label{sec:computational-serendipity}
+
+%% We envisage various potential application areas for computational systems with serendipitous potential. 
+
+%% %In this section, we first describe several areas in, or adjacent to,
+%% %the field of computing, in which the phenomenon of ``serendipity''
+%% %already plays a role.  We then focus on some specific directions for
+%% %development of such systems.  We consider the system's autonomy and
+%% %the user's involvement as more or less complementary variables.
+
+%% Areas for serendipity of interest to artificial intelligence researchers
+%%  include the following
+%% \cite{aisbq-serendipity-symposium}, clustered here according to the
+%% typical role assumed by a user, if any:
+
+%% \[
+%% \hspace{.12em}
+%% \text{(A)}
+%% \hspace{1em}
+%% \begin{rcases*}
+%% \text{AI planning} \\
+%% \text{service-oriented computing} \\
+%% \end{rcases*} \text{Little direct human involvement}
+%% \]
+
+%% \[
+%% \text{(B)}
+%% \hspace{1em}
+%% \begin{rcases*}
+%% \text{information encountering} \\
+%% \text{interdisciplinary collaboration} \\
+%% \text{information retrieval} \\
+%% \text{physical computing} \\
+%% \text{social platforms} \\
+%% \text{bibliometrics} \\
+%% \end{rcases*} \text{User or users at the centre\phantom{(s)}}
+%% \]
+
+%% \[
+%% \hspace{-1.4em}
+%% \text{(C)}
+%% \hspace{1em}
+%% \begin{rcases*}
+%% \text{mining scientific literature} \\
+%% \text{computer art} \\
+%% \text{models of the research process} \\
+%% %\end{rcases*} \begin{array}{c}\text{User or users as stakeholders}\\ \text{for the program} \end{array}
+%% \end{rcases*} \text{User or users as stakeholders} 
+%% \]
+
+%% In Cluster (A), the user plays at most a minor role.  Serendipity, if
+%% it occurs, is in some sense fundamentally within the computational
+%% system.
+
+%% In Cluster (B), the user, or users, tend to play an important role in
+%% perceiving, or indeed in bringing about serendipity, but they are
+%% supported by collaboration with the computer system as this process unfolds.  The
+%% responsibilities associated with the components of our model are
+%% distributed across both user and system.  In some cases it may be
+%% possible to simulate user behaviour with an additional peripheral
+%% system or systems, e.g., a population of computational agents that
+%% interact on a social platform.  In such a case, the system may take
+%% responsibility for more of the functions in our model, as well.
+
+%% In Cluster (C), applications are being developed in which there is no
+%% user role per se, but rather, humans become stakeholders in the computational process
+%% \cite{stakeholder-groups-bookchapter}.  In particular, the
+%% ``evaluation step'' is likely to be carried out from several
+%% perspectives: serendipity, in terms of our model, may take place in
+%% the system or its stakeholders, or both.
+
+%\subsection{Overall summary}
+
+Equipping computational systems with serendipity potential would be
+widely applicable across different artificial intelligence
+applications.
+
+To emphasise the difference between serendipity in the system and
+serendipity as a service, consider the example of {\sf Max}
+\cite{Figueiredo2001,campos2001searching}.  {\sf Max} modelled users'
+interests as word vectors, extracted from emails; these were converted
+to conceptual structures using WordNet; {\sf Max} then suggested new
+web pages for the user to read.  {\sf Max} was capable of delivering,
+albeit with low probability, recommendations deemed to be of
+considerable value.  Examples of pseudoserendipitous and serendipitous
+recommendations were supplied \cite[p.~59]{Figueiredo2001}.
+%%
+However, {\sf Max} was not ``open [to] new lines of
+investigation in the growth of knowledge''
+\cite{swanson1997interactive}, and as such could not carry out
+new use-inspired research to improve its performance.  For example,
+{\sf Max} applied \emph{term frequency-inverse document frequency}
+(tf-idf) to rank the concepts in each user-supplied document
+\cite[p.~160]{campos2001searching}---but there is no chance that the
+system, as architected, would decide to try reducing the dimensionality
+of the associated vector space, and then use declustering (like {\sf
+  Auralist} \cite{Zhang2011}) to see if this improved recommendation
+quality.  In short, the conditions that led to the historically-significant
+extension of tf-idf into \emph{latent
+  semantic analysis} (LSA) are simply not modeled in {\sf Max}, even
+though the program was built with a somewhat-similar problem in mind:
+\begin{itemize}
+\item Landauer, who pioneered LSA: ``the words that people wanted to
+  use, to give orders to computers, or to look things up, rarely
+  matched the words the computer understood'' \cite{landauer2003pasteur}.
+\item Campos and Figueiredo, creators of {\sf Max}: ``Information retrieval usually
+  assumes that the users know what they are searching for [but information can also be acquired] in an accidental, incidental, or
+  serendipitous manner'' \cite{campos2001searching}.
+\end{itemize}
+
+% complements emerging environmental/ecological approaches to AI.
+So far, our evidence is based on examples of computational systems
+which exihbit serendipity potential, but which are considerably less
+than `superintelligent'.  Broadly, rich functional models of operating
+domains will be necessary for systems to recognise their own best and
+most interesting efforts, to identify new problems, and to exploit
+serendipitous outcomes when they occur.  While {\sf DAYDREAMER} met
+the basic requirements of our model, it does not have a robust way to
+discriminate between more and less interesting daydreams.  Nor can it
+adjust its view on the world to take in new perceptions based on its
+creative process.  Similarly, while {\sf HRL} also met the basic
+requirements of the model, to make discoveries of significant value it
+would need to be revised to draw on more scientific and mathematical
+knowledge.
+
+Regarding computational serendipity, \citet{pease2013discussion}
+suggested to ``proceed with caution in this intriguing area.''  The
+current paper offers a considered view of the issues at stake.
+
+%% \begin{table}
+%% \begin{tabular}{l} \\
+%% \textbf{System-environment relationships differ widely, and develop differently.} \\
+%% \textbf{Chance can play various roles in shaping perception.} \\
+%% \textbf{The system has limited control.} \\
+%% To create the possibility for varied patterns of inference to arise, support rich interfaces.  \\
+%% To reduce constraints, allow features to be defined inductively.  \\
+%% Organise and process perceptions differently depending on the tasks undertaken.  \\
+%% \textbf{Adaptive attention is related to surprise.} \\
+%% \textbf{Learning, context, and meaning begin to arise together with attention.} \\
+%% \textbf{To some approximation, features of the environment will be attended to.} \\
+%% Attention can be understood as competition for scarce processing resources.  \\
+%% Attention can be time-delineated.  \\
+%% Competition may be less natural when we can take advantage of parallelism.  \\
+%% \textbf{Assess the data's potential for strategic usefulness.} \\
+%% \textbf{Interest is related to curiosity.} \\
+%% \textbf{Context change is a possible basis for belief revision.} \\
+%% Interest can be linked to novelty in order to inspire learning.  \\
+%% Interest can be linked to aesthetics in order to capture varied notions of fitness.  \\
+%% Beauty is in the eye of the beholder.  \\
+%% \textbf{A new model yields an improved ability to make a prediction.} \\
+%% \textbf{There are different kinds of viable explanations.} \\
+%% \textbf{The system creates an explanation of the event for itself.} \\
+%% Experiments can have limited scope and still be useful.  \\
+%% Given a sufficiently rich background, only a small amount of new data is needed.  \\
+%% Learning is less efficient, but more widely applicable, than knowing. \\
+%% Communication between agents can transfer causal information.  \\
+%% \textbf{It is sometimes necessary or desirable to go beyond explanation.} \\
+%% \textbf{Two cases: pseudoserendipity versus true serendipity: ``identifying'' or ``positing'' a problem.} \\
+%% \textbf{The bridge is transformational.} \\
+%% \textbf{A good problem can be identified by working at a meta-level.} \\
+%% Similarity, analogy, and metaphor can be used to retrieve known problems.  \\
+%% Concept blending may, but does not necessarily, help identify new problems.  \\
+%% Working across domains can give rise to intriguing ideas.  \\
+%% Experiments can give surprising insights.  \\
+%% \textbf{Affection is based on reflection.} \\
+%% Model a sense of taste. \\
+%% Allow the system to use the world. \\
+%% Allow the system to shape its own goals. 
+%% \end{tabular} 
+%% \caption{Summary of theoretical foundations (in bold) and heuristics for implementation from Section \ref{sec:our-model}\label{tab:collected-heuristics}}
+%% \end{table}

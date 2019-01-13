@@ -1,0 +1,241 @@
+%% We look forward to receiving your revised manuscript within eight weeks [from 20/04/2016, so before June 15th]
+
+%% With kind regards,
+%% Mariarosaria Taddeo, PhD
+%% Editor in Chief
+%% Minds and Machines
+
+\subsection*{RESPONSE TO REVIEWERS}
+
+Dear Dr Taddeo and reviewers:
+
+First, thanks to the reviewers for their helpful comments.  Here is a
+summary of the changes we made in response.  Before getting into
+further detail, I wish to alert you to some of the biggest changes:
+\begin{itemize}
+\item \textbf{The introduction has been completely rewritten. (pp. \pageref{sec:introduction}--\pageref{sec:contributions})} 
+\item \textbf{Table \ref{tab:theory-summary} has been introduced as a guide to prior theory in this area, and shows our work in context. (p.~\pageref{tab:theory-summary})}
+\item \textbf{The lengthy section ``Serendipity by Example'' was deleted so that we can quickly get to the main contribution.}
+\item \textbf{The ``definition of serendipity'' is now replaced with a more carefully worded ``definition of serendipity potential.'' (p.~\pageref{def:serendipity})} 
+\item \textbf{The subsection on SPECS was deleted.}
+\item \textbf{The concluding sections have been shortened and combined.}
+\end{itemize}
+
+\noindent Here, we will respond to the central issues raised by reviewers.
+
+\medskip
+
+\emph{R1: ``The logical structure of the ideas in the paper (not the
+  list of section topics) could be made clearer.''}  In order to make
+the logical structure of the paper more clear, we have completely
+rewritten and restructured the introductory section.  We also
+added Table \ref{tab:theory-summary}
+(p.~\pageref{tab:theory-summary}), which includes a summary
+of the several frameworks that we examined in our literature review, and
+contextualises the new framework we introduce.
+Throughout the paper we've added more signposting to the beginning of
+sections, to clarify how they contribute to our overall goal.  Our
+conclusions are summed up more succinctly.
+%% ``Monstrous Moonshine'' would be another interesting example to add to the survey
+
+\emph{R1: ``The status of all the concepts should be spelled out more
+  explicitly.''}  We've been careful to describe serendipity as a
+specific kind of sequence of occurrences, and to attribute ``potential
+for serendipity'' to systems.  Although it was useful for scaffolding
+our initial work, the section on ``Serendipity by Example'' seemed to
+pose an undo burden on readers.  As R2 remarked, ``\emph{I found that
+  it was difficult to grasp\ldots where they were going with the
+  paper}.''  Now the key terminology is introduced much more briefly
+along with the model in Section \ref{sec:our-model}.  We hope that
+this more succinct and precise treatment will make concepts like the
+``focus shift'' clearer.  
+
+\emph{R1: ``The definition offered for serendipity includes some
+  profound and potentially difficult concepts.''} We have revised the
+definition at the centre of the paper, so that it is more explicitly
+focused on data processing.  In our revised definition, applying the
+definition of serendipity potential requires a comparison with other
+relevant systems.  Applying the definition does present some
+challenges, and associated heuristics are discussed in Section
+\ref{specs-heuristics}.
+
+\emph{R2: ``I think because of the physicality of these examples it
+  was difficult to understand how they could be translated
+  computationally.''}  Rather than simply adding more diverse examples
+``\emph{beyond the usual suspects}'' (R2), we decided to remove this
+section entirely, so that the reader will not be bogged down and can
+jump straight into our computational examples.  In Section
+\ref{sec:by-example-summary} we provide some additional computational
+examples that help to illustrate the concepts.
+
+\emph{R1: ``OVER-INFLATED METHODOLOGY.''}  We incorporated everything
+we needed from the section on SPECS directly into the definition of
+serendipity potential.
+
+\emph{R1: ``{\upshape[T]}his seems to be a slightly obese paper with a
+  much slimmer and more focussed paper lurking within it''} As
+indicated above, the long section on ``the usual suspects'' of
+serendipity in science is now gone, and relevant examples are
+introduced briefly \emph{in situ} where they are actually used.  The
+long discussion of ``related work'' is gone, with the few most
+relevant items refactored into other sections.  The discussion/future
+work/conclusion sections have been shortened and combined.  Overall
+we've used more sections to make the structure more tangible, and
+eliminated many unnecessary digressions.  The paper now weighs in at
+28 pages instead of 33.
+
+Finally, we've made a number of other minor adjustments in response to
+the other points raised by the reviewers: among other things we
+spell-checked and proofread the paper, and fleshed out the
+bibliographic references that were missing details.  I believe you
+will find the paper much improved, and, we hope,
+suitable for publication.
+
+\bigskip
+
+\begin{flushright}Joseph Corneli (for all of the authors)
+\end{flushright}
+
+\ifdraft{
+%% We can write our response inline with the reviews
+
+\newpage
+
+\begin{itemize}
+\item serendipity on the user side vs system side
+\item 4Ps, process in social sciences? (not the usual suspects) ; information science; people? - things that aren’t too physical
+\item sum up what the contribution of the current paper is (christian)
+\item Joe to set up a ``response document'' [THIS DOCUMENT, reviews.tex in the repository]
+\end{itemize}
+
+\noindent Section by section response to Reviewer \#1:
+\begin{itemize}
+\item Reviewer 1, Sect 1: clarify concepts.  \textbf{Alison} with \textbf{Joe} and \textbf{Simon} (Section \ref{app:concepts} below) [JC: I'VE MADE A START.]
+\item Verbosity: \textbf{Christian} (Section \ref{app:verbosity} below) [FIRST PASS DONE]
+\item SPECS: \textbf{Anna} (Section \ref{app:specs} below) [SECTION DELETED, WONTFIX]
+\item misc: small points \textbf{Joe} (Section \ref{app:small} below)
+\item \textbf{All}: look at presentation at the end (Section \ref{app:presentation} below)
+\item \textbf{All}: overall Highlight - structure of paper starting from the examples / case studies. (Section \ref{app:overall})
+\item examples: \textbf{Christian}, \textbf{Joe}? (Section \ref{app:rev2} below)
+\item Reviewer 2 objections are few, mostly covered in response to reviewer 1.
+\item NEED TO GET THIS DONE BY THE END OF MAY
+\end{itemize}
+
+\subsection*{COMMENTS FOR THE AUTHOR}
+
+Reviewer \#1:
+This paper is very interesting, and full of thought-provoking ideas. It is far from being the definitive statement, or the last word, on formal models of serendipity, but it is a worthwhile and substantial contribution to any debate on that topic.
+
+There are several ways in which the paper could be improved.
+
+\subsection{CONCEPTS AND DEFINITIONS} \label{app:concepts}
+
+\edcomment{The logical structure of the ideas in the paper (not the list of section topics) could be made clearer.}{\textbf{Joe}: I have completely rewritten the introduction using a more structured outline that makes the anatomy of the paper much more clear.}
+
+\edcomment{The definition (p.12) classes a sequence of events (involving a system) as either an instance of serendipity or not (with no mention of degrees of serendipity). Then the operationalisation of the definition (p.13) states that serendipity can be present to varying degrees. Why is this not part of the definition, merely part of the pseudo-SPECS second stage? [JC: See \ref{note:sequence}.]}{\textbf{Joe}: I've started to address this by making the status of our \emph{dimensions} more clear.  More to do here though.\\[2mm]\textbf{Joe}: I've now revised the definition, so we define \emph{serendipity potential} and so that it is always a number in a range, degrees are implied.}
+
+\edcomment{We gradually find out that the review of systems considers not individual occurrences of serendipity, but "potential for serendipity", apparently a property of computer systems.}{\textbf{Joe}: The situation is now made clear right away in the introduction: \emph{We consequently share van Andel’s view that serendipity cannot
+be planned or programmed – exactly because, being unanticipated, this shift in focus cannot be predetermined. However, we suggest that a computational system can be designed to have greater or lesser potential for serendipitous discoveries.}} 
+
+\edcomment{Then on p.13, there are two clear mentions of a *system* (not a sequence of events) being "considered serendipitous". It would be good if "potential for serendipity" was clearly and explicitly defined, and it was clearer what sort of entity "serendipitous" applied to. (On p.21, elements of a population of data items are described as "more serendipitous than others", which blurs the picture even more.)}{We've stuck to serendipity as a specific kind of sequence of occurrences, and systems as having ``potential for serendipity,'' and have checked that this this is consistent throughout the paper.}
+
+\edcomment{There are then the additional "factors" (dynamic world, etc.) whose status not totally clear. Are these necessary conditions for something to count as serendipity, or is there a hypothesis that these factors tend to promote serendipity?  Why is "focus shift" (a.k.a. "reevaluation") a "condition", while "prepared mind" is a "component"? Overall, the logical thread of the argumentation, and the status of all the concepts, should be spelled out more explicitly.}{\textbf{Joe}: I've started to address from one angle by adding Table \ref{tab:theory-summary}, which includes a clearer summary of the frameworks that we're getting from the literature review.  I think we can use this to more clearly explain what we're doing in the ``By Example'' section.\\[2mm] \textbf{Joe}: I've continued here, adding a narrative introduction to the ``By Example'' section (Section \ref{sec:by-example}) that explains why ``focus shift'' has a special status.  What remains is to sum things up in Section \ref{sec:by-example-summary} and, in particular, to justify why we think that the different concepts don't need to be defined further.}
+
+\edcomment{The definition offered for serendipity includes some profound and potentially difficult concepts such as "prepared mind" and "sagacity" but no detailed operationalisation of these terms is offered, leaving the authors free to make their own subjective judgements about when and where these concepts appear.}{\textbf{Joe}: With the latest revisions there are fewer ``profound'' concepts in the definition, which is much more focused on data processing.  Subjective judgements are still required, these will be expanded in the Heuristics section.}
+
+\edcomment{When the authors examine specific computer systems, this allows some rather mundane aspects of these systems to be labelled as constituting "prepared mind", "sagacity", etc. What computer system could be said *not* to have a "prepared mind", given the looseness of the way this term can be used? Do any knowledge-based systems *not* manifest "sagacity"?}{These concepts are now marked as ``heuristic'' and our definition of potential for serendipity does not rely on them directly.  The central part of the definition is to compare with other relevant populations: the question is not which systems have a prepared mind, but which ones are more likely to turn an unexpected data into a favourable result.  This roots the definition of serendipity potential in computational concepts.}
+
+\edcomment{Generally, when a definition is proposed for a subtle concept like serendipity, it is useful to see how it separates the items in question into instances and non-instances. Hence, it would be interesting to apply the authors' reviewing regime to systems which are *not* promoted as "creative" or "serendipitous", but which might have many of the relevant properties. Consider, for example, a conventional multi-tasking operating system which can respond to interrupts, or an email server with a spam filter "evaluating" unexpected items.  The argument is not that these systems have potential for serendipity, but such a comparison might bring out the point that all the criteria must be met, even though some (perhaps all) of the individual conditions are  -- in the loose way that they are applied in the authors' case studies -- simply common properties of many systems.}{\textbf{Joe}: I think the relevant points are made in the new Section \ref{sec:by-example-summary}.  It's true that we could do more with these specific, super-familiar items -- maybe in the discussion/conclusion section we can wrap up with those.  Furthermore, I think the tightened-up definition and more explicit section on heuristics means that we \emph{are not} applying the criteria in a particularly loose way.}
+
+\newpage
+
+\subsection{VERBOSITY AND UNNECESSARY DISCUSSIONS} \label{app:verbosity}
+
+\edcomment{There is a certain amount of material which could usefully be pruned out of the text. The authors sometimes make quite sweeping unsubstantiated statements: 
+
+"Demonstrably gracefully behaviour in response to unexpected circumstances, and a preference for ``happy'' as opposed to ``unhappy'' outcomes may be prerequisites for the development of autonomous systems that are worthy of our trust."
+
+"If we can build systems that can communicate with us about their unexpected discoveries and reason about the value of these discoveries in a socially responsible way, then we may be reasonably confident that they will behave in an ethical manner."
+
+This gratuitous philosophising is unnecessary. The central ideas in the paper should be assessed in their own right without such speculative claims.}{\textbf{Christian}: I pruned down the introduction significantly, which also made these statements obsolete. I also tried to stress the invention / creativity aspect stronger in the intro, as this was not mentioned here before at all and seems to be an important part of our contribution. I removed entire paragraphs here; They're still in the .tex, but surrounded by \emph{\textbackslash begin\{comment\}} and 
+\emph{\textbackslash end\{comment\}}, so they're not rendered in the document.}
+
+\edcomment{Allied to this is a tendency to ramble off the topic slightly, pulling other interesting issues into the paper, such as the last paragraph on p.24, the paragraph starting "In sum..." on p.25, the final paragraph of Sect 6.1, much of the verbiage in Sect 6.2.}{\textbf{Christian}: I added some glue/signposting to the beginning of sections, to clarify how they contribute to the overall goal.}
+
+\edcomment{Sect 2 is a very pleasant and informative review of the history of "serendipity", but does not need, in the context of this paper, to be quite so long and detailed.}{\textbf{Christian}: I also shortened this, and split it up into two sections. ``Background'' didn’t sound right, so now it’s ``Serendipity: Etymology and selected definitions'' and ``Serendipity, Invention and Creativity''. The previous section 4 is now called ``A computational model and evaluation framework for serendipity'' to stress the aspect of evaluation, and contains one more subsection comprising the model and working definition.}
+
+\edcomment{On the whole, this seems to be a slightly obese paper with a much slimmer and more focussed paper lurking within it.}{\textbf{Christian}: I tried to make the paper structure clearer in the intro and by changing the sec. 2 heading.  Many items that are not part of the main storyline have been removed, and the discussion/future work/conclusion sections have been shortened (and combined).}
+
+\subsection{OVER-INFLATED METHODOLOGY} \label{app:specs}
+
+\edcomment{The allusions to Jordanous' SPECS methodology are specious. In effect, the authors argue that they have defined their terms, given at least rough operational descriptions for these terms, and then stuck to their own specifications. This is just general good practice in any empirical investigation, and to promote this to the status of a special methodology is pretentious. The Jordanous articles cited may have more to say about this, particular with respect to creativity, but what has been demonstrated here -- i.e. merely being relatively careful about one's concepts when using them empirically -- is hardly a special methodology invented in recent years and attributable to Jordanous. (In fact, paragraph A on page 13 passes the buck on operationalisation, and simply repeats the abstract definition, along with an edict that the evaluator should do the work for this step.)}{\textbf{Joe}: We've incorporated everything we needed from that section into the definition of serendipity potential itself.}
+
+\subsection{MISCELLANEOUS SMALL POINTS} \label{app:small}
+
+\edcomment{What is meant by a "non zero-sum notion of value"?
+  "Zero-sum" is a term commonly used in describing games, to describe
+  the trade-offs between adversaries, but it's not obvious what is
+  meant here.}{\textbf{Joe}: if it's not obvious, then it should be
+  eliminated, since the term was meant to be illustrative; that's what
+  I've done.}
+
+\edcomment{In Sect 3.4 it was unclear how the anecdote about Semmer illustrated the general point about "dynamic world".}{\textbf{Joe}: I added a more extensive quote and narration.}
+
+\edcomment{It would help to have a bibliographic citation for the anecdote on p.10 about the Bell Labs antenna.}{\textbf{Joe}: Added}
+
+\edcomment{The first paragraph of Sect 4.2 is puzzling. The model has four measures which seem to take values which are totally ordered, perhaps even numerical. This paragraph then says that selecting a relevant comparison population means that actual values need not be used. That seems to be a non-sequitur.}{\textbf{Joe}: The paragraph was saying two things: one, that estimates are OK, and two, that estimates are obtained by making a population-based comparison. This is now clarified.}
+
+\edcomment{In the opening paragraph of Sect 5, it is not clear why, in the spell-checker example, the serendipitous computation should not be wholly attributed to the user, with the spell-checker acting as an external agency outside the user's control.}{\textbf{Joe}: Yes, that's correct, and it's made clearer now.}
+
+\edcomment{On p.23, "Current systems seek to induce serendipity by...". Do current systems have a goal of serendipity? Really??}{\textbf{Joe}: We revised the language so that intentionality isn't attributed to systems.}
+
+\subsection{PRESENTATION} \label{app:presentation}
+
+There are many typos throughout the paper. At the very least the spelling should be checked.
+
+Some of the bibliography entries lack some information (usually editors and addresses, although perhaps these are not required by this journal).
+
+
+\subsection{OVERALL} \label{app:overall}
+
+The paper needs to be tightened up.  In dealing with the authors' own ideas, there should be much more attention to detail and critical analysis. Also, there should be less in the way of speculation or digressions on to related topics.
+
+
+\subsection{Reviewer \#2} \label{app:rev2}
+In the paper, "Modelling serendipity in a computational context," the authors developed and examined, through three case studies, a computational model of serendipity. My expertise on the topic of serendipity is grounded in information science so I found this perspective on serendipity both different from what I have been accustomed to, and thought-provoking. 
+\edcomment{In information science the focus is on the perception of an experience as serendipitous by the user rather than the system, but I think the model developed by the authors shares many of the characteristics of serendipity models developed in information sciences despite the vastly different perspective.}{\textbf{Christian}: clarified in the recommender system case study.}
+
+The paper is very well-written and flows very well. The authors provide a thorough review of the relevant literature and proceed to logically explain their model. I found that it was difficult to grasp, however, where they were going with the paper until I reached the three relatively diverse case studies. There were numerous examples of serendipity provided that preceded these case studies but they all were grounded in the sciences. \edcomment{It would have been helpful to use a more diverse set of examples beyond the usual suspects (penicillin, Velcro). I think because of the physicality of these examples it was difficult to understand how they could be translated computationally.}{\textbf{Joe}: Added a progressively developed computational example.}
+
+The authors mention the relevance of serendipity in several sectors in the second paragraph of the intro, perhaps exploring some of these would help. Examples from the growing body of research on serendipity in the information sciences may prove helpful in this respect. Based on my research on serendipity, I'm not convinced that all serendipity requires invention -- but I think my definition may be broader than the authors'.
+
+I'm looking forward to reading the authors' future research on this subject.
+
+One typo: page 19, section 5.3.1 "but thar are"
+
+\subsection{Further comments}
+
+\ednote{\textbf{R1}: There are many
+  typos throughout the paper. At the very least the spelling should be
+  checked.}
+%%
+\ednote{\textbf{R1}: Some of the bibliography entries lack
+  some information (usually editors and addresses, although perhaps
+  these are not required by this journal).}
+%%
+\ednote{\textbf{R1}: The
+  paper needs to be tightened up.  In dealing with the authors' own
+  ideas, there should be much more attention to detail and critical
+  analysis. Also, there should be less in the way of speculation or
+  digressions on to related topics.}
+%%
+\ednote{\textbf{Christian}: Should we say
+  "Modelling and Evaluating..." in the title, as this is an important
+  aspect here?}  
+%%
+\ednote{\textbf{Joe}: page number for Velcro\texttrademark\ example in Roberts?}
+%%
+\ednote{\textbf{Joe}: is there a better reference for the big bang stuff?}
+%%
+\ednote{\textbf{Joe}: Double check language on intentionality/goals.}
+}{}

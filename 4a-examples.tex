@@ -1,0 +1,212 @@
+\subsection{In pursuit of serendipity: An brief account of progress with computational discovery systems} \label{sec:pursuit}
+
+In this section we will consider landmarks in a historical sequence of
+development of discovery systems created by two of the authors
+\cite{colton2002automated,pease07}.  This is treated via four
+snapshots of the development process, each of which is evaluated
+using the model, to discern the serendipity potential (if any) for
+the system described at that point in time.
+
+\begin{ex}[HR constructs the concept of the central elements in a group]\label{ex:central}
+The {\sf HR} system\footnote{Named after mathematicians Hardy (1877 - 1947) and Ramanujan (1887 - 1920).} \citet{colton2002automated} is a general purpose machine learning tool which performs automated discovery in a variety of domains. The user provides background domain knowledge describing axioms, concepts and examples, and the system uses production rules to discover new concepts.  HR then conjectures empirical relationships between concepts, and evaluates its concepts and conjectures according to a set of interestingness measures.  When working in mathematics domains, it can link to McCune's theorem prover {\sf OTTER} (Organized Techniques for Theorem-proving and Effective Research)\cite{mccune:90} and model generator {\sf MACE} (Models And Counter-Examples) \cite{mccune:macemanual,zhang}, in order to prove interesting conjectures or find counterexamples.  In early applications its basic mode of operation was entirely deterministic.
+%%
+
+One early success was in the domain of abstract algebra, in which {\sf HR} re-discovered the concept of \emph{the central elements of a group} (the set of elements in a group that commute with every element in the group) \cite{colton2002automated}.  This is a core concept in Group Theory that appears in most if not all basic textbooks on the subject.  HR discovered this concept by applying its {\em compose}, {\em exists} and {\em forall} production rules in the following way:  
+
+\begin{align*}
+\left.
+\begin{array}{c}
+{[}a,b,c{]} : a*b=c\\
+{[}a,b,c{]} : a*b=c
+\end{array}
+\right\}\:\:
+&\mathbf{compose}\rightarrow [a,b,c] : a*b=c \:\text{\emph{\&\&}}\: b*a=c\\
+&\mathbf{exists}\rightarrow [a,b] : \text{exists}\ c\ (a*b=c \:\text{\emph{\&\&}}\: b*a=c)\\
+&\mathbf{forall}\rightarrow [a] : \text{all}\ b\ (\text{exists}\ c\ (a*b=c \:\text{\emph{\&\&}}\: b*a=c))
+\end{align*}
+\end{ex}
+
+Relative to our model, the operations involved do not go much beyond
+those of the pocket calculator discussed in Section
+\ref{sec:calculator}.  In addition to perceiving new conjectures
+(which it generates), we allow that these are given further attention
+(by testing them with examples and checking them with external systems),
+but in the context of our model, that is where things stop.
+
+\begin{ex}[HR refutes a boring conjecture in monoid theory]\label{ex:monoid}
+With a view to increasing the serendipity potential of {\sf HR} , Colton 
+subsequently enhanced the system so that whenever it finds a
+counterexample to a new conjecture, it tests to see whether the
+counterexample also breaks any previously unsolved open conjecture.
+In this case, the system's ``prepared mind'' takes the form of previous
+experiences, background knowledge, a store of unsolved problems, as
+well as skills and a current focus.  The new counterexample arises
+due partly to factors beyond the system's control, in particular, the
+built-in structure of the
+domain.
+%% dynamic complexity, or some other process independent of the
+%% current focus.
+This version of the system was tested in three test domains:  group theory (associativity, identity and inverse axioms), monoid theory (associativity, identity) and semigroup theory (associativity). When run in breadth first mode, i.e., with no heuristic search, during sessions with tens of thousands of production rule steps, there were no instances of open problems which were solved in this way. Amending the search strategy to random led to one instance of a newly generated counterexample solving a pre-existing conjecture in monoid theory, none at all in group theory and a handful of times in semi-group theory (there were three times when a new counterexample dispatched an open conjecture, and on one occasion, ten open conjectures were dispatched by one counterexample).  Not only was it rare, the conjectures which were disproved in this way could not be considered interesting: for instance, the monoidal conjecture which was an open problem disproved by a later counterexample was the following:
+\begin{align*}
+\forall b, c, d &\hspace{.2cm}(((b * c = d \wedge c * b = d \wedge c * d = b \wedge (\exists(e * c = d \wedge e * d = c)))\\
+&\hspace{.2cm}\leftrightarrow(b * c = d \wedge (\exists f(b * c = f)) \wedge (\exists g(g * c = b)) \wedge d * b = c \wedge c * d = b)))
+\end{align*}
+
+\noindent This conjecture does {\em not} appear in textbooks on Monoid Theory.
+\end{ex}
+
+Alongside the attributes of perception and attention that were present
+in Example \ref{ex:central}, we now have evidence of a focus shift,
+since every newly-disproved conjecture is considered in the context of
+each open conjecture, a potentially long series of (rather limited)
+recontextualisations.  However, this evidence must be seen as rather
+weak, since the same basic routine happens with each disproved
+conjecture, whereas one might expect a true recontextualisation would
+be data-specific.
+%%
+The explanation phase is somewhat better represented (namely via the
+demonstration that the counterexample refutes the earlier conjecture)
+but the bridge is wholly missing, so the system's findings can only be
+regarded as path-dependent rather than serendipitous.
+
+Note, as well, that mathematical theorems are generally more important
+than disproved conjectures, and that the conjectures that were being
+disproved were very unlike the ones that might appear in a textbook on
+abstract algebra.  So, evidence for the valuation phase would also be
+quite weak, if everyday standards of mathematical value were applied.
+
+\begin{ex}[HRL undiscovers the platypus]\label{ex:platypus}
+{\sf HRL} was an adaptation of {\sf HR}, developed by \citet{pease07} and 
+based on a theory of argumentation that acknowledges the role of conflict and ambiguity in mathematical discovery.  The theory, based on the work of
+\citet{lakatos}, can also be used to describe (some) real-world
+discoveries in mathematics.  {\sf HRL} is a distributed system,
+comprised of ``student'' and ``teacher'' agents, each running a copy
+of Colton's {\sf HR}.  The systems have different input knowledge,
+measures of interestingness, and different ways of producing concepts.
+The overall system is organised into independent work phases, and
+discussion phases, in which conjectures, concepts, and counterexamples
+are communicated.  Students react to counterexamples using Lakatos's
+methods.  One such discussion, developed around a simple theory of
+animals, progressed as follows:
+\begin{itemize}
+\item[\emph{A}:] ``There does not exist an animal which produces milk and lays eggs.''
+\item[\emph{B}:] ``The platypus does''
+\item[\emph{A}:] {[}Checks new object against current theory. Finds it breaks 11\% of its conjectures{]}\newline ``The platypus is not an animal''
+\item[\emph{B}:] {[}Finds that the platypus breaks 31\% of its own conjectures.{]}\newline ``Okay - I'll accept that.''
+\end{itemize}
+\end{ex}
+
+We will discuss this example together with the following:
+
+\begin{ex}[HRL formulates Goldbach's Conjecture]\label{ex:goldbach}
+The same system could also do theory formation in basic number theory.
+Here is another dialogue:
+\begin{itemize}
+\item[\emph{A}:] {[}Knows: numbers 10-20, integer, div, mult{]}\newline ``All even numbers are the sum of two primes.''
+\item[\emph{B}:] {[}Knows: numbers 0-10, integer, div, mult{]}\newline ``2 is not the sum of two primes.''
+\item[\emph{A}:] {[}Checks new object against current theory. It fits well and doesn't break any further conjectures{]}\newline ``Okay - I'll accept that 2 is a number. Then my conjecture is `All even numbers except 2 are the sum of two primes'.''
+\end{itemize}
+\end{ex}
+
+Let's consider whether either of examples 3 and 4 meet our criteria.
+%%
+The system's basic perceptual abilities again rely on its generative
+methods, drawing where relevant on external systems.  Agents develop
+concepts, conjectures, theorems, and examples that are given
+preliminary assessments: the most interesting findings are shared
+during the ``discussion phase''.  This is reasonable evidence of
+attention.  We saw evidence of a limited focus shift even for {\sf HR}
+in Example \ref{ex:monoid}; somewhat more convincing context- and
+data-specific behaviour is illustrated with {\sf HRL}'s agent model,
+since each agent is working with its own theory, and can independently
+decide what to do with the evidence shared by the other agents.
+Causal models are established using external systems, which produce
+proofs or check for counterexamples.  This allows the system to
+generate simple explanations, for example, Agent \emph{A}'s assertion
+that ``The platypus is not an animal.''
+%%
+In Example \ref{ex:platypus}, this explanation is simply accepted, but
+in Example \ref{ex:goldbach}, Agent \emph{A} uses \emph{B}'s
+counterexample to produce a new conjecture.  The reasoning can be seen
+as a bridge to a new problem:
+\begin{quote}
+``All even numbers are the sum of
+two primes.''\:$\rightarrow$\:``2 is not the sum of two
+primes.''\:$\rightarrow$\:``All even numbers except 2 are the sum of two
+primes.'' 
+\end{quote}
+This conjecture is considered interesting by the system for roughly
+the same reason it is historically interesting: it is succinctly
+stated but continues to evade proof.  However, since the conjecture
+is already well known (and remains unproved), the simple
+fact of its reformulation by {\sf HRL} has little chance of 
+receiving the kind of recognition given to original mathematical
+discoveries---of the sort that have in fact been made with {\sf HR}
+\cite{colton2007computational}.
+
+\subsection{Summary}
+%%% Maybe stress here briefly how we differ from Pease et al's earlier paper in which the GH system was evaluated more positively?
+%% As Table \ref{tab:systems-analysis} shows, our model
+%% can effectively discriminate between systems that have little or no
+%% potential to be serendipitous, and computational or interactive
+%% systems that possess serendipity potential.
+%%
+{\sf DAYDREAMER} meets our criteria for \emph{serendipity in the
+  system}, though two are only met weakly.  {\sf Colloquy of Mobiles}
+meets the criteria only when viewed as a system for \emph{serendipity
+  as a service.}  {\sf HRL} seems to have serendipity potential,
+though our analysis here shows that in itself this does not
+immediately confer tangible benefits over its predecessor system.
+
+Negative examples can also be readily supplied.
+
+The serendipity potential of {\sf DAYDREAMER} and {\sf Colloquy of
+  Mobiles} might be increased in further rounds of prototyping.
+%%
+The source code for {\sf DAYDREAMER} is
+online,\footnote{\url{https://github.com/eriktmueller/daydreamer}} and
+\citet{pangaro2018serendipity} are building {\sf Colloquy of Mobiles
+  2018} using contemporary technologies, intending to ``open-source
+everything found and everything generated, including CAD numerical
+models and engineering drawings''---so such progress may indeed be
+possible.
+ 
+The model also highlights areas where there is further room for improvement
+that could confer specific advantages.
+In particular, in future development, the system might be redesigned to make more
+interesting focus shifts, e.g., rather than undiscovering the
+platypus, the system might invent the category of monotremes and look
+for any evidence of further examples.  Such a requirement would push
+back on the perception phase, since the system might need to select
+appropriate sources of data to search for examples.  Taken together,
+this description of {\sf HR} and {\sf HRL} shows how a sequence of
+development can unfold, bringing the features that our model
+describes online one by one, and strengthening them over time.
+
+%% \paragraph{Environmental factors}
+%% \begin{itemize}
+%% \item Dynamic world: 
+%% \item Multiple contexts: Reasoning could operate across different domains, eg one agent in number theory, one in group theory.
+%% \item Multiple tasks: 
+%% \item Multiple influences: This is a multi-agent system, where
+%% multiple software agents with different knowledge and goals
+%% interact.
+%% \end{itemize}
+
+%% \paragraph{Skills of the discoverer in the computational case}
+
+%% \begin{enumerate}
+%% \item Prepared mind: the agent's background knowledge,
+%% developed theory, store of unsolved problems, set of
+%% production rules, interestingness measure, and revision
+%% techniques, and current focus 
+%% \item Perception of the new event is when agent receives the
+%% conjecture ``all even numbers are the sum of two primes''.
+%% Agent pays attention to the conjecture by re-constructing
+%% it in order to put it into context with its existing theory
+%% \item Bridge: the agent performs the theory formation step to
+%% get the new (modified) conjecture. 
+%% \item Result: 
+%% \end{enumerate}
+
+%% \paragraph{The value of the discovery in the computational case}

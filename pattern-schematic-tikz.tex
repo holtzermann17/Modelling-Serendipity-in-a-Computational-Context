@@ -1,0 +1,44 @@
+\begin{center}
+\begingroup
+\tikzset{
+block/.style = {draw, fill=white, rectangle, minimum height=3em, minimum width=3em},
+tmp/.style  = {coordinate}, 
+sum/.style= {draw, fill=white, circle, node distance=1cm},
+input/.style = {coordinate},
+output/.style= {coordinate},
+pinstyle/.style = {pin edge={to-,thin,black}}
+}
+
+\begin{tikzpicture}[auto, node distance=2cm,>=latex']
+    \node [sum] (A-sum1) {};
+    \node [input, name=pinput, above left=.7cm and .7cm of A-sum1] (A-pinput) {};
+    \node [input, name=tinput, left=2.2cm of A-sum1] (A-tinput) {};
+    \node [input, name=minput, below left of=A-sum1] (A-minput) {};
+    \node [input, name=minput, right of=A-sum1] (A-moutput) {};
+
+    \draw [->] (A-pinput) -- node{{\footnotesize% $p$:
+                                   problem}} (A-sum1);
+    \draw [->] (A-tinput) -- node{\vphantom{{\footnotesize g}}{\footnotesize% $T$:
+                                                                 context~}} (A-sum1);
+
+    \node [sum, right=2.3cm of A-sum1] (B-sum1) {};
+    \node [input, name=pinput, above left=.7cm and .7cm of B-sum1] (B-pinput) {};
+    \node [input, name=tinput, left of=B-sum1] (B-tinput) {};
+    \node [input, name=minput, below left of=B-sum1] (B-minput) {};
+    \node [sum, right=2cm of B-sum1] (B-sum2) {};
+
+    \node [input, name=minput, right of=B-sum2] (B-moutput) {};
+    \draw [->] (B-pinput) -- node{{\footnotesize% $p^{\prime}$:
+        \vphantom{{\footnotesize p}}rationale}} (B-sum1);
+
+    \draw [->] (A-sum1) -- node{\vphantom{{\footnotesize g}}{\footnotesize %$T^{\star}$:
+                                                               solution~~}} (B-sum1);
+
+    \draw [->] (B-sum1) -- node{\vphantom{{\footnotesize g}}{\footnotesize % $R$:
+                                                               pattern}} (B-sum2);
+    \draw [->] (B-sum2) -- node[text width=1.5cm,execute at begin node=\setlength{\baselineskip}{1ex}]{\footnotesize % $|R|>0$:
+                                                                                                       \emph{new~shared\\knowledge}} (B-moutput);
+\end{tikzpicture}
+
+\endgroup
+\end{center}

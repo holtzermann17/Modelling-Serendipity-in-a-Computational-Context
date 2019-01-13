@@ -1,0 +1,101 @@
+\begingroup
+\tikzset{
+pblock/.style = {font={\ttfamily},rectangle split, rectangle split horizontal,
+                 rectangle split parts=3, rectangle split part fill={gray,white,gray}},
+eblock/.style = {font={\ttfamily},rectangle split, rectangle split horizontal,
+                 rectangle split parts=1, rectangle split part fill={gray,white,gray}}
+}
+
+\begin{tikzpicture}
+    % PERCEPTION
+    \node [pblock] (perception)
+                              {\nodepart{one}    \phantom{3456780234567}
+                               \nodepart{two}    \phantom{123789013}
+                               \nodepart{three}  \phantom{9999012356780}};
+    \node[left=of perception.west] (perceptionL) {Perception};
+
+    % EVENT
+    \node[above=.5cm of perception.90,draw,circle] (event) {};
+    \node[right=of event.east] (eventL) {Event};
+
+    % ATTENTION
+    \node [pblock,below=of perception.west,anchor=west]
+                   (attention)
+                              {\nodepart{one}    \phantom{3456780234567}
+                               \nodepart{two}    \phantom{123789013}
+                               \nodepart{three}  \phantom{9999012356780}};
+    \node[anchor=west] (attentionL) at (attention -| perceptionL.west)  {Attention};
+
+    % INTEREST
+    \node [pblock,below=of attention.west,anchor=west]
+                   (interest)
+                              {\nodepart{one}    \phantom{3456780234567}
+                               \nodepart{two}    \phantom{123789013}
+                               \nodepart{three}  \phantom{9999012356780}};
+    \node[anchor=west] (interestL) at (interest -| perceptionL.west) {Interest};
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    % EXPLANATION
+    \node [eblock,below=of interest.west,anchor=west,rectangle split part fill={gray}]
+                   (explanation)
+                              {\nodepart{one}    \phantom{6789013561234567905600090124567999890\hspace{.4em}}};
+    \node[anchor=west] (explanationL) at (explanation -| perceptionL.west) {Explanation};
+
+    % BRIDGING
+    \node [eblock,below=of explanation.west,anchor=west,rectangle split part fill={gray}]
+                   (bridging)
+                              {\nodepart{one}    \phantom{9012346781234567913456345678023495690\hspace{.4em}}};
+    \node[anchor=west] (bridgingL) at (bridging -| perceptionL.west) {Bridging};
+
+    % VALUATION
+    \node [eblock,below=of bridging.west,anchor=west,rectangle split part fill={gray}]
+                   (valuation)
+                              {\nodepart{one}    \phantom{2290134567888127890145612345680129930\hspace{.4em}}};
+    \node[anchor=west] (valuationL) at (valuation -| perceptionL.west) {Valuation};
+
+    % EVENT+PERCEIVED
+    \node[below=1cm of event,draw,circle,double] (eventY) {};
+
+    % EVENT+CONSCIOUS
+    \node[below=2cm of event,draw,circle,double] (eventX) {};
+    \node[draw,circle,scale=.7] (eventXdec) at (eventX){};
+
+    % EVENT+FOCUS
+    \node[below=3cm of event,draw,circle,circular drop shadow,fill=white] (eventZ) {};
+
+    % EVENT+EXPLANATION
+    %% \begin{scope}[transform canvas={xshift = -.2cm}]
+    %% \node[below=4cm of event,draw,circle] (eventB) {};
+    %% \node[right=.1cm of eventB,draw,regular polygon,regular polygon sides=4] (explanationB) {};
+    %% \end{scope}
+
+    % EVENT+EXPLANATION+PROBLEM
+    %% \begin{scope}[transform canvas={xshift = -.45cm}]
+    %% \node[below=5cm of event,draw,circle] (eventC) {};
+    %% \node[right=.1cm of eventC,draw,regular polygon,regular polygon sides=4] (explanationC) {};
+    %% \node[right=.13cm of explanationC,draw,regular polygon,regular polygon sides=3,scale=.65,yshift=-.08cm] (problemC) {};
+    %% \end{scope}
+
+    % EVENT+EXPLANATION+PROBLEM+VALUATION
+    %% \begin{scope}[transform canvas={xshift = -.45cm}]
+    %% \node[below=6.4cm of event,draw,circle] (eventD) {};
+    %% \node[right=.1cm of eventD,draw,regular polygon,regular polygon sides=4] (explanationD) {};
+    %% \node[right=.13cm of explanationD,draw,regular polygon,regular polygon sides=3,scale=.65,yshift=-.08cm] (problemD) {};
+
+    %% \node[left=.01cm of eventD,xshift=.1cm] (evaluation1) {$v($};
+    %% \node[right=1.07cm of evaluation1] (evaluation2) {$)$};
+
+    %% \coordinate[right=1.15cm of evaluation1] (evaluationO);
+    %% \end{scope}
+
+    %% Flow of events
+    \path[draw,->,shorten <= 0.05cm, shorten >= 0.05cm] (event) -> (eventY);
+    \path[draw,->,shorten <= 0.05cm, shorten >= 0.05cm] (eventY) -> (eventX);
+    \path[draw,->,shorten <= 0.05cm, shorten >= 0.05cm] (eventX) -> (eventZ);
+%    \path[draw,->,shorten <= 0.07cm, shorten >= 0.05cm] (eventZ) -> (eventB);
+%    \path[draw,->,shorten <= 0.05cm, shorten >= 0.05cm] (eventB) -> (eventC);
+%    \path[draw,->,shorten <= 0.05cm, shorten >= 0.05cm] (eventC) -> (eventD);
+
+\end{tikzpicture}
+\endgroup

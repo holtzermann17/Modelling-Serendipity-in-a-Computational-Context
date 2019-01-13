@@ -1,0 +1,107 @@
+\begin{tikzpicture}[
+single/.style={draw, anchor=text, rectangle},
+]
+\node (discovery) {\textbf{\emph{Discovery:}}};
+% ``poet generates poem''
+
+
+\node[single, right=8mm of discovery.east,text width=1.5cm] (poet) {\emph{generative\\ process}};
+\node[single, right=6mm of poet.east] (poem) {$E$};
+\draw [->] (poet.east) -- (poem.west);
+
+\node[above left=1mm and -10mm of poet] (perception) {{\sf perception}};
+% \draw [->,dotted,shorten >=0.05cm,>=stealth] (perception) -- ([xshift=5mm]poet.north west);
+%\node[right=1mm of perception] (plane) {{\large\faPaperPlaneO}};
+
+% ``critic listens to poem and offers feedback''
+\node[ellipse, draw, right=9mm of poem.east,text width=1.3cm] (critic) {\emph{feedback}};
+\draw [->] (poem.east) -- (critic.west);
+\node[single, above=8mm of critic.north,text width=1.4cm] (experience) {\emph{reflective\\ process}};
+\node[draw,diamond,inner sep =.3mm, above right=4mm and 3mm of critic] (comment) {\raisebox{2mm}{$p\vphantom{^{\prime}}_1$}} ;
+\node[draw,diamond,inner sep =.3mm, above left=4mm and 3mm of critic] (reflection) {\raisebox{2mm}{$p\vphantom{^{\prime}}_2$}} ;
+
+\node[above right=2mm and 1mm of comment] (attention) {{\sf attention}};
+% \draw [->,dotted,shorten >=0.05cm,>=stealth] (attention) -- ([xshift=1mm,yshift=1mm]comment.east);
+
+\draw[->,thick] ([yshift=1mm]critic.east) to [out=0,in=270] (comment.south) ;
+\draw[->,thick] (comment.north) to [out=90,in=0] (experience.east) ;
+\draw[->,thick] (experience.west) to [out=180,in=90] (reflection.north) ;
+\draw[->,thick] (reflection.south) to [out=270,in=140] ([yshift=1.5mm]critic.west) ;
+
+% nonprinting point to use to bend curve
+\coordinate[below right=3mm and 7mm of critic] (mid1);
+
+\node[single, below left=10mm and 2mm of critic] (feedback) {$T$};
+\node[single, left=6mm of feedback] (selection) {$T^{\star}$};
+
+% \node[below left=-9mm and 1mm of selection] (subselection) {{\large\faDatabase}};
+
+\draw [-] (feedback.west) -- node[ fill=white, anchor=center, pos=0.5,font=\bfseries,inner sep=0pt,minimum size=1mm](selectionprocess){\guillemotleft} (selection.east);
+
+\node[above right=3mm and -8mm of selectionprocess] (interest) {{\sf interest}};
+%\draw [->,dotted,shorten >=0.1cm,>=stealth] (interest) -- ([xshift=-.01mm,yshift=-.01mm]selectionprocess.north);
+
+\node[below=.65cm of discovery] (focusshift) {{\small \textbf{\emph{[Focus shift]}}}};
+
+% draw the first curve into focus shift
+\draw [->] ([yshift=-1mm]critic.east) to[out=0,in=90] (mid1) to[out=270,in=0] (feedback.east);
+
+%%% Next phase
+\node[below=2.6cm of discovery] (invention) {\textbf{\emph{Invention:}}};
+
+% ``poet integrates feedback''
+\node[ellipse, draw, right=12mm of invention.east,text width=1.71cm] (integrator) {\emph{verification}};
+
+
+
+% nonprinting point to use to bend curve
+\coordinate[above left=2mm and 9mm of integrator] (mid2);
+
+
+
+\draw [->,dashed,shorten >=5pt,>=stealth] (integrator) to[in=270] (selectionprocess);
+
+% draw the second curve out from focus shift
+\draw [->] (selection.west) to[out=180,in=90] (mid2) to[out=270,in=160] (integrator.west);
+
+% ``poet asks questions about the feedback''
+
+\node[single, below=9mm of integrator.south,text width=2cm] (explainer) {\emph{experimental\\ process}};
+
+\node[draw,diamond,inner sep =.3mm, below right=4mm and 5mm of integrator] (question) {\raisebox{2mm}{$p^{\prime}_1$}};
+\node[draw,diamond, inner sep =.3mm, below left=4mm and 5mm of integrator] (answer) {\raisebox{2mm}{$p^{\prime}_2$}};
+
+\node[below left=1mm and 1mm of answer] (explanation) {{\sf explanation}};
+% \draw [->,dotted,shorten >=0.05cm,>=stealth] (explanation) -- ([xshift=-1mm,yshift=-1mm]answer.west);
+
+\draw[->,thick] ([yshift=-1mm]integrator.east) to [out=0,in=90] (question.north) ;
+\draw[->,thick] (question.south) to [out=270,in=0] (explainer.east) ;
+\draw[->,thick] (explainer.west) to [out=180,in=270] (answer.south) ;
+\draw[->,thick] (answer.north) to [out=90,in=200] ([xshift=1mm,yshift=-1.8mm]integrator.west) ;
+
+\node[yshift=1mm,single, right=10mm of integrator.east] (problem) {$M$};
+
+\draw [->] ([yshift=1mm]integrator.east) -- (problem.west);
+
+% ``poet reflects on feedback and updates codebase''
+
+\node[single, right=6mm of problem.east,text width=1.2cm] (pgrammer) {\emph{creative}\\ \emph{process}};
+\draw [->] (problem.east) -- (pgrammer.west);
+
+\node[above right=1mm and -10mm of pgrammer] (bridge) {{\sf bridge}};
+%\node[left=-1mm of bridge] (compress) {{\large\faCompress}};
+
+% \draw [->,dotted,shorten >=0.05cm,>=stealth] (bridge) -- ([xshift=1mm,yshift=1mm]pgrammer.north);
+
+\node[single, right=10mm of pgrammer.east] (solution) {$P$};
+\draw [->] (pgrammer.east) -- (solution.west);
+
+\node[single, below=6mm of solution.south,text width=1.6cm] (eval) {\emph{evaluation}\\ \emph{process}};
+\draw [->] (solution.south) -- (eval.north);
+
+\node[below left=1mm and -10mm of eval] (valuation) {{\sf valuation}};
+% \draw [->,dotted,shorten >=0.1cm,>=stealth] (valuation) -- (eval.west);
+
+\node[single, right=4mm of eval.east,text width=.3cm] (etc) {...};
+\draw [->] (eval.east) -- (etc.west);
+\end{tikzpicture}

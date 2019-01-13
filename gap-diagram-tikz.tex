@@ -1,0 +1,197 @@
+\begingroup
+\tikzset{
+pblock/.style = {font={\ttfamily},rectangle split, rectangle split horizontal,
+                 rectangle split parts=3, rectangle split part fill={gray,white,gray}}
+}
+
+\begin{tikzpicture}
+    % PERCEPTION
+    \node [pblock] (perception)
+                               {\nodepart{one}   \phantom{34567}
+                                \nodepart{two}   \phantom{123456789013333}
+                                \nodepart{three} \phantom{12345678901237}};
+    \node[left=of perception.west] (perceptionL) {Perception};
+    \node[anchor=west,xshift=-.2cm,yshift=-.4cm] at (perceptionL.west) {{\tiny
+\begin{tabular}{c@{\hspace{-.01cm}}c@{\hspace{.01em}}l}
+\textbf{w}&:& sensory field\\
+\textbf{x}&:& sensory orientation\\
+\end{tabular}}};
+
+    % EVENT
+    \node[above=.5cm of perception.90,draw,circle] (event) {};
+    \node[right=of event.east] (eventL) {Chance};
+    \node[anchor=west] (eventLL) at (event -| perceptionL.west)  {Event};
+
+    \node[anchor=west,xshift=-.2cm,yshift=-.4cm] at (eventLL.west) {{\tiny
+\begin{tabular}{c@{\hspace{-.01cm}}c@{\hspace{.01em}}l}
+\textbf{w}&:& possibility\\
+\textbf{x}&:& domain\\
+\end{tabular}}};
+
+    % CHANCE
+    \coordinate [left=1cm of event] (chance1);
+    \coordinate [right=.35cm of eventL] (chance2);
+    \path[draw,dotted,->,shorten <= 0.05cm] (event) -- (chance1);
+    \path[draw,dotted,shorten <= 0.05cm] (event) -- (eventL);
+    \path[draw,dotted,->] (eventL) -- (chance2);
+    \node[xshift=-.03cm](bar1) at (chance1){|};
+    \node[xshift=.03cm](bar2) at (chance2){|};
+
+    % ATTENTION
+    \node [pblock,below=of perception.west,anchor=west]
+                   (attention)
+                               {\nodepart{one}   \phantom{345678023456}
+                                \nodepart{two}   \phantom{1234567890246}
+                                \nodepart{three} \phantom{901234567}};
+    \node[anchor=west] (attentionL) at (attention -| perceptionL.west)  {Attention};
+    \node[anchor=west,xshift=-.2cm,yshift=-.4cm] at (attentionL.west) {{\tiny
+\begin{tabular}{c@{\hspace{-.01cm}}c@{\hspace{.01em}}l}
+\textbf{w}&:& processing resources\\
+\textbf{x}&:& focus\\
+\end{tabular}}};
+
+    % INTEREST
+    \node [pblock,below=of attention.west,anchor=west]
+                   (interest)
+                              {\nodepart{one}    \phantom{3456780234567}
+                               \nodepart{two}    \phantom{123789013}
+                               \nodepart{three}  \phantom{999901235678}};
+    \node[anchor=west] (interestL) at (interest -| perceptionL.west) {Interest};
+    \node[anchor=west,xshift=-.2cm,yshift=-.4cm] at (interestL.west) {{\tiny
+\begin{tabular}{c@{\hspace{-.01cm}}c@{\hspace{.01em}}l}
+\textbf{w}&:& experience\\
+\textbf{x}&:& curiosity\\
+\end{tabular}}};
+
+    % EXPLANATION
+    \node [pblock,below=of interest.west,anchor=west]
+                   (explanation)
+                              {\nodepart{one}    \phantom{678901356}
+                               \nodepart{two}    \phantom{12345679056}
+                               \nodepart{three}  \phantom{00090124567998}};
+    \node[anchor=west] (explanationL) at (explanation -| perceptionL.west) {Explanation};
+    \node[anchor=west,xshift=-.2cm,yshift=-.4cm] at (explanationL.west) {{\tiny
+\begin{tabular}{c@{\hspace{-.01cm}}c@{\hspace{.01em}}l}
+\textbf{w}&:& effort\\
+\textbf{x}&:& skills\\
+\end{tabular}}};
+
+    % BRIDGE
+    \node [pblock,below=of explanation.west,anchor=west]
+                   (bridge)
+                              {\nodepart{one}    \phantom{345678023456}
+                               \nodepart{two}    \phantom{1234567913456}
+                               \nodepart{three}  \phantom{901234678}};
+    \node[anchor=west] (bridgeL) at (bridge -| perceptionL.west) {Bridge};
+    \node[anchor=west,xshift=-.2cm,yshift=-.4cm] at (bridgeL.west) {{\tiny
+\begin{tabular}{c@{\hspace{-.01cm}}c@{\hspace{.01em}}l}
+\textbf{w}&:& laterality\\
+\textbf{x}&:& domain knowledge\\
+\end{tabular}}};
+
+    % VALUATION
+    \node [pblock,below=of bridge.west,anchor=west]
+                   (valuation)
+                              {\nodepart{one}    \phantom{12345680123}
+                               \nodepart{two}    \phantom{1278901456}
+                               \nodepart{three}  \phantom{2290134567888}};
+    \node[anchor=west] (valuationL) at (valuation -| perceptionL.west) {Valuation};
+    \node[anchor=west,xshift=-.2cm,yshift=-.4cm] at (valuationL.west) {{\tiny
+\begin{tabular}{c@{\hspace{-.01cm}}c@{\hspace{.01em}}l}
+\textbf{w}&:& taste\\
+\textbf{x}&:& judgement\\
+\end{tabular}}};
+
+    % EVENT+PERCEIVED
+    \node[below=1cm of event,draw,circle,double] (eventY) {};
+
+    % EVENT+CONSCIOUS
+    \node[below=2cm of event,draw,circle,double] (eventX) {};
+    \node[draw,circle,scale=.7] (eventXdec) at (eventX){};
+
+    % EVENT+FOCUS
+    \node[below=3cm of event,draw,circle,circular drop shadow,fill=white] (eventZ) {};
+
+    % EVENT+EXPLANATION
+    \begin{scope}[transform canvas={xshift = -.2cm}]
+    \node[below=4cm of event,draw,circle] (eventB) {};
+    \node[right=.1cm of eventB,draw,regular polygon,regular polygon sides=4] (explanationB) {};
+    \end{scope}
+
+    % EVENT+EXPLANATION+PROBLEM
+    \begin{scope}[transform canvas={xshift = -.45cm}]
+    \node[below=5cm of event,draw,circle] (eventC) {};
+    \node[right=.1cm of eventC,draw,regular polygon,regular polygon sides=4] (explanationC) {};
+    \node[right=.13cm of explanationC,draw,regular polygon,regular polygon sides=3,scale=.65,yshift=-.08cm] (problemC) {};
+    \end{scope}
+
+    % EVENT+EXPLANATION+PROBLEM+VALUATION
+    \begin{scope}[transform canvas={xshift = -.45cm}]
+    \node[below=6.4cm of event,draw,circle] (eventD) {};
+    \node[right=.1cm of eventD,draw,regular polygon,regular polygon sides=4] (explanationD) {};
+    \node[right=.13cm of explanationD,draw,regular polygon,regular polygon sides=3,scale=.65,yshift=-.08cm] (problemD) {};
+
+    \node[left=.01cm of eventD,xshift=.1cm] (evaluation1) {$v($};
+    \node[right=1.07cm of evaluation1] (evaluation2) {$)$};
+
+    \coordinate[right=1.15cm of evaluation1] (evaluationO);
+    \end{scope}
+
+    %% Flow of events
+    \path[draw,->,shorten <= 0.05cm, shorten >= 0.05cm] (event) -> (eventY);
+    \path[draw,->,shorten <= 0.05cm, shorten >= 0.05cm] (eventY) -> (eventX);
+    \path[draw,->,shorten <= 0.05cm, shorten >= 0.05cm] (eventX) -> (eventZ);
+    \path[draw,->,shorten <= 0.07cm, shorten >= 0.05cm] (eventZ) -> (eventB);
+    \path[draw,->,shorten <= 0.05cm, shorten >= 0.05cm] (eventB) -> (eventC);
+    \path[draw,->,shorten <= 0.05cm, shorten >= 0.05cm] (eventC) -> (eventD);
+
+    %% Controller
+    \coordinate[right=.8cm of perception.east] (Mperception);
+    \path[draw,->] (Mperception) -> (perception.east);
+
+    \coordinate[right=.8cm of attention.east] (Mattention);
+    \path[draw,->] (Mattention) -> (attention.east);
+
+    \coordinate[right=.8cm of interest.east] (Minterest);
+    \path[draw,->] (Minterest) -> (interest.east);
+
+    \coordinate[right=.8cm of explanation.east] (Mexplanation);
+    \path[draw,->] (Mexplanation) -> (explanation.east);
+
+    \coordinate[right=.8cm of bridge.east] (Mbridge);
+    \path[draw,->] (Mbridge) -> (bridge.east);
+
+    \coordinate[right=.8cm of valuation.east] (Mvaluation);
+    \path[draw,->] (Mvaluation) -> (valuation.east);
+
+    \coordinate[below=.85cm of Mvaluation] (juxt);
+
+    \coordinate (juxt2) at (Mperception |- event) ;
+    \coordinate (world) at (perception.east |- event);
+
+    \node[circle,fill=black,scale=.5] at (evaluationO) {};
+    \path[draw,-] (evaluationO) -- (juxt) -- (Mvaluation);
+
+    \path[draw,-] (Mperception) -- (Mattention) -- (Minterest) -- (Mexplanation) -- (Mbridge) -- (Mvaluation) -- (juxt2);
+    \path[draw,->] (juxt2) -> (world);
+
+   \coordinate[below=.3cm of eventX] (eventX');
+   \path [draw=gray30,decorate,decoration=snake,->] (eventX') ++(.2,0) node[circle,fill=gray30,scale=.3]{} -> ++(.7,0);
+   \path [draw=gray30,decorate,decoration=snake,->] (eventX') ++(-.2,0) node[circle,fill=gray30,scale=.3]{} -> ++(-.5,0);
+
+   \coordinate[below=.3cm of eventZ] (eventZ');
+   \path [draw=gray30,decorate,decoration=snake,->] (eventZ') ++(.2,0) node[circle,fill=gray30,scale=.3]{} -> ++(.3,0);
+   \path [draw=gray30,decorate,decoration=snake,->] (eventZ') ++(-.2,0) node[circle,fill=gray30,scale=.3]{} -> ++(-1.2,0);
+
+   \coordinate[below=.3cm of eventB] (eventB');
+   \path [draw=gray30,decorate,decoration=snake,->] (eventB') ++(.2,0) node[circle,fill=gray30,scale=.3]{} -> ++(1.2,0);
+   \path [draw=gray30,decorate,decoration=snake,->] (eventB') ++(-.2,0) node[circle,fill=gray30,scale=.3]{} -> ++(-.7,0);
+
+   \coordinate[below=.3cm of eventC] (eventC');
+   \path [draw=gray30,decorate,decoration=snake,->] (eventC') ++(.2,0) node[circle,fill=gray30,scale=.3]{} -> ++(.5,0);
+   \path [draw=gray30,decorate,decoration=snake,->] (eventC') ++(-.2,0) node[circle,fill=gray30,scale=.3]{} -> ++(-.9,0);
+   %% \path [draw,decorate,decoration=snake,->] (eventZ) -> ++(.5,-.5);
+   %% \path [draw,decorate,decoration=snake,->] (eventB) -> ++(.5,-.5);
+   %% \path [draw,decorate,decoration=snake,->] (eventC) -> ++(.5,-.5);
+\end{tikzpicture}
+\endgroup

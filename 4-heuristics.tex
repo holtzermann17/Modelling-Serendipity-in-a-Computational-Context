@@ -1,0 +1,340 @@
+\subsection{Heuristics for applying the definition of serendipity potential}\label{specs-heuristics}
+
+The constituent terms in the abstract model presented in Figure
+\ref{fig:model} are purposefully general.  A trigger, for example, is
+not defined in terms of a specific data structure, nor is a bridge
+constrained to be drawn from a specific set of reasoning techniques.
+We view such generality as a strength, but it does leave further work
+for anyone who aims to apply this model.
+%%
+The definition of serendipity potential guides the user to focus on
+five key questions:
+% $5: novitiate
+
+\begin{enumerate}
+\item \textbf{What is the comparison population?}
+\item \textbf{What kind of data could constitute a ``trigger''?}
+\item \textbf{What causes a trigger to be designated as ``interesting''?}
+\item \textbf{What class of outcomes count as a ``valuable result''?}
+\item \textbf{How are results evaluated?}
+\end{enumerate}
+
+Although the process of answering these questions may be informed by
+heuristic concepts such as a ``prepared mind,'' ``curiosity,'' and
+``sagacity,'' answers themselves should be given in computational
+terms.  Such answers will be system-specific, but the following
+general guidelines provide a starting point.
+
+\begin{newpart}{In one of the COINVENT deliverables, I promised we would include some evaluation of the COINVENT system in this document; maybe it can be a short case study or walk-through example in this section.}
+New concepts discovered through the use of the Cobble system (most
+notably, Containment Division Rings \cite{bou2015role}) can be seen as
+serendipitous findings according to our understanding of serendipity
+-- although it is important to point out that in case of CDRs the
+discovery is joint between the system and a human mathematician.  In
+the music domain, another \mbox{(pseudo-)}serendipitous outcome -- this time
+at the process level -- is our finding that ``the conceptual blending
+approach is able to create perceptually meaningful blends based on
+self-evaluation of its outcome'' \cite{zacharakis2015conceptual} using
+a relatively simple cadence description framework.
+\end{newpart}
+
+% \textbf{What is the comparison population?}
+
+\paragraph{Heuristic 1. Choose relevant populations to produce useful estimates.}
+\label{heur:1}
+Our aim is to separate success from failure in a meaningful way at
+each critical point in the process, and this can be done by figuring
+out what proportion of a relevant population is likely to meet the
+success criteria.  We need not compute exact values for $a$, $b$, $c$,
+and $d$ if we can build informative estimates.  Towards this end, we
+might choose to compare Alexander Fleming to lab biologists in
+general, or Charles Goodyear to other industrial chemists.  In
+comparison to their peers, both were highly curious about and invested
+in the specific topics they were researching
+\cite{fleming,goodyear1855gum}.  Their discoveries would accordingly
+be called ``pseudoserendipitous'' under Roberts's
+\cite{roberts} definition.  One inference we can make here is
+that $b$ should be given a rather \emph{low} rating for these
+researchers, since they knew what they were looking for, whereas only
+a relatively small proportion of biologists or chemists would
+recognise the corresponding trigger as a trigger (\emph{vide} Semmer,
+for instance).  Secondly, the pseudoserendipitous aspect of their work
+also means that, due to their perseverance and somewhat obsessive
+focus, Fleming and Goodyear had a higher than usual chance of
+encountering the trigger than members of the comparison population,
+and, so $a$, while still small, it was less small for these
+researchers than it would have been for their peers.  As mentioned
+above, if the system has multiple threads or runs multiple times, this
+may present a natural comparison population.  Note, however, that the
+comparison is only useful if the members of the population are
+sufficiently different.  Our case studies in Section
+\ref{sec:computational-serendipity} will illustrate this point.
+
+% \textbf{What kind of data could constitute a ``trigger''?}
+
+\paragraph{Heuristic 2. Find the salient features of the trigger.}
+\label{heur:2}
+How can we estimate the chance of a trigger appearing, if every potential
+trigger is unique?  Consider de Mestral's famous encounter with burrs that precipitated the invention of Velco\texttrademark.  There
+is a high chance of encountering burrs while
+out walking: many
+people have had that experience.  We can
+estimate $a$ as
+\emph{high} in this case.  What is most remarkable about de Mestral's experience is
+not that he encountered burrs -- and certainly not that he encountered
+some particularly ``special'' burrs -- but that he had the
+curiosity, resources, technical, and entrepreneurial mindset that caused him to think
+twice about the experience, and later, the sagacity (and tenacity) to
+transform his idea into a successful product using variations on
+then-current manufacturing techniques.
+%%
+More broadly, the question is not so much ``what makes this data
+intrinsically different?'' but rather, ``how does the agent's
+attention allow it to become extrinsically differentiated?''  The
+trigger may in fact be a complex object or circumstance that develops
+over a period of time -- in other words, it may be a pattern, rather
+than a unitary fact or ``datum'' that exists apart from
+interpretation.  We generally  understand patterns in terms of
+their constituent and contextual factors.
+%%
+Makri and Blandford's \cite{Makri2012a} term ``new connection''
+is apt because it suggests that the state of the ``prepared mind'' is
+important in establishing data as a trigger -- although the concept of a ``pattern identification'' may be more widely applicable.
+
+% \textbf{What causes a trigger to be designated as ``interesting''?}
+
+\paragraph{Heuristic 3. Clarify the role of embedded evaluation.}
+\label{heur:3}
+``Embedded evaluation'' is required at each of the major steps in our
+model: i.e., the system must form a preliminary assessment of
+the trigger in the process of perceiving it; centrally, it must
+re-evaluate the trigger to assign it some particular interest and
+effect a focus shift; it must make further relevant associations when
+forming the bridge; and typically, it will ascribe positive value to the final result.
+Identifying the locus of evaluative judgements can serve
+as a vital clue when applying the definition of serendipity potential, and
+especially when thinking through the focus shift.
+%%
+\emph{A focus shift happens when something that initially was uninteresting, neutral or even negative becomes interesting.}
+%%
+According to our definition of the serendipity of a system, is not
+enough to simply subject the trigger to further processing: rather, it
+needs to be classified as being ``especially interesting,'' which
+implies framing it in a new context of evaluation.
+%%
+For example, a standard spell-checking program might suggest a
+substitution that the user evaluates as especially valuable, fortuitous,
+or humorous.
+However, we would not say that spell checking system has serendipity
+potential.  Indeed, a standard spell checking program is, in itself, entirely predictable: assuming it is well-written, it provides more or less the same
+corrections that any competent speller would come up with.  It does not discriminate
+between its inputs or generated results in an especially meaningful way.  
+
+% \textbf{What class of outcomes count as a ``result''?}
+
+\paragraph{Heuristic 4. Look at long-term behaviour to the extent that this is possible.}
+\label{heur:4}
+Finally, many systems (including all of the examples that we consider
+in our case studies in Section \ref{sec:computational-serendipity})
+have an iterative aspect.  This means that the outcome of one
+processing step may serve as a trigger for, or otherwise potentiate,
+subsequent discoveries.  As Simon and Newell remarked, machines can
+improve their behaviour ``not merely by memorizing specific patterns
+of successful behaviour, but by reprogramming themselves in ways that
+parallel at least some human learning procedures''
+\cite[p.~7]{simon1958heuristic}.  Keep in mind that if learning is
+taking place, further indeterminacy may need to be introduced or else
+the behaviour could become convergent, and potentially infallible,
+precluding rather than enhancing serendipity.  It is worth emphasising
+this point: if we imagine a system that is infallible in every
+respect, it cannot be meaningfully compared to other systems.  In this
+case we can just choose $\mathcal{F}$ to be made up of the system
+itself and see that its likelihood of success is $1>\delta$.  For the
+same reason, any individual successful run taken on its own is not
+particularly informative; similarly, a long run of failures that does not
+take into account an eventual major success misses the point.
+%% 
+Long-term behaviour of fallible systems may be hard to foresee,
+but to the extent possible, it should be included in estimates of a
+system's serendipity potential.
+
+%\textbf{How are results evaluated?}
+
+\paragraph{Heuristic 5. Evaluate results in context.}
+\label{heur:5}
+As described in Heuristic 3, it is crucial that the system makes its
+own evaluations.  As per \citet[p.~7]{Makri2012a}, ``forward facing
+projections are made on the potential value of the outcome'' as the
+focus shift is effected, and again during the bridging phase.  Even
+though we also expect the system to reflect on the value of the
+outcome (e.g., via an evaluation module as in Figure \ref{fig:1b}), it
+is not strictly necessary for the system to have the last word.  The
+definition of serendipity potential requires the evaluator to step in
+with an assessment of value.  Judgements from the user or another
+party can also confirm or deny the system's evaluations.  Third-party
+judgements of value may take into account additional features of
+context that are not directly available to either the system or its
+users.
+
+  
+%% \bigskip
+
+%% With the above definition and toolkit in mind, we now tackle several
+%% examples.
+%% For example, we cannot be sure in advance if the hypothetical
+%% \emph{System C} would realise super-human intelligence, were it
+%% constructed.
+
+\subsection{A step-by-step example illustrating how the concept of serendipity potential can be applied to computational systems} \label{sec:by-example-summary}
+
+To exemplify the concepts above before turning to more detailed case studies in Section \ref{sec:computational-serendipity}, here we will consider variations on a theme from the tradition of ``computational
+discovery in mathematics'' \cite{colton2007computational}.  Broadly speaking, even though fallibility is an overarching criterion, as richer and more robust system components come online, the potential for serendipity increases.  We consider the following cases:
+%%   These system descriptions illustrate two central points: namely that
+%% all of the components are necessary in order for a system to have
+%% potential for serendipity, and that they can be active to a greater or
+%% lesser degree in different systems.  In addition, systems do not
+%% require all (or even any) of the supportive environmental factors to
+%% achieve serendipitous results, but that the presence of these factors
+%% can go along with several advantages.
+
+\begin{itemize}
+\item Zero potential for serendipity: Automatic theorem proving
+\item Low potential for serendipity: Conjecture generation
+\item Moderate potential for serendipity: Conjecture and proof generation
+\item High potential for serendipity: Mining an online domain model
+\end{itemize}
+
+\paragraph{System A.~Zero potential for serendipity -- Automatic theorem proving} 
+A user of an automatic theorem proving system typically has in mind
+the theorem for which he or she wishes to establish a formal proof.
+That is, an informal proof already exists, and when translating this
+into a formal language, only minor logical and syntax errors stand in
+the way.  These can be straightforwardly debugged.  Once the proof has
+been fully specified, the theorem prover will return a certification.
+There seems to be no chance for serendipity here, at least not on the
+system side.  Even if we were to construe an erroneous formal proof as
+a potential \textbf{trigger} for discovery, and a corresponding error
+message as a corresponding \textbf{result}, no focus shift has
+materialised, since the system does not assign special interest to any
+of its inputs.  Furthermore, the binary result (valid/invalid) is not
+likely to be particularly significant to the user, who already expects
+to correct errors until the proof ``goes through.''  Thinking
+long-term, the hoped-for proof certification may be valuable, but we
+would not call it serendipitous.
+%(e.g., \citet{hales2015formal})
+
+%% Furthermore, if the user
+%% happens to be surprised by the error message, they are unlikely to be
+%% particularly happy about it.
+
+\paragraph{System $B$.~Low potential for serendipity -- Conjecture generation}
+
+Here we focus in on the part of the mathematical thought process that generates
+conjectures, without considering proof attempts.  This was the
+historical course initially taken by the {\sf HR} project with the
+{\sf NumbersWithNames} program \cite{colton2002numberswithnames}.
+%%  --
+%% although subsequent versions of the system worked with third-party theorem
+%% provers to generate proofs \cite{colton2002hr}.
+%%
+Intuitively, {\sf NumbersWithNames} can help with ``the discovery
+part'' of mathematics \cite[p.~7]{colton2002numberswithnames}.
+%%
+The \textbf{trigger} for this system was a given integer sequence,
+which may have been chosen at random or hand-selected by a user.  The system was sometimes able to construct a \textbf{bridge} from the sequence to an
+interesting conjecture about the sequence (\emph{sans} proof), which is
+considered to be a valuable, albeit preliminary, \textbf{result}.  A
+case can be made for the system possessing a form of
+\textbf{curiosity}, which in itself is non-exceptional,
+but which stands out in comparison to the population of system users,
+who would not be so painstaking.
+Namely, each potential trigger is submitted for further processing,
+via a range of transformation rules that explore outwards
+from the triggering sequence to discover potential statements that can
+be made about it.  Only some of these are subjected to further
+processing, following a ``pruning'' step.  Identifying the
+\emph{plausible} conjectures among these requires some further
+common-sense ideas and straightforward numerical processing.
+Naturally, filtering the results list cannot guarantee that any of the
+generated plausible results will actually be of interest to the user.  Here it is
+worth emphasising that, in practice, many of the interesting results
+from {\sf NumbersWithNames} were found based on intelligent problem
+selection on the part of the system's users, who were able to supply
+a preselected sequence of interest.  Ultimately, the fact that {\sf
+  NumbersWithNames} could surface some interesting conjectures about these
+sequences suggests that it is sufficiently, if minimally, \textbf{sagacious}.  Although its preparations are mathematically non-sophisticated, its
+various forms of rule-based processing meet the most basic conditions of an elementary
+\textbf{prepared mind}. 
+%%
+{\sf NumbersWithNames} can be contrasted with standard proof checking
+software in that, after the user provided a trigger in the form of an
+input sequence, {\sf NumbersWithNames} carried out further processing
+to generate results that it could contextualise as unexpected,
+plausible, and therefore, potentially valuable.  Work with the system
+produced \emph{surprising} publishable mathematical results
+\cite{colton1999refactorable}.
+
+\paragraph{System $B^{\prime}$.~Moderate potential for serendipity -- Conjecture and proof generation}
+
+Here we consider embedding \emph{System B} within a larger system that
+is able to assess generated conjectures using a plausibility measure,
+and, on this basis, to selectively construct proof-attempts.  Later
+versions of {\sf HR} took this route.  Given a specific conjecture,
+\emph{System $B^{\prime}$} can be discriminating in its
+\textbf{curiosity} and invest further processing selectively, whereas
+\emph{System $B$} was not especially discriminating in its processing
+efforts.  In other words, automated problem selection is a key
+advantage that \emph{System $B^{\prime}$} obtains by using
+\emph{System $B$} as a submodule.  Assuming that proof attempts are
+successful reasonably often, \emph{System $B^{\prime}$} will be
+convincing in its \textbf{sagacity} as well.  Furthermore, its
+\textbf{results} will be strictly more informative than those of
+\emph{System $B$}.
+%% :\emph{System B}'s ``hit rate'' of 3\% would be much worse if the
+%% conjectures did were not filtered.
+
+\paragraph{System C.~High potential for serendipity -- Mining an online domain model} 
+In a more futuristic hypothetical example, we can imagine a system that has at its
+disposal a large database of formalised proofs, assorted mathematical
+concepts, and informal heuristics.   
+Additionally, suppose that new data in a machine-accessible format is coming online
+all the time -- perhaps the system deploys a next-generation parser on
+new papers as they are added to the mathematics Arxiv
+(cf.~\citet{ginev2009architecture}).  Such a system could have
+a large collection of open problems that it is working on at any given
+moment, which, together with the aforementioned facts and heuristic patterns,
+constitute a considerably more robust \textbf{prepared mind} than in
+the previous systems.  This system could take a highly discriminating
+approach to generating conjectures, and apply a range of mathematical
+techniques to construct \textbf{bridges} from conjecture to proof.
+%%
+Each new paper or fragment of user interaction it encounters would constitute
+a potential \textbf{trigger} for discovery.  Some of these contributions will have
+more generative potential than others.  Importantly, the system would
+be able to judge for itself whether a given \textbf{result} is globally
+new.  The fact that the system runs in an online manner 
+means that \textbf{chance} plays a prominent role for this 
+system.  However, like the previous system, this one is fallible: for
+all its background knowledge, there is no guarantee that it will find
+any worthwhile results on any given day.  Its ``hit rate'' will depend partly on the quality of
+the search strategies it uses.  It would be straightforward to
+characterise the system's search priorities using the dimension of
+\textbf{curiosity}.  Again, the system could afford to be
+discriminating, with its allocation of attention driven by an interest in
+specific problems.
+%%
+The system's heuristics for solving these problems would
+straightforwardly connect with the dimension of \textbf{sagacity}.
+One can go on to imagine a further layer of higher-order programs that would operationalise the search for new strategies
+and heuristics.  The system is clearly situated in a \textbf{dynamic
+  world}.  It can avail itself of \textbf{multiple influences} by
+reading papers from different mathematical domains.  Switching
+attention between proving new theorems and developing new search
+strategies and problem solving heuristics would give the system
+\textbf{multiple tasks} and \textbf{multiple contexts} for creativity.
+
+% \bigskip
+
+%The foregoing system descriptions illustrate two central points: namely that all of the components are necessary in order for a system to have potential for serendipity, and that they can be active to a greater or lesser degree.  We will make these assertions more precise in the following section.
+
+

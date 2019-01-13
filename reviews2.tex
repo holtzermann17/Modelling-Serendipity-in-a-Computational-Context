@@ -1,0 +1,249 @@
+%% We look forward to receiving your revised manuscript within eight weeks [from 20/04/2016, so before June 15th]
+
+%% With kind regards,
+%% Mariarosaria Taddeo, PhD
+%% Editor in Chief
+%% Minds and Machines
+
+%\newpage
+%\thispagestyle{empty}
+%\pagestyle{empty}
+
+\subsection*{RESPONSE TO REVIEWERS}
+
+Dear Dr Taddeo and reviewers:
+
+First, thanks Reviewer 1 for these further comments.  Here is a
+summary of the changes that we made in response.
+
+\bigskip
+
+\rev{Reviewer \#1: The authors have made a good start on transforming their original submission into a clearer article, with fewer digressions and more explanation of their proposals. However, there is still some way to go before the draft is of a suitable standard for journal publication. Some of the key concepts are still not properly defined, or are used in what seems to be an inconsistent way. Also the formal definition (of serendipity potential) is insufficiently justified, highly unclear, and its supposed application later in the paper is confusing. Here are some more details of these problems.}
+
+In line with these remarks, the main focus in our revisions has been
+to refine the definitional core of the paper.  We've developed a
+step-by-step theoretical model that is grounded in ideas from
+cognitive science (Section \ref{sec:our-model}).  This is accompanied
+by a new explanatory diagram (Figure \ref{fig:gap-diagram-tikz}).
+These changes allow us to present the central idea of a system's
+potential for serendipity in a clearer and more directly useful way.
+Among other things, we can now better elucidate the difference between
+``serendipity as a service'' and the serendipity potential of a
+system.  We exhibit this model in the case studies, drawing on the new
+graphical system for clarity, and streamlining the prose.
+%%
+In addition, we have removed a considerable amount of now-extraneous
+content, so that the case studies have been moved up to directly
+follow the definitions.
+
+% DONE JOE: Revise abstract - erase terms that we're not talking about anymore. E.g. "sagacity"?
+
+\rev{1. The justification for the content of the definition}
+
+\rev{In the discussions early in the paper, both "curiosity" and "sagacity" seem to be properties of the agent (or the agent's mind). In Fig 1(a), it is not clear that they are properties of the agent (or the mind), or what they are, functionally. They, along with "chance" and "value" (not properties of the agent) are labelled "a", "b", "c", "d". The definition at the top of p.10 then uses elements a, b, c, d, with b and c defined as proportions of the set F. Assuming these are the same a,b,c,d, then curiosity and sagacity become properties of the set F, not attributes of the specific system. This has the counter-intuitive result that the informal notions of curiosity and sagacity need to be high for serendipity to result, but the definition (via b and c) ascribes low potential for serendipity if b and c are high. P.20 contains the confusing passage "Generating a successful result through combinatorial or heuristic methods does require a moderate degree of sagacity, but over time we expect most knowledge pertaining to flowchart construction to be available equally to all agents, so we rate this factor as `high'."}
+
+We replaced the old diagram Fig 1(a) with the more detailed
+agent-centric Figure \ref{fig:gap-diagram-tikz}.  This figure has
+explicit labels and delineation of components.  The accompanying text
+explains these matters in detail.
+%
+%% TODO Also align labels in different diagrams (new one and old
+%% Fig. 2 "boxes and arrows" - potentially write T, R, etc. out?
+%% Potentially turn $p$ vs. $p'$ into $p_{\mathit{invention}}$
+%% vs. $p_{\mathit{discovery}}$?
+%
+One of the clarifications we made was to emphasise that chance plays
+multiple roles in serendipity.  First and foremost, this is how we
+model events in the world.  But we emphasise that previous experiences
+of chance events also condition the agent's ``prepared mind.''  We
+have added references to recent literature on the predictive mind to
+help explain this coupling.
+
+Along with the revised model presented in Figure
+\ref{fig:gap-diagram-tikz} and accompanying text, we have developed a
+much clearer mathematisation of serendipity potential (Definition
+\ref{def:serendipity-potential}).  This time, no reference is made to
+the comparison set ``$\cal{F}$'', and the serendipity potential of a
+system is described in terms of that system's own features.
+
+We do say some words about comparisons between and combinations of
+multiple systems in the discussion (Section \ref{sec:discussion}), but
+again, matters are now much more straightforward, because we are not
+dealing with proportions of populations.
+
+\rev{This calls into question whether the measures on p.10 are useful reflections of the ideas for which other authors have used the terms "curiosity" and "sagacity".}
+
+The earlier confusion associated with defining those variables in
+terms of the ``special'' proportion of a given population is gone.
+Indeed, the terminology itself has been significantly revised.  Our
+treatment of serendipity is now based on a more standard cognitive
+science lexicon, while emphasising the role of chance (Row 8 of Table
+\ref{tab:theory-summary}).  (And we add relevant connections to
+contemporary literature in Section \ref{sec:role-of-chance}.)
+
+\rev{More generally, it would be much clearer if the substance of the p.10 definition were justified first, rather than being simply presented. Why and how do these formal manipulations reflect the intuitive ideas behind serendipity?}
+
+We believe the narration in and interspersed between Definition
+\ref{def:foundational-terms}--Definition
+\ref{def:serendipity-potential} will help the reader develop intuition
+as the new concepts are introduced.
+
+\rev{2. The lack of clarity within the formal definition}
+
+Definition \ref{def:serendipity-potential} is both
+clearer and simpler than our earlier definition of the
+serendipity potential of a system, and also grounded on the
+preceding list of definitions.
+
+\rev{If the definition (which I'll call SPS for short) is to define the serendipity potential of a system, then the system should figure in the definition from the start. I'll call it S. The family of systems, F, should surely include S, otherwise the exercise seems a little pointless. (See 3. below for more comments about F).}
+
+A discussion of the relationship between the serendipity potential of
+a specific system and a family of systems is present in the first two
+paragraphs of Section \ref{sec:discussion}.  We do not belabour the
+point with excessive mathematical formalism.
+
+Accordingly, we will not respond directly to the following paragraphs,
+which justly criticised the old definition.  We appreciate the
+reviewer's efforts to help make sense of that definition, but
+ultimately we must agree that the earlier attempt had irreparable
+flaws.  This motivated a complete reset of the model, which makes it
+clearer and, we believe, more useful.
+
+\rev{The defn SPS focusses on a possible sequence of events involving the system(s), and so is presumably existentially quantified over possible outcomes of system runs, although this is not made explicit.}
+\rev{Defn SPS seems to consider 4 subsets of F: those which meet criterion (1), those meeting criterion (1) and (2), those meeting (1) and (2) and (3), etc.  The wording in the final paragraph (using "each of") is ambiguous -- must a system meet *at least one of* (1)-(4), or must it meet *all of* these criteria? In either case, if no runs of S ever meet this condition, then S has no SP, so the interesting (and more complicated) case is where S meets at least criterion (1). I'll take these two alternative interpretations in turn:}
+\rev{"at least one of":
+Some of the systems which meet (1) -- including our system of
+interest, S -- might never make it to the later stages
+(e.g. (3)). However, the calculation of SP is done using the values
+a,b,c which are proportions of set F, which does not take the specific
+system into account. Hence, all the systems which meet at least (1)
+have the same SP, (1 - a x b x c), even those which never make it past
+stage (1). This seems an odd outcome.}
+\rev{"all of":
+All the systems that meet (1) also reach all of stages (1)-(4). (It
+may also be that no other elements of F meet this condition -- this is
+not entirely clear.) The proportions a, b, c are therefore all the
+same, and once again, all the systems that meet at least criterion (1)
+are assigned the same SP.}
+\rev{Whichever meaning is chosen by the authors, the wording of SPS could be clarified and simplified.}
+\rev{It is not possible to propose specific amendments here, as I don't know what the authors intend.}
+
+\rev{3. Choosing the set F.}
+
+\rev{The definition gives no indication that F should be characterised by some property independent of the serendipity criteria, even though later applications of the definition (to human activities) imply that a suitable comparison class must be chosen.}
+\rev{On p.13 a scenario is considered in which "we can just choose F to be made up of the system itself", which suggests there is great freedom here. And if we can have a singleton F, then in the case of any successfully serendipitous system (or person), we can use this tactic to show that they have no SP (e.g. {Alexander Fleming}). This emphasises that SP may be relative to the comparison class, which the wording of the definition SPS should reflect.}
+\rev{It seems odd to phrase SPS as initially selecting F and then expanding it. This makes SPS fall between being a fully abstract declarative definition and an algorithm for determining SP. Also, it has the consequence that a system with no SP (i.e. not meeting the required stages) can be an element of F only if it is in the initially selected F, but cannot enter as a result of the later expansion. Thus there are two classes of elements of F -- founder members (which might be completely unserendipitous) and added members (which must meet certain serendipity-related conditions). Why should this be? Is the intention that the computation of SP must in some way consider a maximal set of eligible systems?}
+
+\rev{4. Focus shifts}
+
+We have clarified that this is just another way to talk about what
+happens when the event becoming interesting.  Definition
+\ref{def:interest} explains how a change of focus through assigning
+interest recontextualises an event.  That is: giving the event
+attention retrieves or assembles a mental context, by drawing on the
+agent's prior experience.  The corresponding shift of focus moves from
+the event in its natural context of occurrence, to the event as
+considered in this mental model.
+
+\rev{Focus shift is first mentioned on p.3, without a clear definition
+  of what is meant. Later remarks about the focus shift are often
+  ambiguous between two possible interpretations: (a) the assignment
+  of increased interest to a trigger is a necessary pre-condition for
+  a *subsequent* focus shift, which consists of further processing;
+  (b) a focus shift consists of two parts: the assignment of increased
+  interest to a trigger *and* some further processing as a result.}
+
+The new model resolves these concerns by more clearly delineating the several steps involved.
+
+\rev{In the definition SPS (p.10), the structure of clause (2) is ambiguous between these two meanings. Similarly, the wordings "a focus shift indicates that the trigger has now been discovered to be interesting", "it must re-evaluate the trigger to assign it some particular interest and effect a focus shift", "a focus shift happens when something that initially was uninteresting, neutral or even negative becomes interesting", "no focus shift has materialised, since the system does not assign special interest to any of its inputs" are all ambiguous between (a) and (b), as is the statement (p.17) that a user is "responsible" for the focus shift by creating the change in interest. On p.23, "only some ...would recognise and take interest in a given trigger... and consequently only some would effect a focus shift" leans slightly towards the meaning (a), but this is not totally clear, and in any case is rather late in the paper to be defining a key construct.}
+
+\rev{If the meaning is (b), then the SPS definition is clumsy in grouping two logically distinct steps into clause (2), making it ill-suited to describing situations where the trigger is noted as interesting but no further processing occurs, which seems to be the authors' account of the Semmer case study.}
+
+We have clarified that Semmer did everything up to but not including
+the ``bridge'' stage (p.~\pageref{def:result}).
+
+\rev{5. Triggers}
+
+We agree this term was confusing and we now talk about an `event'.  We
+do not go into this in the paper because it would be unduly confusing,
+but for clarity here: an event is what our previous revision
+(inconsistently) referred to as a `potential trigger'.
+
+\rev{Most of the text seems to imply that a trigger is, initially, an item that is allocated no particularly high level of interest. Assignment of particular interest can then happen to the trigger. However, there are some passages that imply that something takes on the status of a trigger only by virtue of this later increase in interest. For example, there are uses of the term "potential trigger", or "only a relatively small proportion of biologists or chemists would recognise the corresponding trigger as a trigger" (p.12), "the state of the `prepared mind' is important in establishing data as a trigger"(p.12). The sketch on p.9 includes the notion of "potential trigger" and "trigger", but it is unclear how/when one transforms into the other.}
+
+The new terminology avoids all of these problems: an event is simply a
+change in the world (Definition \ref{def:foundational-terms}).
+
+\rev{6. Use of formal definition}
+
+We now rely on the step-by-step presentation, schematised in our
+diagram -- rather than a probabilistic formalism.
+
+\rev{The main problem in the paper is that the authors, having offered a formal definition of SP (albeit a highly confusing one -- see above), give the impression that they will illustrate this formal model using sample cases. However, when discussing these cases, the authors stray at will from their own definitions, so that their supposedly supporting analysis are merely yet more informal discussion of serendipity. These passages contain occasional mentions of the symbols used in the SPS definition, but do not use the concepts from those definitions in a rigorous and consistent way. This completely misses the point of devising a formal model. Merely citing symbols from a formal definition does not make a vague informal discussion more rigorous.}
+
+In this revision our case studies have largely dispensed with the
+trappings of formality, while at the same time we consider the
+revision to be more intellectually rigourous: at the very least, the
+revised case studies should be much more clear.
+
+Our main changes were to add diagrams (Figure
+\ref{fig:gap-diagram-gamprovising} and Figure
+\ref{fig:gap-diagram-flowr}) and to ensure that the text clearly
+follows the linear treatment suggested by the model from Section
+\ref{sec:our-model}.  Additionally, we have simplified the case
+studies by removing the less relevant material on environmental
+factors.
+
+\rev{(i) Humans}
+
+\rev{The definition on p.10 is stated for systems, but the authors also use parts of its notation when describing illustrative examples of serendipity in human activities. It is not always clear how this is supposed to work. On p.12, it is said that the value of a would be greater for Fleming and Goodyear than for their peers. But in the formal definition, "a" is the proportion of the systems which observe a trigger, which therefore does not vary by individual.}
+
+The text that follows Definition \ref{def:foundational-terms}
+clarifies the intended scope of the definition.  Again, the components
+are no longer mapped to proportions of a population.
+
+\rev{(ii) The GAmprovising case study}
+
+\rev{The case study in section 4.1 fluctuates between two tasks: assessing (for SP) the overall  GAmprovising system, and evaluating the individual improvising agents created by GAmprovising. It seems clear that the overall system is under review in the first paragraphs of 4.1.1 and of 4.1.2, but then the 2nd paragraph of 4.1.2 seems to take the perspective of evaluating the SP of the Improvisers, not GAmprovising itself, although in a strangely muddled fashion, in which the user's guidance to GAmprovising is somehow taken as influencing the SP of the individual Improvisers. Section 4.1.3 seems to veer between the two stances.}
+\rev{A further inconsistency results from stating (p.17) that the user will be treated as part of the system, then on p.18 making the opposite assumption.}
+\rev{Overall, this case study obscures rather than illuminates the authors' ideas.}
+
+We now focus on analysing {\sf GAmprovising} as a whole, and discarded
+the attempt to re-analyse the system in terms of the aggregate of
+individual agents.  We have clarified the user's role, using a few
+additional quotes from the original paper of Jordanous.
+
+\rev{(iii) The FloWr case study}
+
+\rev{At the start of 4.2.2, one trigger source is said to be "new information arising from various streaming services", and "Specific output (e.g., from a streaming service) will only be available to a subpopulation." This is baffling, as the overview in 4.2.1 makes no mention of any functionality relating to these data resources.}
+
+We have clarified the system description, adding a brief comment about
+the {\tt Twitter} node as an example of a dynamically-updating
+service, and explaining that this behaviour complicates evaluation.
+
+\rev{The chance parameter, a, is assessed by saying that "the chance of encountering a given trigger can be rated as `high'". If the SPS definition is being followed, surely the statement should be "the proportion of systems which will encounter a given trigger is `high'". The curiosity parameter, b, is estimated by guessing that systems will attend to each new trigger in turn. But the SPS definition has b as the proportion of systems that assign *special* interest to a trigger *and* process it further as a result, which is a different condition. The sagacity is estimated not as the proportion of systems that transform the trigger into a result, but as an intuitive assessment of how much knowledge the system will have.}
+
+The confusing issues described above all arose due to the earlier
+problematic attempt to define SPS in terms of proportions.  For
+reasons remarked above we believe the current revision to the case
+study is now easier to follow.
+
+\rev{(iv) The recommender case study}
+
+\rev{The analysis does not state what the comparison set F is, but produces estimates for chance, curiosity and sagacity which seem to be based on the informal meanings of these words rather than the definitions (a,b,c) in the SPS definition (which are in terms of proportions of sets of systems). For curiosity, a particular action "could be described as curiosity", and then it is said that curiosity could be "set as a parameter", illustrating the hugely elastic nature of this concept.}
+
+Again, the terminology and logic of this case study has been adjusted.
+
+\rev{7. Overall}
+
+\rev{The current version of the paper seems to contain interesting ideas, but they have not been worked through properly, with the result that the centrepiece -- the formal definition of serendipity potential, and its relevance to serendipity as normally understood -- is incomprehensible and could not be used by a reader of this paper.}
+
+Thanks to the comments above, this revision is more coherent, and has
+more to offer.
+
+\bigskip
+
+\rev{Reviewer \#2: I am happy with the changes made by the authors of this paper. I think the authors made the paper both cleaner and clearer using the suggestions of the reviewers. I like the flow and I think the shorter version is best. I think this paper makes an important contribution to the literature and certainly introduced me to the potential contribution of computational science to serendipity.}
+
+Briefly, our latest changes aim for brevity and clarity and generally
+follow the spirit of Reviewer 2's earlier remarks.

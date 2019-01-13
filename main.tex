@@ -1,0 +1,282 @@
+% arara: pdflatex
+% arara: bibtex
+% arara: pdflatex
+% arara: pdflatex
+
+\documentclass[natbib,a4paper,preprint,number,sort&compress,times]{elsarticle} 
+
+\usepackage{preamble}
+
+\makeatletter
+\def\Cline#1#2{\@Cline#1#2\@nil}
+\def\@Cline#1-#2#3\@nil{%
+  \omit
+  \@multicnt#1%
+  \advance\@multispan\m@ne
+  \ifnum\@multicnt=\@ne\@firstofone{&\omit}\fi
+  \@multicnt#2%
+  \advance\@multicnt-#1%
+  \advance\@multispan\@ne
+  \leaders\hrule\@height#3\hfill
+  \cr}
+\makeatother
+
+\iffalse
+1) (Anna) Ground framework terms in table 1 deeper in section 2 / relate them more closely to the related work. Use words from last line of table 1 in section 2.
+2) (Christian) Stress that we focus on serendipity in the system, not system supporting serendipity in person. Stress that we do not programme serendipity, but serendipity potential. Refactor text on serendipity as a service. Cf. creativity support tools and computational creativity. We adopt similar analogy.
+3) (Joe) In section 3, define different components based on (i) theoretical (deepen) and (ii) CS literature (formal). The definition of components and how they're technically realised currently. (One stage, drawing implementations from many systems). DONE
+4) (ALL) Describe applications of this in section 4, not evaluating potential anymore. How could serendipity in system benefit researchers / users? (One system - compared against all stages from framework) Potential projects to discuss: painting fool (involve Simon!), coinvent, Mexica, etc.
+5) (Christian) Clarify major contributions in introduction / conclusion, rewrite abstract to guide our work (NB subsection added by AJ in Section 5 for conclusions to go in)
+6) (Christian) Draft figure to summarise findings in sec. 3.
+7) (Anna) revise section 5 to not be a wall of text - (make space for Christian to clarify major contributions as a conclusion - DONE)
+\fi
+
+%%% Hack to get showframe to work with landscape pages, from stack exchange
+%%% https://tex.stackexchange.com/questions/115908/geometry-showframe-landscape -JC
+%% Remove this...
+\usepackage{geometry}
+%% and replace with the following...
+
+%% \usepackage[
+%%  outer=25mm,
+%%  inner=35mm,
+%%  vmargin=20mm,
+%%  includehead,
+%%  includefoot,
+%%  headheight=15pt,
+%%   showframe
+%% ]{geometry}
+
+%% \usepackage{pdflscape}
+
+%% \makeatletter
+%% \newcommand*{\gmshow@textheight}{\textheight}
+%% \newdimen\gmshow@@textheight
+%% \g@addto@macro\landscape{%
+%%   \gmshow@@textheight=\hsize
+%%   \renewcommand*{\gmshow@textheight}{\gmshow@@textheight}%
+%% }
+%% \def\Gm@vrule{%
+%%   \vrule width 0.2pt height\gmshow@textheight depth\z@
+%% }%
+%% \makeatother
+
+%%% end of showframe hack
+
+\begin{document}
+
+\begin{frontmatter}
+
+\iffalse
+I write concerning your submission to the Artificial Intelligence journal titled “Modeling Serendipity in a Computational Context”.  After careful consideration, we have decided to decline your article for publication in the Artificial Intelligence Journal.  
+
+The topic of the paper is of great interest, as a broad understanding of intelligence must address such concepts as serendipity, creativity, innovation, and discovery.  As the authors point out, there are specific references to such notions in the AI literature but an overarching framework has been lacking. This is the focus of the article, which culminates in a framework with six phases where selected works from the literature are situated and discussed.
+
+The framework itself is valuable in that it lays the foundations for an understanding of the different aspects involved in serendipity and creativity.  However, the proposed framework lacks a formal computational basis that would be needed in order to make a strong contribution of impact to the field.  
+
+A formalism would be a key mechanism to connect with artificial intelligence research.  For example, while the Perception, Attention, Focus, and Explanation phases were not surprising, it is hard to  see that the proposed "bridge" phase to bring the serendipitous realization into a new problem area would be required.  In addition, it is not clear that one would see that phase in all problems where I would consider serendipity to occur.  For example, I would consider representation changes to be often designed through serendipity and not requiring a bridge phase to link to a new domain.  Conversely, I would consider other serendipitous discoveries having their start in that bridge phase, for example beginning the process by searching for analogies and then proceed with the Focus and Explanation phases.  Although the paper states that one can go back to previous phases, it does not mention whether and how one could start in any of them.  A clear formalism would clarify the issues raised here and be better positioned to influence the field.
+
+A formalism would also help define what is meant by different terms and clarify the concepts.  The main concepts identified as key to describe the different phases and their components are quite abstract, and their definitions are provided using terms that are also abstract.  For example, it is not clear how "context", "explanation", and "contextual explanation" relate or if they overlap.  Or the elaboration of an "inspiration" stage into "incubation" and "insight".
+
+Further formalization would also push the computational basis for the work and increase its impact.  For example, analogies are rightly recognized by the authors as a key component of serendipity.  It is discussed as a heuristic in the Bridge phase.  The work that is cited on analogy is not a formalized analogical reasoning.  It would be helpful to understand how this phase would map to computational models of analogy, such as Deidre Gentner's Structure Mapping or Manuela Veloso's derivational and transformational analogy.  Both are well-know, implemented computational frameworks for analogy, and describing how serendipity would map to such formalizations would increase the impact of the ideas presented in the article.
+
+The paper is rightly situated by the authors as philosophical foundations of AI and commonsense reasoning.  Those areas are of interest to the journal, but the papers we accept must have a clear contribution to artificial intelligence.  I have consulted with others about the article, and I am perhaps the most appreciative of all about the ideas it puts forward.  I suspect the most interesting part of the article for artificial intelligence researchers will likely be that it draws from implemented approaches and architectures to provide examples of where serendipity and creativity can be glimpsed. Examples are drawn from some of the literature in learning, robotics, and cognitive architectures.  While this would be of interest to journal readers, it is not enough of a contribution in itself to grant acceptance.
+
+Thank you for submitting your work to the Artificial Intelligence journal.  We get a large number of submissions, and our goal is to identify those submissions that will have an impact in the field.  I hope that you will continue to keep the journal in mind as a potential outlet for your best work.
+
+\hfill  Patrick Doherty
+
+\clearpage
+\fi
+
+% TITLE INFORMATION
+\title{Modelling Serendipity in a Computational Context}
+
+%% \thanks{This research was supported by the Engineering and Physical Sciences Research Council through grants EP/L00206X, EP/J004049 as well as EP/L015846/1 and the Future and Emerging Technologies (FET) programme within the Seventh Framework Programme for Research of the European Commission, under FET-Open Grant numbers: 611553 (COINVENT) and 611560 (WHIM).}
+
+\author[A,G]{Joseph Corneli\corref{cor1}\fnref{fn1}}
+\ead{joseph.corneli@ed.ac.uk}
+\author[B]{Anna Jordanous}
+\ead{a.k.jordanous@kent.ac.uk}
+\author[C,G]{Christian Guckelsberger}
+\ead{c.guckelsberger@gold.ac.uk}
+\author[D]{Alison Pease}
+\ead{a.pease@dundee.ac.uk}
+\author[C,E,G]{Simon Colton}
+\ead{s.colton@gold.ac.uk}
+
+\cortext[cor1]{Corresponding author}
+\fntext[fn1]{Present address: School of Informatics, University of Edinburgh, 10 Crichton St, Edinburgh EH8 9AB, UK}
+
+\address[A]{School of Informatics, University of Edinburgh, 10 Crichton St, Edinburgh EH8 9AB, UK}
+\address[B]{School of Computing, University of Kent, Chatham Maritime, Medway, Kent ME4 4AG, UK}
+\address[C]{School of Electronic Engineering and Computer Science, Queen Mary University of London, Mile End Road, London E1 4NS, UK}
+\address[D]{School of Science \& Engineering, University of Dundee, Dundee DD1 4HN, UK}
+\address[E]{Sensilab, Monash University, 900 Dandenong Road 
+Caulfield East Victoria 3145, 
+Australia}
+%% \institute{
+%% J.~Corneli\\
+%% School of Informatics, University of Edinburgh\\
+%% Email: joseph.corneli@ed.ac.uk \\[2mm]
+%% C.~Guckelsberger \and S.~Colton\\
+%% Department of Computing, Goldsmiths, University of London\\
+%% Email: c.guckelsberger@gold.ac.uk, s.colton@gold.ac.uk\\[2mm]
+%% A.~Jordanous\\
+%% School of Computing, University of Kent\\
+%% Email: a.k.jordanous@kent.ac.uk\\[2mm]
+%% A.~Pease\\
+%% School of Science and Engineering, University of Dundee\\
+%% Email: a.pease@dundee.ac.uk\\}
+% \date{\vspace{-1in}}%\today - revised version due 8 weeks from 20/04/2016, so before 15/06/2016
+\address[G]{Department of Computing, Goldsmiths, University of London, New Cross, London SE14 6NW, UK}
+
+\begin{abstract}
+%% Overall definition
+We understand the term serendipity to describe a creative process that
+develops, in context, with the active participation of a creative
+agent, but not entirely within that agent's control.
+%% Section 1
+While a system cannot be made to perform serendipitously on demand,
+nevertheless, we argue that its \emph{serendipity potential} can be
+increased by means of a suitable system architecture and other design choices.
+%% Section 2 
+We distil a unified description of serendipitous occurrences from
+historical theorisations of serendipity and creativity.  Whereas most
+existing research that considers serendipity in a computing context
+deals with serendipity as a service, we relate theories of serendipity
+to artificial intelligence practice and the development of autonomous
+systems.
+
+\end{abstract}
+
+\begin{keyword}
+Serendipity \sep Discovery Systems \sep Automated Programming \sep Recommender Systems \sep Computational Creativity \sep Autonomous Systems \sep Predictive Processing
+\end{keyword}
+
+\end{frontmatter}
+
+% \titlerunning{Modelling serendipity in a computational context}
+%\authorrunning{~}
+
+%\maketitle
+
+\thispagestyle{plain}
+\pagestyle{plain}
+
+\clearpage
+
+
+% * <annajordanous@gmail.com> 2017-12-15T18:35:21.454Z:
+%
+% ^.
+%\tableofcontents
+
+%\newpage
+
+%\input{abstract.tex}
+
+%\bigskip
+%\maketitle
+%\linenumbers
+% * <annajordanous@gmail.com> 2017-12-15T18:35:29.228Z:
+%
+% ^.
+% * <annajordanous@gmail.com> 2017-12-15T18:35:27.117Z:
+%
+% ^.
+\setcounter{footnote}{0}
+
+%% It occurs to me that the six sections of the paper could be used
+%% to demonstrate the six sections of the model! -Joe Dec 31 2018
+
+\input{1-introduction.tex}
+\input{2-literature.tex}
+\input{3-model.tex}
+% \input{4-heuristics.tex}
+\input{4-case-studies.tex}
+%\input{4a-examples.tex}
+\input{5-discussion}
+\input{6-conc-future-work.tex}
+
+\section*{Acknowledgements}
+
+Patrick Doherty commented on an earlier version of the paper.
+We also thank several anonymous reviewers for their feedback.
+%%
+We thank all of the participants in the ``AISB Member Workshop VII:
+Serendipity Symposium'' and ``AISB 2018 Symposium: Cybernetic
+Serendipity Reimagined'' for sharing their reflections.
+%%
+We are grateful to the AISB for supporting these two workshops
+financially and organisationally, and to Yasemin J.~Erden (St.~Mary's
+University) for further on-the-ground support that went beyond the
+call of duty.
+%% and also to Floriana Grasso (Liverpool University) for accommodating our somewhat unusual discussion format.
+%%
+We received additional financial support for the first workshop
+through the EPSRC Platform grant ``The Integration and Interaction of
+Multiple Mathematical Reasoning Processes'' (EP/N014758/1).
+%%
+Finally, we thank Ursula Martin for allowing the first author to
+devote some of his time to this paper whilst working on ``MathSoMac:
+the social machine of mathematics'' (EP/K040251/2).
+%% not sure whether to include this grant number here?
+
+% We would like to acknowledge also the contributions of several groups
+% of anonymous reviewers (see ArXiv for earlier versions).
+
+
+%\newpage
+
+%% \bigskip
+
+%% \noindent \textbf{Acknowledgement.}
+%% We appreciate the effort of our anonymous reviewers.
+
+%% here change the meaning of \VAN command
+\DeclareRobustCommand{\VAN}[3]{#3}
+
+\addcontentsline{toc}{section}{References}
+\section*{References}
+
+\bibliographystyle{plainnat}
+\bibliography{biblio}
+
+%% \newpage
+%% \appendix
+
+%% \section{Previous Versions, Reviews, and Responses}\label{sec:reviews}
+
+%% \subsection{Cognitive Computation}
+
+%% \textbf{Initial submission to Cognitive Computation:
+%% \url{https://arxiv.org/abs/1411.0440v1}}
+
+%% \noindent\textbf{Revised submission to Cognitive Computation:
+%% \url{https://arxiv.org/abs/1411.0440v2}}
+
+%% \input{cc-reviews}
+
+%% \subsection{Minds and Machines - 1st round}
+
+%% \textbf{Initial submission to Minds and Machines:
+%% \url{https://arxiv.org/abs/1411.0440v3}}
+
+%% \input{reviews}
+
+%% \subsection{Minds and Machines - 2nd round}
+
+%% \textbf{Revised submission to Minds and machines:
+%% \url{https://arxiv.org/abs/1411.0440v4}}
+
+%% \input{reviews2}
+
+%% \subsection{AISB Members Workshop VII: Serendipity Symposium}
+
+%% \textbf{Version shared at AISB workshop:
+%% \url{https://arxiv.org/abs/1411.0440v5}}
+
+%% \input{aisb-comments}
+
+\end{document}
