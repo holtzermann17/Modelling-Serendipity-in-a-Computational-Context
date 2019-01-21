@@ -39,10 +39,16 @@
 
 \RequirePackage{fix-cm}
 
+
+
 %% handle Van Andel's name properly
 % http://tex.stackexchange.com/questions/40747/bibtex-handling-of-the-dutch-van-name-prefix-with-natbib
 \DeclareRobustCommand{\VAN}[3]{#2}
 
+\usepackage{stackengine}
+
+\def\asterism{\par\vspace{1em}{\centering\scalebox{1}{%
+  \stackon[-0.5pt]{\bfseries*~*}{\bfseries*}}\par}\vspace{.5em}\par}
 
 
 %%%%%%%%%%%%%%%
