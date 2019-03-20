@@ -84,7 +84,33 @@ human actors.
 
 
 \subsection{{\sf HR} and {\sf LHR}: On the trail of serendipity} \label{sec:pursuit}
+In this section we give an account of several episodes in a historical sequence of development of the related discovery systems {\sf HR} and {\sf LHR}. We use our model to discern the serendipity potential (if any) for the system described at that stage of development.
 
+{\bf Perception:} an interface between the system and the world which selectively allows
+evidence of events to enter the system.
+
+{\bf Attention:} directs the system’s processing power to the perceived event or certain aspects
+thereof.
+
+{\bf Focus shift:} occurs if processing leads to a functional hypothesis related to the event.
+
+{\bf Explanation} uses reasoning to extend the hypothesis about the observed event to other
+events in the context within which the system operates.
+
+{\bf Bridge:}  generalises and reworks
+the explanation as a solution strategy for a problem in the system's
+operating domain.
+
+{\bf Evaluation:} The solution is
+\textbf{evaluated} according to some pre-existing objective function.
+
+We define the {\em Serendipity Potential} of a system as a tuple of the 6 possible phases and 10 possible transitions identified in []. 
+
+
+
+
+[HERE]
+\subsection{{\sf HR} and {\sf LHR}: OLD}
 In this section we give an account of several episodes in a historical sequence of development of the related discovery systems {\sf HR} and {\sf LHR}. We use our model to discern the serendipity potential (if any) for the system described at that stage of development.
 
 \begin{ep}[HR constructs the concept of the central elements in a group]\label{ex:central}
@@ -105,6 +131,9 @@ One early success was in the domain of abstract algebra, in which {\sf HR} re-di
 \end{ep}
 
 In addition to perceiving new conjectures (which it generates), we allow that these are given further attention (by testing them with examples and checking them with external systems), but in the context of our model, that is where things stop.
+
+The {\em Serendipity Potential} of HR$_{ep1}$ is 
+$<P, A_{blind}, T_{weak}(P, A)>$
 
 \begin{ep}[HR refutes a boring conjecture in monoid theory]\label{ex:monoid}
 Colton 
@@ -143,6 +172,14 @@ but the bridge is wholly missing, so the system's findings can only be
 regarded as path-dependent rather than serendipitous.
 Evidence for the valuation phase is also be
 quite weak, if everyday standards of mathematical value were applied.
+
+The {\em Serendipity Potential} of HR$_{ep2-breadth}$ is 
+$<P, A, FS,
+[T(P, FS)..]>$
+
+The {\em Serendipity Potential} of HR$_{ep2-random}$ is 
+$<P, A, FS, E, B, V_{poor}
+[T(P, A)..]>$
 
 \begin{ep}[HRL undiscovers the platypus]\label{ex:platypus}
 {\sf HRL} was an adaptation of {\sf HR}, developed by \citet{pease07} and 
@@ -212,5 +249,14 @@ fact of its reformulation by {\sf HRL} has little chance of
 receiving the kind of recognition given to original mathematical
 discoveries---of the sort that have in fact been made with {\sf HR}
 \cite{colton2007computational}.
+
+The {\em Serendipity Potential} of HRL$_{ep3}$ is 
+$<P, A, FS, E;
+T(P, A), T(A, FS), T(FS, E)>$
+
+The {\em Serendipity Potential} of HRL$_{ep4}$ is 
+
+$<P, A, FS, E, B, V;
+T(P, A), T(A, FS), T(FS, E), T(E, B), T(B, V)>$
 
 Eco suggested that if Kant had had the opportunity to observe the platypus, he would have concluded that it is ``a masterpiece of design, a fantastic example of environmental adaptation, which permitted the mammal to survive and flourish in rivers'' \cite[p.~93]{eco2000kant}.  There is quite a difference between this creative line of abductive reasoning and {\sf HRL}'s reductive approach.  However, as we have seen, given a somewhat richer background theory, {\sf HRL} was also capable of exercising something akin to reflective judgement, which it used to reinvent a famous number-theoretic conjecture.
