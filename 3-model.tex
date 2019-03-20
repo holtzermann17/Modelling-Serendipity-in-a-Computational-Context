@@ -217,7 +217,7 @@ system's sensors.
 %% \end{center}
 
 \begin{defn}\label{def:interest}
-  \hypertarget{def:interest}{} A \textbf{focus shift} occurs if processing leads to a functional hypothesis describing the event.
+  \hypertarget{def:interest}{} A \textbf{focus shift} occurs if processing leads to a functional hypothesis related to the event.
 \end{defn}
 % I'm not sure if "fitness function" is generic enough here. Rather "objective function", expressing a system's goals? You write yourself that our use is at odds with the evolutionary literature; so why do we use the term then, still?
 
@@ -298,15 +298,10 @@ system's sensors.
 %% \asterism
 %% \end{center}
 
-
-
-\begin{defn}[\textbf{Explanation: Building a predictive model}]\label{def:explanation}
-\hypertarget{def:explanation}{}By means of closer analysis,
-experimentation, discussion, or some other concerted means of
-examination devoted to the event, it now receives an
-\textbf{explanation} that predicts functional, operational, or
-statistical behaviours that relate the previously-unexpected event to
-its context.
+\begin{defn}\label{def:explanation}
+  \hypertarget{def:explanation}{} An \textbf{explanation} uses
+  reasoning to extend the hypothesis about the observed event to other
+  events in the context within which the system operates.
 \end{defn}
 % There's two fundamental mechanism to build a predictive model: a maximum likelihood estimator in classic inferential statistics, or Bayesian inference where the goal is to find the posterior p(theta|evidence) using the prior p(theta) and the likelihood p(evidence|theta). Here, theta is a (set of) parameter which characterises our model. Bayesian inference easily becomes intractable and can be approximated with Gibbs Sampling or Variational Inference, amongst others. It seems like you completely left related work out here. All of these approaches are explaines in C. M. Bishop's Pattern Recognition and Machine-Learning book. 
 %% \paragraph{\textbf{\upshape Foundations}}
@@ -373,12 +368,10 @@ its context.
 %% \asterism
 %% \end{center}
 
-\begin{defn}[\textbf{Bridge: Identifying or positing a problem}]\label{def:bridge}
-\hypertarget{def:bridge}{}The system may now create a \textbf{bridge}
-connecting the explanation of the event, generated earlier, and either
-(i) an existing problem within the domain, or else (ii) some
-previously unknown problem.  In either of cases, the explanation is
-generalised and reworked as a solution strategy.
+\begin{defn}\label{def:bridge}
+\hypertarget{def:bridge}{}A \textbf{bridge} generalises and reworks
+the explanation as a solution strategy for a problem in the system's
+operating domain.
 \end{defn}
 %% \paragraph{\textbf{\upshape Foundations}}
                                          
@@ -487,10 +480,10 @@ generalised and reworked as a solution strategy.
 %% \asterism
 %% \end{center}
 
-\begin{defn}[\textbf{Valuation: Evaluation of the solution via an existing objective function}]\label{def:result}
-\hypertarget{def:result}{}The solution to the bridged problem is positively 
+\begin{defn}\label{def:result}
+\hypertarget{def:result}{}The solution is
 \textbf{evaluated} according to some pre-existing objective function.
-This may be system-intrinsic, or specified by the system's user or a third party.
+%% This may be system-intrinsic, or specified by the system's user or a third party.
 \end{defn}
 %Ah okay, here you mention the extrinsic vs. intrinsic distinction. Anyways, my earlier suggestions still apply.
 %Is this the same objective/fitness function that we've been discussed earlier?
