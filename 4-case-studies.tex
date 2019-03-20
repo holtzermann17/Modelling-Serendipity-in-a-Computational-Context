@@ -7,7 +7,7 @@ Here we discuss three historical systems in relation to our model.
 %%% Btw, these experiments might be related: https://deepmind.com/blog/agents-imagine-and-plan/
 The {\sf DAYDREAMER} system \cite{mueller1990} was intended to provide a computational model of daydreaming.  An agent is guided to use its `imagination' to develop ideas and construct short narratives.  The principle behind {\sf DAYDREAMER} is that a planning agent can operate in a `relaxed' manner to explore possibilities in unusual ways, where the relaxation state is achieved by removing or reducing constraints on the search process that guides the exploration.  {\sf DAYDREAMER}'s exploration is driven by loosely constrained planning mechanisms which are given a pre-determined goal.
 %% The agent to construct a plan in a less-constrained manner. 
-The generated plan then becomes the basis of a narrative.
+The generated plan then becomes the basis of a fictional narrative.
 Mueller identifies a distinction between {\sf DAYDREAMER} and other comparable systems:
 \begin{quote}
 \emph{``There are certain needless limitations of most present-day
@@ -18,13 +18,12 @@ Mueller identifies a distinction between {\sf DAYDREAMER} and other comparable s
 In other words, the {\sf DAYDREAMER} system was designed to capitalise
 on the unusual or accidental {\em non-obvious} options available to
 it, which gives intuitive support for Mueller's case that it can act
-serendipitously. 
-Here is episode that illustrates how the system implemented model.
+serendipitously.
+Here is a episode that illustrates the first five steps of our model.
 \begin{quote}
-  \textbf{Perception}: \emph{``DAYDREAMER receives an alumni directory from the college she attended which happens to contain the number of Carol Burnett.''}\\
-  \textbf{Attention}: \emph{``DAYDREAMER had previously been daydreaming about contacting Harrison Ford in order to ask him out again.''}\\
-  \textbf{Focus shift}: \emph{``Serendipitously, DAYDREAMER realizes that the alumni directory is applicable to the problem of finding out the unlisted telephone number of Harrison Ford.''}\\
-  \textbf{Explanation}: \emph{``DAYDREAMER could possibly find out Harrison's telephone number by obtaining a copy of the alumni directory from the college Harrison Ford attended, if any.''} \cite[p. 125]{mueller1990}
+\textbf{Perception \& Attention}: \emph{``DAYDREAMER receives an alumni directory from the college she attended which happens to contain the number of Carol Burnett.''}\\
+\textbf{Focus shift \& Explanation}: \emph{``DAYDREAMER had previously been daydreaming about contacting Harrison Ford in order to ask him out again. Serendipitously, DAYDREAMER realizes that the alumni directory is applicable to the problem of finding out the unlisted telephone number of Harrison Ford.''}\\
+  \textbf{Bridge}: \emph{``DAYDREAMER could possibly find out Harrison's telephone number by obtaining a copy of the alumni directory from the college Harrison Ford attended, if any.''} \cite[p. 125]{mueller1990}
 \end{quote}
 
 \subsection{{\sf Colloquy of Mobiles}: Serendipity as a Service}
@@ -36,34 +35,42 @@ of ``serendipity'' relates to one of the more famous artworks that was
 exhibited there.
 %%% I find this a very weak motivation. Not even Pask himself has related his artwork to serendipity, has he? If you want to keep this, I'd (i) stress the artificiality of the system without being classic-computational; (ii) the social aspect leading to serendipitous encounters with people. This is currently still too implicit.
 %%
+Here we examine the experience of serendipity by gallery attendees.
 In an essay that describes the details of his installation, composed
 before the exhibition took place, Pask wrote:
 
 \begin{quote}
-``[T]\emph{he mobiles produce a complex auditory and visual effect by
-  dint of their interaction.  They cannot, of course, interpret these
-  light and sound patterns.  But human beings can and it seems
-  reasonable that they will also aim to achieve patterns that they deem
-  pleasing by interacting with the system at a higher level of
-  discourse.}
+\textbf{Perception}: ``[T]\emph{he mobiles produce a complex auditory
+  and visual effect by dint of their interaction.}\\
 %%
-: 
-\emph{I do not know.  But I believe it may work out that way.}''  \cite[p.~91]{pask1971comment}
+\textbf{Attention}: ``\emph{They cannot, of course, interpret these
+  light and sound patterns.  But human beings can}''\\
+%%
+\textbf{Focus shift}: ``\emph{and it seems reasonable that they will
+  also aim to achieve patterns that they deem pleasing by interacting
+  with the system at a higher level of discourse. I do not know.  But
+  I believe it may work out that way.}''
+%% \textbf{Bridge}: 
+\cite[p.~91]{pask1971comment} 
 \end{quote}
-
-While the system components have been given regulatory goals which are
-realised in a
-%  an aleatoric---or, more literally,
-stochastic way, the
-system components are not themselves able to make any deeper sense of
-their communication or behaviour.  This suggests that we should make a
-dual accounting, and examine the potential for serendipity on the
-side of the system, and compare it with the potential for serendipity
-on the side of the audience.
+This prediction proved true \cite[p.~98]{pask1971comment}.  Subsequent
+commentators then pick up the story.
+\begin{quote}
+\textbf{Explanation}: ``\emph{actions lead to impacts on the environment that lead to sensing and further modification of actions}'' \cite{haque2007architectural}.\\
+\textbf{Bridge:} 
+``\emph{one can understand the Colloquy as at once an unusual art
+  object and a demonstration model of the cybernetic ontology}''
+\cite[p.~48]{pickering2007ontological}.\\
+\textbf{Valuation:} 
+``\emph{The work introduced machinic attributes that even today still sound
+very advanced to museum audiences}''
+\cite[p.~5]{gemeinboeck2015performance}.
+\end{quote}
 %%
-According to our analysis, there was no possibility for serendipity on
-the system side, since it missed the bridge and valuation steps, but nevertheless there was a possibility for
-serendipity in the ``wider'' system that included human actors.
+There was no possibility for serendipity on the system side, since it
+missed the bridge and valuation steps, nevertheless there was a
+possibility for serendipity in the ``wider'' system that included
+human actors.
 %% The
 %% historical evidence is that there was a certain serendipity to the
 %% exhibition as a whole:
