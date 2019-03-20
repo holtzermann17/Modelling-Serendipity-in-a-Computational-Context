@@ -55,11 +55,20 @@ discovery: for example, improved ways to process rubber and safe
 antibiotics were pursued in broad outline long before the specific
 details became clear \cite{fleming,goodyear1855gum}.  Similarly,
 Pasteur's research has been retroactively described as
-``use-inspired'' \cite{stokes1997pasteur}.  Anticipation plays a more
-subtle role in serendipity proper: the unexpected emerges relative,
-not to an blank slate, but to existing top-down predictions, including
-our anticipation of ourselves, our customs, and our \emph{Umwelt}
+``use-inspired'' \cite{stokes1997pasteur}.  Anticipation plays another
+subtle role in serendipity: the unexpected emerges relative, not to an
+blank slate, but to existing top-down predictions, including our
+anticipation of ourselves, our customs, and our \emph{Umwelt}
 \cite{dennett_2013}.
+
+We should emphasise that this section develops a theoretical
+framework, rather than a working model.  Some key of the key stages
+involve synthesis, e.g., of a new hypothesis, a new method, or a new
+application, and we say very little here about how such syntheses are
+implemented.  In Section \ref{sec:system-analysis}, we give examples
+of historical systems that match the outlines of the model and we
+comment on the prospects of more robust implementations using use
+contemporary synthesis technologies in Section \ref{sec:discussion}.
 
 % http://anticipationconference.org/call-for-participation/
 
@@ -130,12 +139,24 @@ though such predictions are fallible.
 
 $\Gamma$ is a \emph{context}.  We understand its contents to depend on
 time and other variables, for instance, location, sensors used, and so
-on.  For example, at some time $t$ we might have $\Gamma(t,\ldots)
-\equiv a_1, a_2, a_3, \ldots, a_n : A, f:A\rightarrow \mathbb{R},
->:\mathbb{R}\rightarrow\mathbb{R}\rightarrow \mathbb{B}, \ldots$
-Perception is generative insofar as judgements are made.  For example,
-$A$ might denote the type `tree' and the relation $\forall i
-\mathbin{.} i\neq 1 \Rightarrow f(a_1)>f(a_i)$ may be observed.  (The story of Simcha Blass is one of the examples collected by \citet{van1994anatomy}, which we take as a running example for the rest of this section.)
+on.  Perception includes objects of various types, their attributes,
+and relationships between the objects and attributes.
+
+\paragraph{\textbf{\upshape Example}}
+
+One of the examples collected by \citet{van1994anatomy} is the story
+of Simcha Blass (cf.~\cite{shoji1977drip}).
+The story begins at some time $t$, with some configuration of sensors
+$s$, in which
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+$$\Gamma(t,s) \equiv\: a_1, a_2, a_3, \ldots, a_n : A,\enspace
+f:A\rightarrow \mathbb{R},\enspace
+>:\mathbb{R}\rightarrow\mathbb{R}\rightarrow \mathbb{B}, \ldots$$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Here $A$ denotes the type `tree', $f$ measures the height of each
+tree, and $>$ is used to compare their heights.  One of the trees was
+surprisingly tall, in other words, the relation $\forall i \mathbin{.}
+i\neq 1 \Rightarrow f(a_1)>f(a_i)$ was observed.
 
 \begin{center}
 \asterism
@@ -170,7 +191,14 @@ $A$ might denote the type `tree' and the relation $\forall i
 $\Gamma_1 \subset \Gamma$ is a \emph{restricted context}, obtained by
 constraining some of the variables on which $\Gamma$ depends.  Again,
 the contents of $\Gamma_1$ vary with time.  Attention generates
-changes in the way new perceptions come online.
+changes in the way new perceptions come online.  These changes can
+happen step by step.
+
+\paragraph{\textbf{\upshape Example}} Moving closer, Blass observed that there was a faucet near the tall tree:
+ $\Gamma_1(t_1,s_1)\vdash p:\mathit{Pipe}$.  Looking closer still,
+he observed that the faucet was leaking:
+$\Gamma_1(t_1^\prime,s_1^\prime)\vdash p:\mathit{Pipe}, l:\mathit{Leak}$.
+In this case, $\Gamma_1$ also includes the perceptions from the original context $\Gamma$.
 
 \begin{center}
 \asterism
@@ -242,14 +270,14 @@ occurrs if processing leads to a functional model of the event.
 
 \paragraph{\textbf{\upshape Notation}}
 
-Within $\Gamma_1$, features are identified that seem to have
-functional relationships with each other.  For example, $\Gamma_1
-\vdash \mathrm{Faucet} \rightarrow \mathrm{Handle} \rightarrow
-\mathrm{Valve} \rightarrow \mathrm{Leak}$. Whereas attention only
-changed the way items come online, the focus shift generates
-hypotheses: they need not be correct.  In the process of establishing
-functional hypotheses, the context itself may shifts, by revisiting
-the attention phase.
+Within $\Gamma_1$, features are identified that seem to have causal
+relationships with each other.  These relationships might be
+stochastic.  At this stage, the relationships identified have the
+status of hypotheses.
+
+\paragraph{\textbf{\upshape Example}}
+ $\Gamma_1 \vdash \mathit{Time\ passes} \rightarrow
+\mathit{Valve\ degrades} \rightarrow \mathit{Pipe\ Leaks} \rightarrow \mathit{Water\ spreads} \rightarrow \mathit{Tree\ grows}$.
 
 % I don't think that it is helpful to talk about aesthetics here, as it only narrows our scope. 
 % I would remove the last item / paragraph entirely. Clearly, judgements of interest depend on the person, but we've discussed that in the "prepared mind" reference earlier in this section. The focus on poetry is too narrow.
@@ -289,8 +317,9 @@ its context.
   \citet{van1994anatomy} describes Blass's explanation of as follows:
   ``On investigation he found that, although the soil around the tree
   was dry, water was continually dripping from a nearby leaking
-  connection in a water pipe.''  This is a fine ``how'' explanation:
-  the usefulness of Blass's model arose only later.  According to
+  connection in a water pipe.''  This is a perfectly suitable ``how''
+  explanation.  According to this interpretation of the story, the
+  usefulness of Blass's model only arose later.  According to
   Aristotle, the fundamental question that must be addressed is
   ``why?''  \cite{sep-aristotle-causality}: answers are to be
   demonstrated in terms of ``principles and causes'' \cite[Book Gamma,
@@ -315,12 +344,19 @@ its context.
 \end{description}
                                          
 \paragraph{\textbf{\upshape Notation}}
+The function will at this stage be generalised to cover other similar
+cases, and an \emph{inhabitant} $\phi$ of the suitably generalised
+function type is constructed.  Whereas the focus shift led to the
+generation of hypotheses, this step generates a reproducible working
+method.  We do not insist that this method functions the same way in
+all possible contexts.
 
-An inhabitant for one of the functional types is constructed, for
-example: $\Gamma_1 \vdash \phi : (\Pi l:\mathrm{Leak},
-d:\mathrm{Rate}, r:\mathrm{Radius}, p:\mathrm{Plant} \mathbin{.}
-\mathrm{Growth}(l,d,r,p))$.  Whereas the focus shift generated
-hypotheses, this step generates a proof.
+\paragraph{\textbf{\upshape Example}}
+$\Gamma_1 \vdash \phi : (\Pi l:\mathrm{Leak}, d:\mathrm{Rate},
+r:\mathrm{Radius}, p:\mathrm{Plant} \mathbin{.}
+\mathrm{Growth}(l,d,r,p))$, i.e., in general when water leaks a
+sufficient rate near a growing plant, that plant's growth is likely to
+be increased.
 
 \begin{center}
 \asterism
@@ -330,8 +366,8 @@ hypotheses, this step generates a proof.
 \hypertarget{def:bridge}{}The system may now create a \textbf{bridge}
 connecting the explanation of the event, generated earlier, and either
 (i) an existing problem within the domain, or else (ii) some
-previously unknown problem.  In both cases, the explanation is
-generalised as a solution strategy.
+previously unknown problem.  In either of cases, the explanation is
+generalised and reworked as a solution strategy.
 \end{defn}
 \paragraph{\textbf{\upshape Foundations}}
                                          
@@ -401,36 +437,44 @@ solution.
   involves a meta-problem, in other words, a fitness function or
   ``aesthetic'' \cite{pease2011computational}, through which an entire
   class of problems is surveyed, and the most suitable one (i)
-  selected or (ii) constructed.  One way to create this aesthetic is
-  through experience with previous problems, as in derivational
-  analogy, ``a process that draws analogies from the experiences of
-  the past reasoning process'' \cite{Melis98anargument}. Herbert Clark
-  \cite[p.~169]{Clark:1975:BRI:980190.980237} used the term
+  selected or (ii) constructed.  One way to develop this aesthetic is
+  through experience with previous problems: \emph{derivational
+    analogy} is ``a process that draws analogies from the experiences
+  of the past reasoning process'' \cite{Melis98anargument}. Herbert
+  Clark \cite[p.~169]{Clark:1975:BRI:980190.980237} used the term
   `bridging', in a linguistics setting, to refer to a certain class of
   inferences: ``ones the speaker intends the listener to draw as an
   integral part of the message.''  Our setting is different: people
-  sometimes attribute `intent' or `meaning' to events, but their role
-  in interpreting the events should not be ignored
-  (cf.~\cite{dennett_2013}).
+  frequently attribute `meaning' to events, but it is the observer's
+  role in interpreting the events that we focus on
+  (cf.~\cite{dennett_2013}).  Interpretations tend to be conditioned
+  by previous experience.
 \end{description}
 
 \paragraph{\textbf{\upshape Notation}}
 
 $\Gamma_2$ is a context and $\beth : \Gamma_1 \rightarrow \Gamma_2$ is
-a map between contexts such that $\phi \mapsto \psi$.  $\Gamma_2$, and
-accordingly, $\psi$, can include structure that is not present in
-$\Gamma_1$.  For example, $\psi : (\Pi h:\mathrm{Hose},
-d:\mathrm{Rate}, r:\mathrm{Radius}, p_1,\ldots,p_n:\mathrm{Plant}
-\mathbin{.}  \mathrm{Growth}(h,d,r,p_1,\ldots,p_n))$.  The search for
-applications is generative.
+a map between contexts such that $\phi \mapsto \psi$.  In general,
+$\Gamma_2$ and $\psi$ include structure that is not present in
+$\Gamma_1$.
+
+\paragraph{\textbf{\upshape Example}}
+Blass synthesized a design along the lines of $$\psi : (\Pi
+h:\mathrm{Hose}, d:\mathrm{Rate}, r:\mathrm{Radius},
+p_1,\ldots,p_k:\mathrm{Plant} \mathbin{.}
+\mathrm{Growth}(h,d,r,p_1,\ldots,p_k)).$$ In other words, one hose
+could be constructed in such a way that it incorporates multiple
+leaks, controlled by plastic emmitters, and helps multiple plants grow
+without wasting water.  In practice, actually developing the solution
+was more complex, and depended on contemporary innovations in plastic
+manufacturing and new social relationships to fund and deploy the
+product.
 
 %% However, there would have been ample room for pseudoserendipity in
 %% the initial search for methods to build powered aeroplanes.
 \begin{center}
 \asterism
 \end{center}
-
-
 
 \begin{defn}[\textbf{Valuation: Evaluation of the solution via an existing objective function}]\label{def:result}
 \hypertarget{def:result}{}The solution to the bridged problem is positively 
@@ -471,7 +515,12 @@ that led to this point.
 
 \paragraph{\textbf{\upshape Notation}}
 
-$\psi$ is run, selectively, and generates outcomes.
+$\psi$ is run, selectively, and generates tangible outcomes.
+
+\paragraph{\textbf{\upshape Example}}
+Although various forms of drip irrigation have existed in the past,
+Blass and colleagues created the first drip irrigation company.  Their
+methods continue to be used.
 
 \subsection{Summary}
 We have proposed a phased model of serendipity consisting of several
