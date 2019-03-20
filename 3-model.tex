@@ -62,13 +62,20 @@ anticipation of ourselves, our customs, and our \emph{Umwelt}
 \cite{dennett_2013}.
 
 We should emphasise that this section develops a theoretical
-framework, rather than a working model.  Some key of the key stages
+framework.  Some key of the key stages
 involve synthesis, e.g., of a new hypothesis, a new method, or a new
 application, and we say very little here about how such syntheses are
 implemented.  In Section \ref{sec:system-analysis}, we give examples
 of historical systems that match the outlines of the model and we
 comment on the prospects of more robust implementations using use
 contemporary synthesis technologies in Section \ref{sec:discussion}.
+
+%% In the rest of the section we will take the following story as a running example.
+
+%% \begin{quote}
+%% % Some 40 years ago 
+%% ``\emph{Symcha Blass, an Israeli engineer, observed that a large tree near a leaking faucet exhibited a more vigorous growth than the other trees in the area, which were not reached by the water from the faucet.  Blass knew that conventional methods of irrigation waste much of the water that is applied to the crop, and so the example of the leaking faucet led him to the concept of an irrigation system that would apply water in small amounts, literally drop by drop. Eventually he devised and patented a low-pressure system for delivering small amounts of water to the roots of plants at frequent intervals.}'' \cite{shoji1977drip} 
+%% \end{quote}
 
 % http://anticipationconference.org/call-for-participation/
 
@@ -86,9 +93,12 @@ contemporary synthesis technologies in Section \ref{sec:discussion}.
 %% also has integral generative aspects, but they differ at the different
 %% phases.
 
-\begin{defn}[\textbf{Perception: An interface to the world}]\label{def:perception}
-\hypertarget{def:perception}{}\textbf{Perception} allows evidence of events to enter the system,
-whenever the event's occurrence aligns with the system's sensors.
+\begin{defn}%% [\textbf{Perception: An interface to the world}]
+\label{def:perception}
+\hypertarget{def:perception}{}\textbf{Perception} is an interface
+between the system and the world which allows evidence of events to
+enter the system, whenever the event's occurrence aligns with the
+system's sensors.
 \end{defn}
 
 \setlist[description]{font=\normalfont\itshape,itemsep=-2pt}
@@ -135,35 +145,38 @@ whenever the event's occurrence aligns with the system's sensors.
 %% % further details fall outside the scope of our effort.
 %% \end{description}
 
-\paragraph{\textbf{\upshape Notation}}
+%% \paragraph{\textbf{\upshape Notation}}
 
-$\Gamma$ is a \emph{context}.  We understand its contents to depend on
-time and other variables, for instance, location, sensors used, and so
-on.  Perception includes objects of various types, their attributes,
-and relationships between the objects and attributes.
+%% $\Gamma$ is a \emph{context}.  We understand its contents to depend on
+%% time and other variables, for instance, location, sensors used, and so
+%% on.  Perception includes objects of various types, their attributes,
+%% and relationships between them.
 
-\paragraph{\textbf{\upshape Example}}
+%% \paragraph{\textbf{\upshape Example}}
 
-One of the examples collected by \citet{van1994anatomy} is the story
-of Simcha Blass (cf.~\cite{shoji1977drip}).
-The story begins at some time $t$, with some configuration of sensors
-$s$, in which
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-$$\Gamma(t,s) \equiv\: a_1, a_2, a_3, \ldots, a_n : A,\enspace
-f:A\rightarrow \mathbb{R},\enspace
->:\mathbb{R}\rightarrow\mathbb{R}\rightarrow \mathbb{B}, \ldots$$
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Here $A$ denotes the type `tree', $f$ measures the height of each
-tree, and $>$ is used to compare their heights.  One of the trees was
-surprisingly tall, in other words, the relation $\forall i \mathbin{.}
-i\neq 1 \Rightarrow f(a_1)>f(a_i)$ was observed.
+%% One of the examples collected by \citet{van1994anatomy} is the story
+%% of Simcha Blass (cf.~\cite{shoji1977drip}).
+%% The story begins at some time $t$, with some configuration of sensors
+%% $s$, in which
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% $$\Gamma(t,s) \equiv\: a_1, a_2, a_3, \ldots, a_n : A,\enspace
+%% f:A\rightarrow \mathbb{R},\enspace
+%% m:\mathbb{R},\enspace
+%% >:\mathbb{R}\rightarrow\mathbb{R}\rightarrow \mathbb{B}, \ldots$$
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Here, $A$ denotes `tree', and $a_1,\ldots,a_n$ are specific trees.
+%% $f$ measures the height of each tree,
+%% $m$ is the expected height of trees based on previous observations,
+%% and  $>$ is used to compare their heights.
+%% In our examples, one of the trees was surprisingly tall, in other words, $f(a_1)>m$
+%% was observed.
 
 %% \begin{center}
 %% \asterism
 %% \end{center}
 
-\begin{defn}[\textbf{Attention: Directed processing capacity}]\label{def:attention}
-\hypertarget{def:attention}{}By exerting \textbf{attention}, the system directs its processing power to the perceived event or aspects thereof.
+\begin{defn}\label{def:attention}
+\hypertarget{def:attention}{}\textbf{Attention} directs the system's  processing power to the perceived event or certain aspects thereof.
 \end{defn}
 
 %% \paragraph{\textbf{\upshape Foundations}}
@@ -186,27 +199,26 @@ i\neq 1 \Rightarrow f(a_1)>f(a_i)$ was observed.
 %%   %% \cite{keeney1982epistemology}.
 %% \end{description}
 
-\paragraph{\textbf{\upshape Notation}}
+%% \paragraph{\textbf{\upshape Notation}}
 
-$\Gamma_1 \subset \Gamma$ is a \emph{restricted context}, obtained by
-constraining some of the variables on which $\Gamma$ depends.  Again,
-the contents of $\Gamma_1$ vary with time.  Attention generates
-changes in the way new perceptions come online.  These changes can
-happen step by step.
+%% $\Gamma_1 \subset \Gamma$ is a \emph{restricted context}, obtained by
+%% constraining some of the variables on which $\Gamma$ depends.  Again,
+%% the contents of $\Gamma_1$ vary with time.  Attention generates
+%% changes in the way new perceptions come online.
 
-\paragraph{\textbf{\upshape Example}} Moving closer, Blass observed that there was a faucet near the tall tree:
- $\Gamma_1(t_1,s_1)\vdash p:\mathit{Pipe}$.  Looking closer still,
-he observed that the faucet was leaking:
-$\Gamma_1(t_1^\prime,s_1^\prime)\vdash p:\mathit{Pipe}, l:\mathit{Leak}$.
-In this case, $\Gamma_1$ also includes the perceptions from the original context $\Gamma$.
+%% \paragraph{\textbf{\upshape Example}} Looking closer, Blass observed that there was a pipe near the tall tree:
+%%  $\Gamma_1(t_1,s_1)\vdash p:\mathit{Pipe}$.  Looking closer still,
+%% he observed that the faucet was leaking:
+%% $\Gamma_1(t_1^\prime,s_1^\prime)\vdash p:\mathit{Pipe}, l:\mathit{Leak}$.
+%% In this case, $\Gamma_1$ also includes the perceptions from the original context $\Gamma$.
 
 %% \begin{center}
 %% \asterism
 %% \end{center}
 
-\begin{defn}[\textbf{Focus shift: Data evolution}]\label{def:interest}
-\hypertarget{def:interest}{} We say that a \textbf{focus shift}
-occurrs if processing leads to a functional model of the event.
+\begin{defn}\label{def:interest}
+  \hypertarget{def:interest}{} We say that a \textbf{focus shift} occurs
+  if processing leads to a functional model of the event.
 \end{defn}
 % I'm not sure if "fitness function" is generic enough here. Rather "objective function", expressing a system's goals? You write yourself that our use is at odds with the evolutionary literature; so why do we use the term then, still?
 
@@ -268,16 +280,16 @@ occurrs if processing leads to a functional model of the event.
 %% % You could make two claims here: objective functions could either be extrinsic (e.g. a task specified by the system designer) or intrinsic (pursuing the activity has only inherent, but not instrumental value). In the second case, we can talk about motivations such as curiosity or learning progress. Cf. Oudeyer and Kaplan, 2007/2008 on intrinsic motivations. Crucially, interest is then not exclusively related to curiosity, but to a whole set of intrinsic motivations.
 %% \end{description}
 
-\paragraph{\textbf{\upshape Notation}}
+%% \paragraph{\textbf{\upshape Notation}}
 
-Within $\Gamma_1$, features are identified that seem to have causal
-relationships with each other.  These relationships might be
-stochastic.  At this stage, the relationships identified have the
-status of hypotheses.
+%% Within $\Gamma_1$, features are identified that seem to have causal
+%% relationships with each other.  These relationships might be
+%% stochastic.  At this stage, the relationships identified have the
+%% status of hypotheses.
 
-\paragraph{\textbf{\upshape Example}}
- $\Gamma_1 \vdash \mathit{Time\ passes} \rightarrow
-\mathit{Valve\ degrades} \rightarrow \mathit{Pipe\ Leaks} \rightarrow \mathit{Water\ spreads} \rightarrow \mathit{Tree\ grows}$.
+%% \paragraph{\textbf{\upshape Example}}
+%%  $\Gamma_1 \vdash \mathit{Time\ passes} \rightarrow
+%% \mathit{Valve\ degrades} \rightarrow \mathit{Pipe\ Leaks} \rightarrow \mathit{Water\ spreads} \rightarrow \mathit{Tree\ grows}$.
 
 % I don't think that it is helpful to talk about aesthetics here, as it only narrows our scope. 
 % I would remove the last item / paragraph entirely. Clearly, judgements of interest depend on the person, but we've discussed that in the "prepared mind" reference earlier in this section. The focus on poetry is too narrow.
@@ -343,20 +355,20 @@ its context.
 %%   \cite[p.~131]{floppyearedrabbits1958barber}.
 %% \end{description}
                                          
-\paragraph{\textbf{\upshape Notation}}
-The function will at this stage be generalised to cover other similar
-cases, and an \emph{inhabitant} $\phi$ of the suitably generalised
-function type is constructed.  Whereas the focus shift led to the
-generation of hypotheses, this step generates a reproducible working
-method.  We do not insist that this method functions the same way in
-all possible contexts.
+%% \paragraph{\textbf{\upshape Notation}}
+%% The function will at this stage be generalised to cover other similar
+%% cases, and an \emph{inhabitant} $\phi$ of the suitably generalised
+%% function type is constructed.  Whereas the focus shift led to the
+%% generation of hypotheses, this step generates a reproducible working
+%% method.  We do not insist that this method functions the same way in
+%% all possible contexts.
 
-\paragraph{\textbf{\upshape Example}}
-$\Gamma_1 \vdash \phi : (\Pi l:\mathrm{Leak}, d:\mathrm{Rate},
-r:\mathrm{Radius}, p:\mathrm{Plant} \mathbin{.}
-\mathrm{Growth}(l,d,r,p))$, i.e., in general when water leaks a
-sufficient rate near a growing plant, that plant's growth is likely to
-be increased.
+%% \paragraph{\textbf{\upshape Example}}
+%% $\Gamma_1 \vdash \phi : (\Pi l:\mathrm{Leak}, d:\mathrm{Rate},
+%% r:\mathrm{Radius}, p:\mathrm{Plant} \mathbin{.}
+%% \mathrm{Growth}(l,d,r,p))$, i.e., in general when water leaks a
+%% sufficient rate near a growing plant, that plant's growth is likely to
+%% be increased.
 
 %% \begin{center}
 %% \asterism
@@ -451,24 +463,24 @@ generalised and reworked as a solution strategy.
 %%   by previous experience.
 %% \end{description}
 
-\paragraph{\textbf{\upshape Notation}}
+%% \paragraph{\textbf{\upshape Notation}}
 
-$\Gamma_2$ is a context and $\beth : \Gamma_1 \rightarrow \Gamma_2$ is
-a map between contexts such that $\phi \mapsto \psi$.  In general,
-$\Gamma_2$ and $\psi$ include structure that is not present in
-$\Gamma_1$.
+%% $\Gamma_2$ is a context and $\beth : \Gamma_1 \rightarrow \Gamma_2$ is
+%% a map between contexts such that $\phi \mapsto \psi$.  In general,
+%% $\Gamma_2$ and $\psi$ include structure that is not present in
+%% $\Gamma_1$.
 
-\paragraph{\textbf{\upshape Example}}
-Blass synthesized a design along the lines of $$\psi : (\Pi
-h:\mathrm{Hose}, d:\mathrm{Rate}, r:\mathrm{Radius},
-p_1,\ldots,p_k:\mathrm{Plant} \mathbin{.}
-\mathrm{Growth}(h,d,r,p_1,\ldots,p_k)).$$ In other words, one hose
-could be constructed in such a way that it incorporates multiple
-leaks, controlled by plastic emmitters, and helps multiple plants grow
-without wasting water.  In practice, actually developing the solution
-was more complex, and depended on contemporary innovations in plastic
-manufacturing and new social relationships to fund and deploy the
-product.
+%% \paragraph{\textbf{\upshape Example}}
+%% Blass synthesized a design along the lines of $$\psi : (\Pi
+%% h:\mathrm{Hose}, d:\mathrm{Rate}, r:\mathrm{Radius},
+%% p_1,\ldots,p_k:\mathrm{Plant} \mathbin{.}
+%% \mathrm{Growth}(h,d,r,p_1,\ldots,p_k)).$$ In other words, one hose
+%% could be constructed in such a way that it incorporates multiple
+%% leaks, controlled by plastic emmitters, and helps multiple plants grow
+%% without wasting water.  In practice, actually developing the solution
+%% was more complex, and depended on contemporary innovations in plastic
+%% manufacturing and new social relationships to fund and deploy the
+%% product.
 
 %% However, there would have been ample room for pseudoserendipity in
 %% the initial search for methods to build powered aeroplanes.
@@ -513,14 +525,14 @@ This may be system-intrinsic, or specified by the system's user or a third party
 %% that led to this point.
 %% \end{description}                        
 
-\paragraph{\textbf{\upshape Notation}}
+%% \paragraph{\textbf{\upshape Notation}}
 
-$\psi$ is run, selectively, and generates tangible outcomes.
+%% $\psi$ is run, selectively, and generates tangible outcomes.
 
-\paragraph{\textbf{\upshape Example}}
-Although various forms of drip irrigation have existed in the past,
-Blass and colleagues created the first drip irrigation company.  Their
-methods continue to be used.
+%% \paragraph{\textbf{\upshape Example}}
+%% Although various forms of drip irrigation have existed in the past,
+%% Blass and colleagues created the first drip irrigation company.  Their
+%% methods continue to be used.
 
 \subsection{Summary}
 We have proposed a phased model of serendipity consisting of several
